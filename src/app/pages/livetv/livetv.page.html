@@ -1,15 +1,36 @@
-<!-- <ion-header>
+<ion-header>
   <ion-toolbar>
-    <ion-title>লাইভ টিভি</ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+        <img src="../../../assets/img/logo-200.png" height="35">
+      </ion-buttons>
+    <ion-title>Live TV</ion-title>
   </ion-toolbar>
-</ion-header> -->
+</ion-header>
 
-<ion-content>
+
+<ion-toolbar id="segment">
+  <ion-segment (ionChange)="segmentChanged($event)" value="1" scrollable >
+    <ion-segment-button value="1" id="1">
+      <ion-label><b>Bangla</b></ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="2" id="2">
+      <ion-label><b>India</b></ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+<ion-content id="ionContentLive" (swipeleft)="swipeLeftPress($event)" (swiperight)="swipeRightPress($event)">
 
  <ion-row >
   <ion-col size="6" *ngFor="let c of tv_newspapers" (click)=goToChannel(c.url)>
-    <ion-card>
+    <ion-card *ngIf="showSegment==1">
       <img src="{{c.logo}}" class="tv-logo">
+      <!-- <ion-label color="warning">{{c.channelName}}</ion-label> -->
+    </ion-card>
+
+    <ion-card *ngIf="showSegment==2" style="height: 4em;">
+      <img src="{{c.logo}}" class="tv-logo" alt="{{c.alt}}">
     </ion-card>  
 
     </ion-col>  
