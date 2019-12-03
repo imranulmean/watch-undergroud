@@ -1,0 +1,33 @@
+ion-toolbar {
+    --background: #fe8c00;
+}
+ion-content {
+    /*--background: #424242;*/
+    --background:#f1f1f1
+}
+#segment{
+	--background: #fabc5a1b;
+}
+.newpaperLogo{
+	margin-top: 0.5em;
+}
+
+.tv-logo{
+/*	max-height: 50px;
+	width: unset;*/
+	margin: 0 auto;
+	height: 6em;
+}
+
+.newpaperHeader{
+	padding: 0 0 1em 0.2em;
+}
+
+ion-segment-button {
+	border: none;
+	font-weight: 900;
+	font-size: 0.8em;
+	--indicator-color-checked: #fcb13c;
+	--color-activated: #fcb13c;
+	--color-checked: #fcb13c;
+  }

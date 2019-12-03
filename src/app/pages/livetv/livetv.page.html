@@ -1,0 +1,18 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>লাইভ টিভি</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+ <ion-row >
+  <ion-col size="6" *ngFor="let c of tv_newspapers" (click)=goToChannel(c.url)>
+    <ion-card>
+      <img src="{{c.logo}}" class="tv-logo">
+    </ion-card>  
+
+    </ion-col>  
+  </ion-row>
+
+</ion-content>

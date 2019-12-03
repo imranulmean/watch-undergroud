@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain>localhost</domain>
+        <domain>shobkhobor.dreamdiver.nl</domain>
+        <domain>api.openweathermap.org</domain>
+        <domain>openweathermap.org</domain>
+        <domain>www.mzamin.com</domain>
+        <domain>www.dainikamadershomoy.com</domain>
+        <domain>web.dailyjanakantha.com</domain>
+        <domain>www.jagobd.com</domain>
+        <domain>peacetvnetwork.visionip.tv</domain>
+        <domain>9xm.in</domain>
+        <domain>www.deshibiz.com</domain>
+        <domain>www.freeetv.com</domain>
+        <domain includeSubdomains="true">somoynews.tv</domain>
+        <domain>www.southafricanews24.net</domain>
+        <domain>www.desifree.tv</domain>
+        <domain>tvs.jagobd.com</domain>
+        <domain>peacetv.ashttp22.visionip.tv</domain>
+        <domain>thebangladeshtoday.com</domain> 
+        <domain>www.banglatribune.com</domain> 
+        <domain>m.banglatribune.com</domain> 
+        <domain>www.dailystockbangladesh.com</domain>
+        <domain>dsebd.org</domain> 
+        <domain>m.banglanews24.com</domain> 
+        <domain>m.dailyinqilab.com</domain> 
+    </domain-config>
+</network-security-config>
