@@ -7,6 +7,7 @@ import { Toast } from '@ionic-native/toast/ngx';
 import { OneSignal } from '@ionic-native/onesignal/ngx';
 import { Location } from '@angular/common';
 import { NavController } from '@ionic/angular';
+import { AppUpdate } from '@ionic-native/app-update/ngx';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -41,7 +42,7 @@ export class AppComponent {
     private popoverCtrl: PopoverController,
     private actionSheetCtrl: ActionSheetController,
     private location: Location,
-    private navCtrl: NavController
+    private navCtrl: NavController,private appUpdate: AppUpdate
   ) {
     this.initializeApp();
 
@@ -65,7 +66,6 @@ export class AppComponent {
       { routeName: "ব্যবসা-বাণিজ্য", routeOption: "/home/15", logo: "../assets/img/menu-icons/business.svg" },
       { routeName: "রাশিফল", routeOption: "/home/16", logo: "../assets/img/menu-icons/horoscope.svg" },
     ];
-
   }
   openHome() {
     let rHome = "random" + Math.random();
@@ -90,7 +90,10 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.overlaysWebView(true);
       this.splashScreen.hide();
-
+      ////////////////////////
+      const updateUrl = 'https://raw.githubusercontent.com/imranulmean/version-control/master/version.xml';
+      this.appUpdate.checkAppUpdate(updateUrl).then(() => { console.log('Update available') });
+      ///////////////////////////
       if (this.platform.is('cordova')) {
         this.setupPush();
       }

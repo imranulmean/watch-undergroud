@@ -1,0 +1,10 @@
+{
+  "cordova-plugin-app-update": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-app-update"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

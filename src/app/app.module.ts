@@ -24,7 +24,7 @@ import { OneSignal } from '@ionic-native/onesignal/ngx';
 // import { AdMobFree } from '@ionic-native/admob-free/ngx';
 import { AdmobFreeService } from './services/admobfree.service';
 import { OpenNativeSettings } from '@ionic-native/open-native-settings/ngx';
-
+import { AppUpdate } from '@ionic-native/app-update/ngx';
 
 
 @NgModule({
@@ -41,7 +41,7 @@ import { OpenNativeSettings } from '@ionic-native/open-native-settings/ngx';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     InAppBrowser,
     OneSignal,
-    Toast,OpenNativeSettings
+    Toast,OpenNativeSettings,AppUpdate
   ],
   bootstrap: [AppComponent]
 })
