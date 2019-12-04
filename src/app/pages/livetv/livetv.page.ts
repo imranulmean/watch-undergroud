@@ -52,12 +52,12 @@ export class LivetvPage implements OnInit {
     this.indiaChannel=[
     // https://www.dsebd.org/images/logo.png
     // https://www.dsebd.org/images/dse-name.jpg
-    {channelName: 'ZEE TV', url: 'https://itpolly.iptv.digijadoo.net/live/zee_tv/chunks.m3u8', logo: '',alt:"ZEE TV" },
+    {channelName: 'ZEE TV', url: 'https://itpolly.iptv.digijadoo.net/live/zee_tv/chunks.m3u8', logo: 'http://zeelwebsite.s3.amazonaws.com/zeetele/wp-content/uploads/2017/09/zee_tv.jpg',alt:"ZEE TV" },
      { channelName: 'COLORS HD', url: "https://itpolly.iptv.digijadoo.net/live/colors_hd/chunks.m3u8", logo: '',alt:"COLORS HD" },
      { channelName: 'STAR PLUS HD', url: 'https://itpolly.iptv.digijadoo.net/live/star_plus_hd/chunks.m3u8', logo: '',alt:"STAR PLUS HD" },
-     { channelName: 'Jugantor', url: 'https://www.jugantor.com/', logo: 'https://www.jugantor.com/templates/jugantor-v2/images/logo_main.png?v=1' },
-     { channelName: 'Ittefaq', url: 'https://www.ittefaq.com.bd/', logo: 'https://www.ittefaq.com.bd/templates/desktop-v1/images/main-logo.png' },
-     { channelName: 'Manab Zamin', url: 'http://www.mzamin.com/', logo: 'http://www.mzamin.com/asset/images/logos.png' },
+     { channelName: 'MOVIES OK', url: 'https://itpolly.iptv.digijadoo.net/live/movies_ok/chunks.m3u8', logo: '',alt:"MOVIES OK" },
+     { channelName: 'Cartoon Network', url: 'https://peer1.ustv.to/CN/myStream/chunks.m3u8?nimblesessionid=132494835&wmsAuthSign=c2VydmVyX3RpbWU9MTIvMy8yMDE5IDg6NTQ6NDQgUE0maGFzaF92YWx1ZT1oOXhISGtXdnJ6NWRXNENIamkzYkhBPT0mdmFsaWRtaW51dGVzPTM2MCZzdHJtX2xlbj0w', logo: '',alt:"Cartoon Network" },
+     { channelName: 'Bein Sports USA', url: 'https://ul.cdn946.net:8443/hls/yu3w26c9imgo814.m3u8?s=8B1_iTOaqOZYnqy6Zq6JdQ&e=1575428682', logo: '', alt:"Bein Sports USA" },
      { channelName: 'Samakal', url: 'https://samakal.com/', logo: 'https://samakal.com/assets/images/logo-bn.png' },
      { channelName: 'Amader Shomoy', url: 'http://www.dainikamadershomoy.com/', logo: 'http://www.dainikamadershomoy.com/files/assets/img/main-logo.png' },
      { channelName: 'Prothom Alo', url: 'https://www.prothomalo.com/', logo: 'https://paloimages.prothom-alo.com/contents/themes/public/style/images/Prothom-Alo.png' },
