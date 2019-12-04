@@ -90,10 +90,6 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.overlaysWebView(true);
       this.splashScreen.hide();
-      ////////////////////////
-      const updateUrl = 'https://raw.githubusercontent.com/imranulmean/version-control/master/version.xml';
-      this.appUpdate.checkAppUpdate(updateUrl).then(() => { console.log('Update available') });
-      ///////////////////////////
       if (this.platform.is('cordova')) {
         this.setupPush();
       }

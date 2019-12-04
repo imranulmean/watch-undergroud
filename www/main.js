@@ -1186,7 +1186,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '', redirectTo: 'livetv', pathMatch: 'full' },
     { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
     { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
     { path: 'home/:id', loadChildren: './pages/home/home.module#HomePageModule' },
@@ -1220,7 +1220,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-app>\r\n  <ion-split-pane>\r\n    <ion-menu type=\"overlay\" swipe-gesture=false>\r\n      <ion-content fullscreen>\r\n        <div class=\"sidemenu-ion-content\">\r\n          <ion-list class=\"sidemenu-ion-list\">\r\n\r\n            <ion-item class=\"sidemenu-ion-list-item\">\r\n              <img class=\"sidemenu-logo\" src=\"../assets/img/logo-200.png\" height=\"75\">\r\n            </ion-item>\r\n\r\n            <!-- <ion-menu-toggle auto-hide=\"false\">\r\n\r\n              <ion-item class=\"sidemenu-ion-list-item\" [routerDirection]=\"'root'\" routerLink=\"/home\">\r\n                <ion-icon slot=\"start\" color=\"light\" name=\"home\"></ion-icon>\r\n                <ion-label color=\"light\">\r\n                  সব খবর\r\n                </ion-label>\r\n              </ion-item>\r\n\r\n            </ion-menu-toggle> -->\r\n\r\n            <!-- Item with Children -->\r\n\r\n            <ion-item button class=\"sidemenu-ion-list-item\" (click)=\"openMenuList()\" [class.parent-active]=\"subMenu.open\" detail=\"false\"\r\n              auto-hide=\"false\">\r\n              <ion-icon slot=\"start\" name=\"arrow-forward\" color=\"light\" *ngIf=\"!subMenu.open\"></ion-icon>\r\n              <ion-icon slot=\"start\" name=\"arrow-down\" color=\"light\" *ngIf=\"subMenu.open\"></ion-icon>\r\n              <ion-label color=\"light\">সব খবর</ion-label>\r\n            </ion-item>\r\n\r\n            <!-- Children List for clicked Item -->          \r\n            <ion-list id=\"menuList\" class=\"sidemenu-ion-list-item\" *ngIf=\"subMenu.open\" style=\"height: 0;overflow-y: auto;-webkit-transition: height 2s; transition: height 1s;\">\r\n              <ion-menu-toggle>\r\n                <ion-item class=\"sub-item\" (click)=\"openHome()\">\r\n                  <ion-icon class=\"big\" src=\"../assets/img/menu-icons/prothom-pata.svg\"></ion-icon>\r\n                  <ion-label>\r\n                    প্রথম পাতা\r\n                  </ion-label>\r\n                </ion-item>              \r\n                <ion-item class=\"sub-item\"  *ngFor=\"let s of subRoutes\" [routerDirection]=\"'root'\" routerLink={{s.routeOption}}>\r\n                  <ion-icon class=\"big\" src=\"{{s.logo}}\"></ion-icon>\r\n                  <ion-label>\r\n                    {{s.routeName}}\r\n                  </ion-label>\r\n                </ion-item>\r\n\r\n              </ion-menu-toggle>\r\n            </ion-list>          \r\n\r\n\r\n\r\n            <ion-menu-toggle>\r\n            \r\n            <ion-item class=\"sidemenu-ion-list-item\"  routerLink=\"/job\">\r\n              <ion-icon slot=\"start\" color=\"light\" name=\"ios-briefcase\"></ion-icon>\r\n              <ion-label color=\"light\">\r\n                চাকরির খবর\r\n              </ion-label>\r\n            </ion-item>            \r\n              <ion-item class=\"sidemenu-ion-list-item\" [routerDirection]=\"'root'\" routerLink=\"/sources\">\r\n                <ion-icon slot=\"start\" color=\"light\" name=\"cube\"></ion-icon>\r\n                <ion-label color=\"light\">\r\n                  উৎস\r\n                </ion-label>\r\n              </ion-item>\r\n              <ion-item class=\"sidemenu-ion-list-item\" [routerDirection]=\"'root'\" routerLink=\"/livetv\">\r\n                <ion-icon slot=\"start\" color=\"light\" name=\"tv\"></ion-icon>\r\n                <ion-label color=\"light\">\r\n                  পত্রিকা ও লাইভ টিভি\r\n                </ion-label>\r\n              </ion-item>\r\n              <ion-item class=\"sidemenu-ion-list-item\" [routerDirection]=\"'root'\" routerLink=\"/about\">\r\n                <ion-icon slot=\"start\" color=\"light\" name=\"md-information-circle\"></ion-icon>\r\n                <ion-label color=\"light\">\r\n                  আমাদের সম্পর্কে\r\n                </ion-label>\r\n              </ion-item>\r\n\r\n            </ion-menu-toggle>\r\n          </ion-list>\r\n        </div>\r\n      </ion-content>\r\n      <ion-footer class=\"sidemenu-ion-footer\">\r\n        <ion-label class=\"copyright-text\" color=\"dark\">© Dream Diver 2019 | Version 1.5.5</ion-label>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet main></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>"
+module.exports = "<ion-app>\r\n  <ion-split-pane>\r\n\r\n    <ion-router-outlet main></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>"
 
 /***/ }),
 
@@ -1243,6 +1243,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_toast_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/toast/ngx */ "./node_modules/@ionic-native/toast/ngx/index.js");
 /* harmony import */ var _ionic_native_onesignal_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/onesignal/ngx */ "./node_modules/@ionic-native/onesignal/ngx/index.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/app-update/ngx */ "./node_modules/@ionic-native/app-update/ngx/index.js");
+
 
 
 
@@ -1254,7 +1256,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent(platform, splashScreen, statusBar, oneSignal, alertCtrl, router, toast, modalCtrl, menu, popoverCtrl, actionSheetCtrl, location, navCtrl) {
+    function AppComponent(platform, splashScreen, statusBar, oneSignal, alertCtrl, router, toast, modalCtrl, menu, popoverCtrl, actionSheetCtrl, location, navCtrl, appUpdate) {
         this.platform = platform;
         this.splashScreen = splashScreen;
         this.statusBar = statusBar;
@@ -1268,6 +1270,7 @@ var AppComponent = /** @class */ (function () {
         this.actionSheetCtrl = actionSheetCtrl;
         this.location = location;
         this.navCtrl = navCtrl;
+        this.appUpdate = appUpdate;
         // set up hardware back button event.
         this.lastTimeBackPress = 0;
         this.timePeriodToExit = 2000;
@@ -1300,22 +1303,13 @@ var AppComponent = /** @class */ (function () {
         this.navCtrl.navigateRoot('home/' + rHome);
     };
     AppComponent.prototype.openMenuList = function () {
-        var _this = this;
         if (!this.subMenu.open) {
             this.subMenu.open = true;
-            var routeInterval_1 = setInterval(function () {
-                if (document.getElementById('menuList')) {
-                    document.getElementById('menuList').style.height = '17em';
-                    clearInterval(routeInterval_1);
-                }
-            }, 100);
+            document.getElementById('menuList').style.height = '17em';
         }
         else {
             document.getElementById('menuList').style.height = '0';
-            setTimeout(function () {
-                _this.subMenu.open = false;
-            }, 1000);
-            // this.subMenu.open=false;
+            this.subMenu.open = false;
         }
     };
     AppComponent.prototype.initializeApp = function () {
@@ -1407,7 +1401,7 @@ var AppComponent = /** @class */ (function () {
             _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["PopoverController"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"],
             _angular_common__WEBPACK_IMPORTED_MODULE_8__["Location"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavController"]])
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavController"], _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_9__["AppUpdate"]])
     ], AppComponent);
     return AppComponent;
 }()); // end of class
@@ -1444,6 +1438,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ionic_swipe_all__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ionic-swipe-all */ "./node_modules/ionic-swipe-all/dist/index.js");
 /* harmony import */ var _ionic_native_onesignal_ngx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ionic-native/onesignal/ngx */ "./node_modules/@ionic-native/onesignal/ngx/index.js");
 /* harmony import */ var _ionic_native_open_native_settings_ngx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ionic-native/open-native-settings/ngx */ "./node_modules/@ionic-native/open-native-settings/ngx/index.js");
+/* harmony import */ var _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ionic-native/app-update/ngx */ "./node_modules/@ionic-native/app-update/ngx/index.js");
 
 
 
@@ -1460,6 +1455,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // import { HammerGestureConfig,HAMMER_GESTURE_CONFIG } from "@angular/platform-browser";
+
 
 
 
@@ -1481,7 +1477,7 @@ var AppModule = /** @class */ (function () {
                 { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] },
                 _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_10__["InAppBrowser"],
                 _ionic_native_onesignal_ngx__WEBPACK_IMPORTED_MODULE_16__["OneSignal"],
-                _ionic_native_toast_ngx__WEBPACK_IMPORTED_MODULE_7__["Toast"], _ionic_native_open_native_settings_ngx__WEBPACK_IMPORTED_MODULE_17__["OpenNativeSettings"]
+                _ionic_native_toast_ngx__WEBPACK_IMPORTED_MODULE_7__["Toast"], _ionic_native_open_native_settings_ngx__WEBPACK_IMPORTED_MODULE_17__["OpenNativeSettings"], _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_18__["AppUpdate"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
         })
@@ -1590,7 +1586,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\NODEJS APP\Ionic4\shob-khobor 3\shob-khobor\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\NODEJS APP\Ionic4\watch-undergroud\src\main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { HttpClient } from '@angular/common/http';
-
+import { AppUpdate } from '@ionic-native/app-update/ngx';
 @Component({
   selector: 'app-livetv',
   templateUrl: './livetv.page.html',
@@ -13,7 +13,7 @@ export class LivetvPage implements OnInit {
   indiaChannel:any = [];
   tv_newspapers:any=[];
   showSegment:number=1;
-  constructor(private iab: InAppBrowser,private httpClient: HttpClient ) {
+  constructor(private iab: InAppBrowser,private httpClient: HttpClient,private appUpdate: AppUpdate ) {
     this.tvChannels = [
       // tslint:disable-next-line: indent
       { channelName: 'BTV World', url: 'https://itpolly.iptv.digijadoo.net/live/btv_world/chunks.m3u8', logo: 'https://i2.wp.com/tvbd.live/wp-content/uploads/2016/11/btv-world.png?fit=400%2C225' },
@@ -56,7 +56,7 @@ export class LivetvPage implements OnInit {
      { channelName: 'COLORS HD', url: "https://itpolly.iptv.digijadoo.net/live/colors_hd/chunks.m3u8", logo: '',alt:"COLORS HD" },
      { channelName: 'STAR PLUS HD', url: 'https://itpolly.iptv.digijadoo.net/live/star_plus_hd/chunks.m3u8', logo: '',alt:"STAR PLUS HD" },
      { channelName: 'MOVIES OK', url: 'https://itpolly.iptv.digijadoo.net/live/movies_ok/chunks.m3u8', logo: '',alt:"MOVIES OK" },
-     { channelName: 'Cartoon Network', url: 'https://peer1.ustv.to/CN/myStream/chunks.m3u8?nimblesessionid=132494835&wmsAuthSign=c2VydmVyX3RpbWU9MTIvMy8yMDE5IDg6NTQ6NDQgUE0maGFzaF92YWx1ZT1oOXhISGtXdnJ6NWRXNENIamkzYkhBPT0mdmFsaWRtaW51dGVzPTM2MCZzdHJtX2xlbj0w', logo: '',alt:"Cartoon Network" },
+     { channelName: 'Cartoon Network', url: 'http://sv7.dailymotion.com.1cdn.host/live/ctnw/chunks.m3u8', logo: '',alt:"Cartoon Network" },
      { channelName: 'Bein Sports USA', url: 'https://ul.cdn946.net:8443/hls/yu3w26c9imgo814.m3u8?s=8B1_iTOaqOZYnqy6Zq6JdQ&e=1575428682', logo: '', alt:"Bein Sports USA" },
      { channelName: 'Samakal', url: 'https://samakal.com/', logo: 'https://samakal.com/assets/images/logo-bn.png' },
      { channelName: 'Amader Shomoy', url: 'http://www.dainikamadershomoy.com/', logo: 'http://www.dainikamadershomoy.com/files/assets/img/main-logo.png' },
@@ -68,21 +68,28 @@ export class LivetvPage implements OnInit {
      {channelName: 'Observer', url: 'https://www.observerbd.com/', logo: 'https://www.observerbd.com/files/logo.jpg' },
      {channelName: 'Bangladesh Today', url: 'http://thebangladeshtoday.com/', logo: 'https://thebangladeshtoday.com/wp-content/uploads/2018/06/TBT-Logo-Transparent-1-1.png' },
      {channelName: 'bdnews24.com', url: 'https://bangla.bdnews24.com/', logo: 'https://d30fl32nd2baj9.cloudfront.net/media/2013/01/04/logo1.png1/BINARY/logo1.png' },
-     {channelName: 'banglanews24.com', url: 'https://www.banglanews24.com', logo: 'https://www.banglanews24.com/media/imgAll/2016October/bg/banglanews_logo20180725112204.jpg' },
-     {channelName: 'dailystockbangladesh', url: 'https://www.dailystockbangladesh.com', logo: '../../../assets/img/news-source-icons/dailystock.png' },
+     // {channelName: 'banglanews24.com', url: 'https://www.banglanews24.com', logo: 'https://www.banglanews24.com/media/imgAll/2016October/bg/banglanews_logo20180725112204.jpg' },
+     // {channelName: 'dailystockbangladesh', url: 'https://www.dailystockbangladesh.com', logo: '../../../assets/img/news-source-icons/dailystock.png' },
      
     ];
    this.tv_newspapers=this.tvChannels;
   }
 
+  getUpdate(){
+     ////////////////////////
+     alert("hola");
+    const updateUrl = 'https://raw.githubusercontent.com/imranulmean/version-control/master/version.xml';
+    this.appUpdate.checkAppUpdate(updateUrl).then(() => { console.log('Update available') });
+    ///////////////////////////
+  }
   goToChannel(url) {
-    if(url==='https://www.dsebd.org/' || !url.includes("https")){
-      this.iab.create(url, '_system', 'location=yes');
-    }
-    else{
+    // if(url==='https://www.dsebd.org/' || !url.includes("https")){
+    //   this.iab.create(url, '_system', 'location=yes');
+    // }
+    // else{
       // let openBrowser=this.showSegment==1 ? '_system':'_self';
       this.iab.create(url, '_self', 'location=no');
-    }
+    // }
       // window['plugins'].webintent.startActivity({
       //         action: window['plugins'].webintent.ACTION_VIEW,
       //         url:  "googlechrome://navigate?url="+url
