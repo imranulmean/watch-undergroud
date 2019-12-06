@@ -25,6 +25,7 @@
     "@ionic-native/core": "^5.12.0",
     "@ionic-native/geolocation": "^5.10.0",
     "@ionic-native/in-app-browser": "^5.9.0",
+    "@ionic-native/ionic-webview": "^5.17.1",
     "@ionic-native/native-geocoder": "^5.10.0",
     "@ionic-native/onesignal": "^5.11.0",
     "@ionic-native/open-native-settings": "^5.15.0",
@@ -105,9 +106,7 @@
       "cordova-plugin-statusbar": {},
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
-      "cordova-plugin-ionic-webview": {
-        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
-      },
+      "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-globalization": {},

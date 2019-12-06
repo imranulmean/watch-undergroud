@@ -58,7 +58,7 @@ var LivetvPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-menu-button></ion-menu-button>\r\n        <img src=\"../../../assets/img/logo-200.png\" height=\"35\">\r\n      </ion-buttons>\r\n    <ion-title>Live TV</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-button (click)=getUpdate()>Get Update</ion-button> \r\n<ion-toolbar id=\"segment\">\r\n  <ion-segment (ionChange)=\"segmentChanged($event)\" value=\"1\" scrollable >\r\n    <ion-segment-button value=\"1\" id=\"1\">\r\n      <ion-label><b>Bangla</b></ion-label>\r\n    </ion-segment-button>\r\n    <ion-segment-button value=\"2\" id=\"2\">\r\n      <ion-label><b>India</b></ion-label>\r\n    </ion-segment-button>\r\n  </ion-segment>\r\n</ion-toolbar>\r\n\r\n<ion-content id=\"ionContentLive\" (swipeleft)=\"swipeLeftPress($event)\" (swiperight)=\"swipeRightPress($event)\">\r\n\r\n <ion-row >\r\n  <ion-col size=\"6\" *ngFor=\"let c of tv_newspapers\" (click)=goToChannel(c.url)>\r\n    <ion-card *ngIf=\"showSegment==1\">\r\n      <img src=\"{{c.logo}}\" class=\"tv-logo\">\r\n      <!-- <ion-label color=\"warning\">{{c.channelName}}</ion-label> -->\r\n    </ion-card>\r\n\r\n    <ion-card *ngIf=\"showSegment==2\">\r\n      <img src=\"{{c.logo}}\" class=\"tv-logo\" alt=\"{{c.alt}}\">\r\n    </ion-card>  \r\n\r\n    </ion-col>  \r\n  </ion-row>\r\n\r\n</ion-content>\r\n"
+module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n      <ion-buttons slot=\"start\">\r\n        <ion-menu-button></ion-menu-button>\r\n        <!-- <img src=\"../../../assets/img/logo-200.png\" height=\"35\"> -->\r\n      </ion-buttons>\r\n    <ion-title>Live TV</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-button (click)=getUpdate()>Get Update</ion-button> \r\n<ion-toolbar id=\"segment\">\r\n  <ion-segment (ionChange)=\"segmentChanged($event)\" value=\"1\" scrollable >\r\n    <ion-segment-button value=\"1\" id=\"1\">\r\n      <ion-label><b>Bangla</b></ion-label>\r\n    </ion-segment-button>\r\n    <ion-segment-button value=\"2\" id=\"2\">\r\n      <ion-label><b>India</b></ion-label>\r\n    </ion-segment-button>\r\n    <ion-segment-button value=\"3\" id=\"3\">\r\n      <ion-label><b>Sports</b></ion-label>\r\n    </ion-segment-button>    \r\n  </ion-segment>\r\n</ion-toolbar>\r\n\r\n<ion-content id=\"ionContentLive\" (swipeleft)=\"swipeLeftPress($event)\" (swiperight)=\"swipeRightPress($event)\">\r\n\r\n <ion-row >\r\n  <ion-col size=\"6\" *ngFor=\"let c of tv_newspapers\" (click)=goToChannel(c.url)>\r\n    <ion-card *ngIf=\"showSegment==1\">\r\n      <img src=\"{{c.logo}}\" class=\"tv-logo\">\r\n      <!-- <ion-label color=\"warning\">{{c.channelName}}</ion-label> -->\r\n    </ion-card>\r\n\r\n    <ion-card *ngIf=\"showSegment==2\">\r\n      <img src=\"{{c.logo}}\" class=\"tv-logo\" alt=\"{{c.alt}}\">\r\n    </ion-card>  \r\n\r\n    <ion-card *ngIf=\"showSegment==3\">\r\n      <img src=\"{{c.logo}}\" class=\"tv-logo\" alt=\"{{c.alt}}\">\r\n    </ion-card>     \r\n\r\n    </ion-col>  \r\n  </ion-row>\r\n\r\n</ion-content>\r\n"
 
 /***/ }),
 
@@ -100,6 +100,7 @@ var LivetvPage = /** @class */ (function () {
         this.appUpdate = appUpdate;
         this.tvChannels = [];
         this.indiaChannel = [];
+        this.sportsChannel = [];
         this.tv_newspapers = [];
         this.showSegment = 1;
         this.tvChannels = [
@@ -110,7 +111,7 @@ var LivetvPage = /** @class */ (function () {
             { channelName: 'Ekattur TV', url: 'https://itpolly.iptv.digijadoo.net/live/ekattor_tv/chunks.m3u8', logo: '../../../assets/img/tv-logos/ekattor-tv.png' },
             { channelName: 'Independent TV', url: 'https://itpolly.iptv.digijadoo.net/live/independent_tv/chunks.m3u8', logo: '../../../assets/img/tv-logos/independent-tv-logo.png' },
             { channelName: 'ATN Bangla', url: 'https://itpolly.iptv.digijadoo.net/live/atn_bangla/chunks.m3u8', logo: '../../../assets/img/tv-logos/atn-bangla-tv.png' },
-            // { channelName: 'My TV', url: 'http://www.jagobd.com/my-tv', logo: '../../../assets/img/tv-logos/my-tv-logo.png' },
+            { channelName: 'CHANNEL 9 ', url: 'https://itpolly.iptv.digijadoo.net/live/channel_9/chunks.m3u8', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/Channel9_bd.svg/1280px-Channel9_bd.svg.png', alt: "CHANNEL 9 " },
             { channelName: 'SA TV', url: 'https://itpolly.iptv.digijadoo.net/live/sa_tv/playlist.m3u8', logo: '../../../assets/img/tv-logos/satv.png' },
             { channelName: 'ATN NEWS', url: 'https://itpolly.iptv.digijadoo.net/live/atn_news/chunks.m3u8', logo: '../../../assets/img/tv-logos/Atn_news.png' },
             // { channelName: 'BBC World', url: 'https://www.bioscopelive.com/en/channel/bbc-world', logo: '../../../assets/img/tv-logos/bbc_world.png' },
@@ -138,34 +139,51 @@ var LivetvPage = /** @class */ (function () {
             // https://www.dsebd.org/images/logo.png
             // https://www.dsebd.org/images/dse-name.jpg
             { channelName: 'ZEE TV', url: 'https://itpolly.iptv.digijadoo.net/live/zee_tv/chunks.m3u8', logo: 'http://zeelwebsite.s3.amazonaws.com/zeetele/wp-content/uploads/2017/09/zee_tv.jpg', alt: "ZEE TV" },
-            { channelName: 'COLORS HD', url: "https://itpolly.iptv.digijadoo.net/live/colors_hd/chunks.m3u8", logo: '', alt: "COLORS HD" },
-            { channelName: 'STAR PLUS HD', url: 'https://itpolly.iptv.digijadoo.net/live/star_plus_hd/chunks.m3u8', logo: '', alt: "STAR PLUS HD" },
-            { channelName: 'MOVIES OK', url: 'https://itpolly.iptv.digijadoo.net/live/movies_ok/chunks.m3u8', logo: '', alt: "MOVIES OK" },
-            { channelName: 'Cartoon Network', url: 'https://peer1.ustv.to/CN/myStream/chunks.m3u8?nimblesessionid=132494835&wmsAuthSign=c2VydmVyX3RpbWU9MTIvMy8yMDE5IDg6NTQ6NDQgUE0maGFzaF92YWx1ZT1oOXhISGtXdnJ6NWRXNENIamkzYkhBPT0mdmFsaWRtaW51dGVzPTM2MCZzdHJtX2xlbj0w', logo: '', alt: "Cartoon Network" },
-            { channelName: 'Bein Sports USA', url: 'https://ul.cdn946.net:8443/hls/yu3w26c9imgo814.m3u8?s=8B1_iTOaqOZYnqy6Zq6JdQ&e=1575428682', logo: '', alt: "Bein Sports USA" },
-            { channelName: 'Samakal', url: 'https://samakal.com/', logo: 'https://samakal.com/assets/images/logo-bn.png' },
-            { channelName: 'Amader Shomoy', url: 'http://www.dainikamadershomoy.com/', logo: 'http://www.dainikamadershomoy.com/files/assets/img/main-logo.png' },
-            { channelName: 'Prothom Alo', url: 'https://www.prothomalo.com/', logo: 'https://paloimages.prothom-alo.com/contents/themes/public/style/images/Prothom-Alo.png' },
-            { channelName: 'Janakantha', url: 'http://web.dailyjanakantha.com/', logo: 'http://web.dailyjanakantha.com/layouts/website/assets/img/header-top.png' },
-            { channelName: 'Inqilab', url: 'https://www.dailyinqilab.com/', logo: 'https://www.dailyinqilab.com/includes/themes/dailyinqilab/images/logo.png' },
-            { channelName: 'Bhorer Kagoj', url: 'https://www.bhorerkagoj.com/', logo: 'https://www.w3newspapers.com/bangladesh/images/bhorerkagoj.png' },
-            { channelName: 'Daily Star', url: 'https://www.thedailystar.net/', logo: 'https://assetsds.cdnedge.bluemix.net/sites/all/themes/tds/logo.svg' },
-            { channelName: 'Observer', url: 'https://www.observerbd.com/', logo: 'https://www.observerbd.com/files/logo.jpg' },
-            { channelName: 'Bangladesh Today', url: 'http://thebangladeshtoday.com/', logo: 'https://thebangladeshtoday.com/wp-content/uploads/2018/06/TBT-Logo-Transparent-1-1.png' },
-            { channelName: 'bdnews24.com', url: 'https://bangla.bdnews24.com/', logo: 'https://d30fl32nd2baj9.cloudfront.net/media/2013/01/04/logo1.png1/BINARY/logo1.png' },
+            { channelName: 'Zee Bangla', url: 'http://pockettv.xyz/api/zee.m3u8?c=zeebanglahd', logo: 'https://www.adgully.com/img/400/201810/zee-bangla-logo.jpg', alt: "Zee Bangla" },
+            { channelName: 'Colors Bangla', url: 'https://itpolly.iptv.digijadoo.net/live/colors_bangla_hd/playlist.m3u8', logo: 'https://upload.wikimedia.org/wikipedia/en/8/85/Colors_Bangla_Logo.jpg', alt: "Colors Bangla" },
+            { channelName: 'Star Jalsha Movies', url: 'http://icom.movply.stream/hls/star_jalsha.m3u8', logo: 'https://www.indiantelevision.com/sites/default/files/styles/smartcrop_800x800/public/images/tv-images/2015/04/29/tv%20regional%20priortiy3.jpg?itok=x2h51LS5', alt: "Star Jalsha " },
+            { channelName: 'Star Jalsha Movies', url: 'https://itpolly.iptv.digijadoo.net/live/jalsha_movies/chunks.m3u8', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/Jalsha_movies.png/220px-Jalsha_movies.png', alt: "Star Jalsha Movies" },
+            { channelName: 'COLORS HD', url: "https://itpolly.iptv.digijadoo.net/live/colors_hd/chunks.m3u8", logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Colors_tv2017.png/220px-Colors_tv2017.png', alt: "COLORS HD" },
+            { channelName: 'STAR PLUS HD', url: 'https://itpolly.iptv.digijadoo.net/live/star_plus_hd/chunks.m3u8', logo: 'https://vignette.wikia.nocookie.net/logopedia/images/7/7a/SPL_HD_logo_2018.jpg/revision/latest/scale-to-width-down/180?cb=20180527184922', alt: "STAR PLUS HD" },
+            { channelName: 'MOVIES OK', url: 'https://itpolly.iptv.digijadoo.net/live/movies_ok/chunks.m3u8', logo: 'https://www.tvchannelpricelist.com/wp-content/uploads/channels-logo-300/movies-ok-logo-300x300.jpg', alt: "MOVIES OK" },
+            { channelName: 'ZEE CINEMA', url: 'https://itpolly.iptv.digijadoo.net/live/zee_cinema/chunks.m3u8', logo: 'https://bestmediainfo.com/timthumb.php?src=/wp-content/uploads/2019/04/Zee-Cinema-New_4.jpg&w=620&h=350&zc=1&q=100', alt: "ZEE CINEMA" },
+            { channelName: 'STAR GOLD', url: 'http://216.144.250.174/Star_G0ld_HD/tracks-v1a1/mono.m3u8', logo: 'https://live.staticflickr.com/2906/13937343237_61f69bafc2_c.jpg', alt: "STAR GOLD" },
+            { channelName: 'SONY MAX HD', url: 'http://216.144.250.174/Sony_MaX_HD/playlist.m3u8', logo: 'https://www.satlogo.com/hires/ss/sony_max_in.png', alt: "SONY MAX HD" },
+            { channelName: 'SONY SAB', url: 'http://216.144.250.174/S0ny_Sab_HD/playlist.m3u8', logo: 'https://www.satlogo.com/hires/ss/sony_sab_in.png', alt: "SONY SAB" },
+            { channelName: 'SONY HD', url: 'http://15.1.1.10:8080/SonyTVHD/tracks-v1a1/mono.m3u8?token=f044f935da5f71aaad674b3a437acaec37abf17e-e48a9a9f42fb99bb28f438d41170ede6-1575645826-1575635026', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/SET_India.jpg/170px-SET_India.jpg', alt: "SONY HD" },
+            { channelName: 'SONY Aat', url: 'http://15.1.1.10:8080/SonyAath/tracks-v1a1/mono.m3u8?token=deb1c7aa11427b656677385bb7e7e37e7bf1ac9d-8110bdd6af6473cdf4358a9d9175aa12-1575646025-1575635225', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Sony_Aath_logo.svg/120px-Sony_Aath_logo.svg.png', alt: "SONY Aat" },
+            { channelName: 'National Geographic', url: 'http://livecdnh1.tvanywhere.ae/hls/nat_geo/05.m3u8', logo: 'https://blog.nationalgeographic.org/wp-content/uploads/2019/08/NG_Logo-1140x450.jpg', alt: "National Geographic" },
+            { channelName: 'National Geo Wild', url: 'http://livecdnh1.tvanywhere.ae/hls/nat_geo_wild/05.m3u8', logo: 'http://www.direct-vs-dish.com/media/channel_logos/nat_geo_wild_lam.png.300x300_q85.png', alt: "Nat Geo Wild" },
+            { channelName: 'BBC News', url: 'https://streamingserver003.viewtvgroup.com:443/kapanglocal-playout-master/index.m3u8?fluxustv.m3u8', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/62/BBC_News_2019.svg/1200px-BBC_News_2019.svg.png' },
+        ];
+        this.sportsChannel = [
+            //http://tv.b4ucast.me/tv/fTPcX1BhLK20190901/chunklist_w1773023560_tkaGxzZW5kdGltZT0xNTc1NjM5NzgwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9Q2NaTjNyXzBPZ05mQzNNU3hFaHkySVFMRWpDa3RsUXR4WTNUeFlGU2V5UT0=.m3u8
+            { channelName: ' SKY SPORTS CRICKET', url: 'https://ustreamix.su/stream.php?id=sky-sports-cricket&token=ff1-035-e45-09a-646-ba8-15e-eb3-fef-f8a-66', logo: 'https://e3.365dm.com/tvlogos/channels/1302-Mobile-Logo.svg?', alt: " SKY SPORTS CRICKET" },
+            { channelName: ' SKY SPORTS ACTION', url: 'http://95.170.215.120:80/hls/m3u8/Sky-Sport-action.m3u8', logo: 'https://e3.365dm.com/tvlogos/channels/1333-Mobile-Logo.svg?', alt: " SKY SPORTS ACTION" },
+            { channelName: 'SKY SPORTS FOOTBALL', url: 'http://95.170.215.120:80/hls/m3u8/Sky-Spo-football.m3u8', logo: 'https://e3.365dm.com/tvlogos/channels/3838-Mobile-Logo.svg?', alt: "SKY SPORTS FOOTBALL" },
+            { channelName: ' Star Sports 1 HD', url: 'http://icom.movply.stream/hls/star-sports-1-hd.m3u8', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2017/08/star-sports-1.png?fit=300%2C169', alt: " Star Sports 1 HD" },
+            { channelName: ' Star Sports 2 HD', url: 'http://15.1.1.10:8080/SonySix/tracks-v1a1/mono.m3u8?token=4139fcaf002b048d10b06e1fcf547d5cbe2ba418-7a586c7e05357cfc8b8279e9c18edd80-1575645489-1575634689', logo: 'https://i2.wp.com/sportstvon.com/wp-content/uploads/2017/08/star-sports-2.png?fit=300%2C169', alt: " Star Sports 2 HD" },
+            { channelName: ' PTV Sports', url: 'http://tv.b4ucast.me/tv/29Bi4bkZ1J20190929/chunklist_w957210633_tkaGxzZW5kdGltZT0xNTc1NjI1OTIwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9QThJdThUV0t0UHBxUjhUUnVtRDRKVmFpNmM3RWR4NnZTdG5wWVItSnRCUT0=.m3u8', logo: 'https://i2.wp.com/sportstvon.com/wp-content/uploads/2016/12/ptv-sports.png?fit=300%2C169', alt: " PTV Sports" },
+            { channelName: ' Sony Six', url: 'http://15.1.1.10:8080/SonyESPNHD/tracks-v1a1/mono.m3u8?token=e6140748de9482af33db19ac607b6a374ea25ca7-693a95e5ff8a2b380231ac051c7d0147-1575646607-1575635807', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2016/12/sonysixhd.png?fit=300%2C169', alt: " Sony Six" },
+            { channelName: ' IPL', url: 'http://tv.b4ucast.me/tv/vJ9lsiZFOE20190929/chunklist_w457579760_tkaGxzZW5kdGltZT0xNTc1NjI2MTYwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9RDl4bDdIbWhRVllUMUM0WE5oa3oxNlBXUDVnRTUxN2hPZmdROWhmcV9qbz0=.m3u8', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2017/04/ipl18.png?fit=300%2C169', alt: " IPL" },
+            { channelName: ' Sony Ten 1', url: 'http://icom.movply.stream/hls/ten_1.m3u8', logo: 'https://i0.wp.com/sportstvon.com/wp-content/uploads/2017/08/sony-ten1.png?fit=300%2C169', alt: " Sony Ten 1" },
+            { channelName: ' Sony Ten 2', url: 'http://icom.movply.stream/hls/ten_2.m3u8', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2017/08/ten2hd.png?fit=300%2C169', alt: " Sony Ten 2" },
+            { channelName: ' WWE Network', url: 'http://tv.b4ucast.me/tv/FRQ3rt1Vnj20190929/chunklist_w568633954_tkaGxzZW5kdGltZT0xNTc1NjI2ODIwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9MjJtMjJneEY2Ul9MT084NFd4NWFjbWE5Z1VGR3U3N0gwbldXREN4MkdEdz0=.m3u8', logo: 'http://sportstvon.com/wp-content/uploads/2017/12/wwe-network-300x169.png', alt: " WWE Network" },
+            { channelName: 'WWE Network', url: 'http://cdnak19.cast4u.info/channels/4/10804.m3u8?fluxustv.m3u8', logo: 'https://i.imgur.com/6chO5x2.png' },
+            { channelName: 'HBO', url: 'http://15.1.1.10:8080/HBO/tracks-v1a1/mono.m3u8?token=d2921e39dcd138048f245594fdb5ae42c6a6327e-373f0653e9c883aa3e34a713ba7669e0-1575646340-1575635540', logo: 'https://tvseriesfinale.com/wp-content/uploads/2018/01/hbo_logo-590x332.jpg', alt: "HBO" },
         ];
         this.tv_newspapers = this.tvChannels;
     }
     LivetvPage.prototype.getUpdate = function () {
         ////////////////////////
-        alert("hola");
+        // alert("hola");
         var updateUrl = 'https://raw.githubusercontent.com/imranulmean/version-control/master/version.xml';
         this.appUpdate.checkAppUpdate(updateUrl).then(function () { console.log('Update available'); });
         ///////////////////////////
     };
     LivetvPage.prototype.goToChannel = function (url) {
-        if (url === 'https://www.dsebd.org/' || !url.includes("https")) {
-            this.iab.create(url, '_system', 'location=yes');
+        if (!url.includes("https")) {
+            this.iab.create(url, '_system', 'location=no');
         }
         else {
             // let openBrowser=this.showSegment==1 ? '_system':'_self';
@@ -188,7 +206,15 @@ var LivetvPage = /** @class */ (function () {
         this.goToSegment();
     };
     LivetvPage.prototype.goToSegment = function () {
-        this.tv_newspapers = this.showSegment == 1 ? this.tvChannels : this.indiaChannel;
+        if (this.showSegment == 1) {
+            this.tv_newspapers = this.tvChannels;
+        }
+        else if (this.showSegment == 2) {
+            this.tv_newspapers = this.indiaChannel;
+        }
+        else if (this.showSegment == 3) {
+            this.tv_newspapers = this.sportsChannel;
+        }
         var nextButtonNumber = this.showSegment;
         document.getElementById(String(nextButtonNumber)).click();
         var buttonWidth = document.getElementById(String(nextButtonNumber)).offsetWidth;
@@ -196,16 +222,16 @@ var LivetvPage = /** @class */ (function () {
     };
     LivetvPage.prototype.swipeLeftPress = function ($event) {
         this.showSegment = Number(this.showSegment) + 1;
-        if (this.showSegment > 2) {
-            this.showSegment = 1;
-        }
+        // if(this.showSegment>2) {
+        //  this.showSegment=1;
+        // }
         this.goToSegment();
     };
     LivetvPage.prototype.swipeRightPress = function ($event) {
         this.showSegment = Number(this.showSegment) - 1;
-        if (this.showSegment < 1) {
-            this.showSegment = 2;
-        }
+        // if(this.showSegment<1) {
+        //  this.showSegment=2;
+        // }
         this.goToSegment();
     };
     LivetvPage.prototype.ngOnInit = function () {

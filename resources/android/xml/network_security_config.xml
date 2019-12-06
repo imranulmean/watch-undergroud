@@ -2,7 +2,8 @@
 <network-security-config>
     <domain-config cleartextTrafficPermitted="true">
         <domain>localhost</domain>
-        <domain>shobkhobor.dreamdiver.nl</domain>
+        <!-- <domain>*</domain> -->
+<!--         <domain>shobkhobor.dreamdiver.nl</domain>
         <domain>api.openweathermap.org</domain>
         <domain>openweathermap.org</domain>
         <domain>www.mzamin.com</domain>
@@ -24,6 +25,6 @@
         <domain>www.dailystockbangladesh.com</domain>
         <domain>dsebd.org</domain> 
         <domain>m.banglanews24.com</domain> 
-        <domain>m.dailyinqilab.com</domain> 
+        <domain>m.dailyinqilab.com</domain>  -->
     </domain-config>
 </network-security-config>
