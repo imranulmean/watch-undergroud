@@ -21,7 +21,7 @@ import { Injectable } from "@angular/core";
 import { IonicSwipeAllModule } from 'ionic-swipe-all';
 import { OneSignal } from '@ionic-native/onesignal/ngx';
 
-// import { AdMobFree } from '@ionic-native/admob-free/ngx';
+import { AdMobFree } from '@ionic-native/admob-free/ngx';
 import { AdmobFreeService } from './services/admobfree.service';
 import { OpenNativeSettings } from '@ionic-native/open-native-settings/ngx';
 import { AppUpdate } from '@ionic-native/app-update/ngx';
@@ -36,8 +36,8 @@ import { AppUpdate } from '@ionic-native/app-update/ngx';
     SplashScreen,
     Geolocation,
     NativeGeocoder,
-    // AdMobFree,
-    // AdmobFreeService,
+    AdMobFree,
+    AdmobFreeService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     InAppBrowser,
     OneSignal,

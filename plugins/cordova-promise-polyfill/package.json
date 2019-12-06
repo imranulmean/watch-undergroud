@@ -1,38 +1,35 @@
 {
-  "_args": [
-    [
-      "cordova-promise-polyfill@0.0.2",
-      "D:\\NODEJS APP\\Ionic4\\watch-undergroud"
-    ]
-  ],
-  "_from": "cordova-promise-polyfill@0.0.2",
+  "_from": "cordova-promise-polyfill@~0.0.2",
   "_id": "cordova-promise-polyfill@0.0.2",
   "_inBundle": false,
   "_integrity": "sha1-a7epScVqfDGOf1VOYzjI+GPlBag=",
   "_location": "/cordova-promise-polyfill",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "cordova-promise-polyfill@0.0.2",
+    "raw": "cordova-promise-polyfill@~0.0.2",
     "name": "cordova-promise-polyfill",
     "escapedName": "cordova-promise-polyfill",
-    "rawSpec": "0.0.2",
+    "rawSpec": "~0.0.2",
     "saveSpec": null,
-    "fetchSpec": "0.0.2"
+    "fetchSpec": "~0.0.2"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-promise-polyfill/-/cordova-promise-polyfill-0.0.2.tgz",
-  "_spec": "0.0.2",
-  "_where": "D:\\NODEJS APP\\Ionic4\\watch-undergroud",
+  "_shasum": "6bb7a949c56a7c318e7f554e6338c8f863e505a8",
+  "_spec": "cordova-promise-polyfill@~0.0.2",
+  "_where": "/Users/ahayder/Work/watch-undergroud",
   "author": {
     "name": "Ratson"
   },
   "bugs": {
     "url": "https://github.com/rehy/cordova-promise-polyfill/issues"
   },
+  "bundleDependencies": false,
   "cordova": {
     "id": "cordova-promise-polyfill",
     "platforms": [
@@ -42,6 +39,7 @@
       "wp8"
     ]
   },
+  "deprecated": false,
   "description": "This is a polyfill of the ES6 Promise for Cordova.",
   "devDependencies": {
     "cpy-cli": "^1.0.1",

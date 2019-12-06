@@ -17,7 +17,7 @@ export class AdmobFreeService {
     // for the sake of this example we will just use the test config
     isTesting: true,
     autoShow: false,
-    // id: "ca-app-pub-39402XXXXXXXX2544/6300978111"
+    id: "ca-app-pub-2182088789443424/4312094961"
   };
 
   // Reward Video Ad's Configurations
@@ -42,15 +42,15 @@ export class AdmobFreeService {
           .then(() => {
             // alert(1);
           }).catch(e => alert(e));
-  
-  
-        // Load ad configuration
-        this.admobFree.rewardVideo.config(this.RewardVideoConfig);
-        // Prepare Ad to Show
-        this.admobFree.rewardVideo.prepare()
-          .then(() => {
-            // alert(2);
-          }).catch(e => alert(e));
+
+
+        // // Load ad configuration
+        // this.admobFree.rewardVideo.config(this.RewardVideoConfig);
+        // // Prepare Ad to Show
+        // this.admobFree.rewardVideo.prepare()
+        //   .then(() => {
+        //     // alert(2);
+        //   }).catch(e => alert(e));
       }
 
     });
@@ -76,11 +76,14 @@ export class AdmobFreeService {
     let bannerConfig: AdMobFreeBannerConfig = {
       isTesting: true, // Remove in production
       autoShow: true,
-      id: "ca-app-pub-39402XXXXXXX44/6300978111"
+      id: "ca-app-pub-2182088789443424/3823303516"
     };
     this.admobFree.banner.config(bannerConfig);
 
+    console.log("inside banner ad");
+
     this.admobFree.banner.prepare().then(() => {
+      console.log("banner ad success");
       // success
     }).catch(e => alert(e));
   }

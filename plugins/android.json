@@ -11,7 +11,8 @@
       "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
     },
     "cordova-plugin-admob-free": {
-      "ADMOB_APP_ID": "ca-app-pub-2387490687776151~80XXXXXXX9",
+      "ADMOB_APP_ID": "ca-app-pub-2182088789443424~8251339978",
+      "PLAY_SERVICES_VERSION": "11.0.4",
       "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
     },
     "cordova-plugin-app-update": {
@@ -59,11 +60,11 @@
     }
   },
   "dependent_plugins": {
-    "cordova-admob-sdk": {
-      "PLAY_SERVICES_VERSION": "11.0.4",
+    "cordova-promise-polyfill": {
       "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
     },
-    "cordova-promise-polyfill": {
+    "cordova-admob-sdk": {
+      "PLAY_SERVICES_VERSION": "11.0.4",
       "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
     },
     "cordova-plugin-appversion": {

@@ -1,32 +1,28 @@
 {
-  "_args": [
-    [
-      "cordova-plugin-admob-free@0.27.0",
-      "D:\\NODEJS APP\\Ionic4\\watch-undergroud"
-    ]
-  ],
-  "_from": "cordova-plugin-admob-free@0.27.0",
+  "_from": "cordova-plugin-admob-free",
   "_id": "cordova-plugin-admob-free@0.27.0",
   "_inBundle": false,
   "_integrity": "sha512-4QP89i3maFivk2GN8uAfaPDjwSAwvfrxkJu6pV1+ZJbPSAlp1OhNeXUbXXK8VXNNkoEWqLFQ2TCU1c09ybdATQ==",
   "_location": "/cordova-plugin-admob-free",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "tag",
     "registry": true,
-    "raw": "cordova-plugin-admob-free@0.27.0",
+    "raw": "cordova-plugin-admob-free",
     "name": "cordova-plugin-admob-free",
     "escapedName": "cordova-plugin-admob-free",
-    "rawSpec": "0.27.0",
+    "rawSpec": "",
     "saveSpec": null,
-    "fetchSpec": "0.27.0"
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-admob-free/-/cordova-plugin-admob-free-0.27.0.tgz",
-  "_spec": "0.27.0",
-  "_where": "D:\\NODEJS APP\\Ionic4\\watch-undergroud",
+  "_shasum": "1f695043a2ef3545a9457bab624c196f02f32ec2",
+  "_spec": "cordova-plugin-admob-free",
+  "_where": "/Users/ahayder/Work/watch-undergroud",
   "author": {
     "name": "Ratson"
   },
@@ -39,6 +35,7 @@
   "bugs": {
     "url": "https://github.com/ratson/cordova-plugin-admob-free/issues"
   },
+  "bundleDependencies": false,
   "cordova": {
     "id": "cordova-plugin-admob-free",
     "platforms": [
@@ -46,6 +43,7 @@
       "ios"
     ]
   },
+  "deprecated": false,
   "description": "Cordova AdMob Plugin for Google AdMob",
   "devDependencies": {
     "@babel/core": "^7.4.5",

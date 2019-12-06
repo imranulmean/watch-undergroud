@@ -1220,7 +1220,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-app>\r\n  <ion-split-pane>\r\n\r\n    <ion-router-outlet main></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>"
+module.exports = "<ion-app>\n  <ion-split-pane>\n\n    <ion-router-outlet main></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>"
 
 /***/ }),
 
@@ -1437,8 +1437,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_native_geocoder_ngx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ionic-native/native-geocoder/ngx */ "./node_modules/@ionic-native/native-geocoder/ngx/index.js");
 /* harmony import */ var ionic_swipe_all__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ionic-swipe-all */ "./node_modules/ionic-swipe-all/dist/index.js");
 /* harmony import */ var _ionic_native_onesignal_ngx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ionic-native/onesignal/ngx */ "./node_modules/@ionic-native/onesignal/ngx/index.js");
-/* harmony import */ var _ionic_native_open_native_settings_ngx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ionic-native/open-native-settings/ngx */ "./node_modules/@ionic-native/open-native-settings/ngx/index.js");
-/* harmony import */ var _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @ionic-native/app-update/ngx */ "./node_modules/@ionic-native/app-update/ngx/index.js");
+/* harmony import */ var _ionic_native_admob_free_ngx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @ionic-native/admob-free/ngx */ "./node_modules/@ionic-native/admob-free/ngx/index.js");
+/* harmony import */ var _services_admobfree_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./services/admobfree.service */ "./src/app/services/admobfree.service.ts");
+/* harmony import */ var _ionic_native_open_native_settings_ngx__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @ionic-native/open-native-settings/ngx */ "./node_modules/@ionic-native/open-native-settings/ngx/index.js");
+/* harmony import */ var _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @ionic-native/app-update/ngx */ "./node_modules/@ionic-native/app-update/ngx/index.js");
 
 
 
@@ -1459,6 +1461,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -1472,12 +1476,12 @@ var AppModule = /** @class */ (function () {
                 _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"],
                 _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_13__["Geolocation"],
                 _ionic_native_native_geocoder_ngx__WEBPACK_IMPORTED_MODULE_14__["NativeGeocoder"],
-                // AdMobFree,
-                // AdmobFreeService,
+                _ionic_native_admob_free_ngx__WEBPACK_IMPORTED_MODULE_17__["AdMobFree"],
+                _services_admobfree_service__WEBPACK_IMPORTED_MODULE_18__["AdmobFreeService"],
                 { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] },
                 _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_10__["InAppBrowser"],
                 _ionic_native_onesignal_ngx__WEBPACK_IMPORTED_MODULE_16__["OneSignal"],
-                _ionic_native_toast_ngx__WEBPACK_IMPORTED_MODULE_7__["Toast"], _ionic_native_open_native_settings_ngx__WEBPACK_IMPORTED_MODULE_17__["OpenNativeSettings"], _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_18__["AppUpdate"]
+                _ionic_native_toast_ngx__WEBPACK_IMPORTED_MODULE_7__["Toast"], _ionic_native_open_native_settings_ngx__WEBPACK_IMPORTED_MODULE_19__["OpenNativeSettings"], _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_20__["AppUpdate"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
         })
@@ -1518,6 +1522,123 @@ var MomentPipe = /** @class */ (function () {
         })
     ], MomentPipe);
     return MomentPipe;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/admobfree.service.ts":
+/*!***********************************************!*\
+  !*** ./src/app/services/admobfree.service.ts ***!
+  \***********************************************/
+/*! exports provided: AdmobFreeService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdmobFreeService", function() { return AdmobFreeService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_native_admob_free_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic-native/admob-free/ngx */ "./node_modules/@ionic-native/admob-free/ngx/index.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+
+
+
+
+var AdmobFreeService = /** @class */ (function () {
+    function AdmobFreeService(admobFree, platform) {
+        var _this = this;
+        this.admobFree = admobFree;
+        this.platform = platform;
+        // Interstitial Ad's Configurations
+        this.interstitialConfig = {
+            // add your config here
+            // for the sake of this example we will just use the test config
+            isTesting: true,
+            autoShow: false,
+            id: "ca-app-pub-2182088789443424/4312094961"
+        };
+        // Reward Video Ad's Configurations
+        this.RewardVideoConfig = {
+            isTesting: true,
+            autoShow: false // ,
+            // id: "ca-app-pub-3940XXXXXXX42544/6300978111"
+        };
+        platform.ready().then(function () {
+            if (_this.platform.is('cordova')) {
+                // Load ad configuration
+                _this.admobFree.interstitial.config(_this.interstitialConfig);
+                // Prepare Ad to Show
+                _this.admobFree.interstitial.prepare()
+                    .then(function () {
+                    // alert(1);
+                }).catch(function (e) { return alert(e); });
+                // // Load ad configuration
+                // this.admobFree.rewardVideo.config(this.RewardVideoConfig);
+                // // Prepare Ad to Show
+                // this.admobFree.rewardVideo.prepare()
+                //   .then(() => {
+                //     // alert(2);
+                //   }).catch(e => alert(e));
+            }
+        });
+        // Handle interstitial's close event to Prepare Ad again
+        this.admobFree.on('admob.interstitial.events.CLOSE').subscribe(function () {
+            _this.admobFree.interstitial.prepare()
+                .then(function () {
+                alert("Interstitial CLOSE");
+            }).catch(function (e) { return alert(e); });
+        });
+        // Handle Reward's close event to Prepare Ad again
+        this.admobFree.on('admob.rewardvideo.events.CLOSE').subscribe(function () {
+            _this.admobFree.rewardVideo.prepare()
+                .then(function () {
+                alert("Reward Video CLOSE");
+            }).catch(function (e) { return alert(e); });
+        });
+    }
+    AdmobFreeService.prototype.BannerAd = function () {
+        var bannerConfig = {
+            isTesting: true,
+            autoShow: true,
+            id: "ca-app-pub-2182088789443424/3823303516"
+        };
+        this.admobFree.banner.config(bannerConfig);
+        console.log("inside banner ad");
+        this.admobFree.banner.prepare().then(function () {
+            console.log("banner ad success");
+            // success
+        }).catch(function (e) { return alert(e); });
+    };
+    AdmobFreeService.prototype.InterstitialAd = function () {
+        var _this = this;
+        // Check if Ad is loaded
+        this.admobFree.interstitial.isReady().then(function () {
+            // Will show prepared Ad
+            _this.admobFree.interstitial.show().then(function () {
+            })
+                .catch(function (e) { return alert("show " + e); });
+        })
+            .catch(function (e) { return alert("isReady " + e); });
+    };
+    AdmobFreeService.prototype.RewardVideoAd = function () {
+        var _this = this;
+        // Check if Ad is loaded
+        this.admobFree.rewardVideo.isReady().then(function () {
+            // Will show prepared Ad
+            _this.admobFree.rewardVideo.show().then(function () {
+            })
+                .catch(function (e) { return alert("show " + e); });
+        })
+            .catch(function (e) { return alert("isReady " + e); });
+    };
+    AdmobFreeService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_native_admob_free_ngx__WEBPACK_IMPORTED_MODULE_2__["AdMobFree"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"]])
+    ], AdmobFreeService);
+    return AdmobFreeService;
 }());
 
 
@@ -1586,7 +1707,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\NODEJS APP\Ionic4\watch-undergroud\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/ahayder/Work/watch-undergroud/src/main.ts */"./src/main.ts");
 
 
 /***/ })

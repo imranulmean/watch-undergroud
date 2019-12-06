@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { HttpClient } from '@angular/common/http';
 import { AppUpdate } from '@ionic-native/app-update/ngx';
+import { AdmobFreeService } from 'src/app/services/admobfree.service';
 @Component({
   selector: 'app-livetv',
   templateUrl: './livetv.page.html',
@@ -15,7 +16,11 @@ export class LivetvPage implements OnInit {
   tv_newspapers:any=[];
   
   showSegment:number=1;
-  constructor(private iab: InAppBrowser,private httpClient: HttpClient,private appUpdate: AppUpdate ) {
+  constructor(private admob: AdmobFreeService,
+    private iab: InAppBrowser,private httpClient: HttpClient,private appUpdate: AppUpdate ) {
+
+    this.admob.BannerAd();
+    
     this.tvChannels = [
       // tslint:disable-next-line: indent
       { channelName: 'BTV World', url: 'https://itpolly.iptv.digijadoo.net/live/btv_world/chunks.m3u8', logo: 'https://i2.wp.com/tvbd.live/wp-content/uploads/2016/11/btv-world.png?fit=400%2C225' },

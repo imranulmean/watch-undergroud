@@ -119,16 +119,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-admob-free": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-admob-free@^0.27.0"
-    },
-    "is_top_level": true,
-    "variables": {
-      "ADMOB_APP_ID": "ca-app-pub-2387490687776151~80XXXXXXX9"
-    }
-  },
   "cordova-promise-polyfill": {
     "source": {
       "type": "registry",
@@ -152,5 +142,15 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-admob-free": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-admob-free"
+    },
+    "is_top_level": true,
+    "variables": {
+      "ADMOB_APP_ID": "ca-app-pub-2182088789443424~8251339978"
+    }
   }
 }
