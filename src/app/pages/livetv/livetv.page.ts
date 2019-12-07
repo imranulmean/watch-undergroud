@@ -99,7 +99,7 @@ export class LivetvPage implements OnInit {
   getUpdate(){
      ////////////////////////
      // alert("hola");
-    const updateUrl = 'https://raw.githubusercontent.com/imranulmean/version-control/master/version.xml';
+    const updateUrl = 'https://raw.githubusercontent.com/livetvappbd/livetv-version/master/version.xml';
     this.appUpdate.checkAppUpdate(updateUrl).then(() => { console.log('Update available') });
     ///////////////////////////
   }
