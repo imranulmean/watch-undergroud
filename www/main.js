@@ -1120,31 +1120,9 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./login/login.module": [
-		"./src/app/login/login.module.ts",
-		"login-login-module"
-	],
-	"./pages/about/about.module": [
-		"./src/app/pages/about/about.module.ts",
-		"pages-about-about-module"
-	],
-	"./pages/home/home.module": [
-		"./src/app/pages/home/home.module.ts",
-		"common",
-		"pages-home-home-module"
-	],
-	"./pages/job/job.module": [
-		"./src/app/pages/job/job.module.ts",
-		"common",
-		"pages-job-job-module"
-	],
 	"./pages/livetv/livetv.module": [
 		"./src/app/pages/livetv/livetv.module.ts",
 		"pages-livetv-livetv-module"
-	],
-	"./pages/sources/sources.module": [
-		"./src/app/pages/sources/sources.module.ts",
-		"pages-sources-sources-module"
 	]
 };
 function webpackAsyncContext(req) {
@@ -1156,7 +1134,7 @@ function webpackAsyncContext(req) {
 			throw e;
 		});
 	}
-	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
+	return __webpack_require__.e(ids[1]).then(function() {
 		var id = ids[0];
 		return __webpack_require__(id);
 	});
@@ -1187,13 +1165,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [
     { path: '', redirectTo: 'livetv', pathMatch: 'full' },
-    { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-    { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
-    { path: 'home/:id', loadChildren: './pages/home/home.module#HomePageModule' },
-    { path: 'about', loadChildren: './pages/about/about.module#AboutPageModule' },
-    { path: 'sources', loadChildren: './pages/sources/sources.module#SourcesPageModule' },
     { path: 'livetv', loadChildren: './pages/livetv/livetv.module#LivetvPageModule' },
-    { path: 'job', loadChildren: './pages/job/job.module#JobPageModule' },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -1220,7 +1192,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-app>\n  <ion-split-pane>\n\n    <ion-router-outlet main></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>"
+module.exports = "<ion-app>\r\n  <ion-split-pane>\r\n\r\n    <ion-router-outlet main></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>"
 
 /***/ }),
 
@@ -1707,7 +1679,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/ahayder/Work/watch-undergroud/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\NODEJS APP\Ionic4\watch-undergroud\src\main.ts */"./src/main.ts");
 
 
 /***/ })

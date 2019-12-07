@@ -63,7 +63,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"common":"common","pages-home-home-module":"pages-home-home-module","pages-job-job-module":"pages-job-job-module","login-login-module":"login-login-module","pages-about-about-module":"pages-about-about-module","pages-livetv-livetv-module":"pages-livetv-livetv-module","pages-sources-sources-module":"pages-sources-sources-module"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"common":"common","pages-livetv-livetv-module":"pages-livetv-livetv-module"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function

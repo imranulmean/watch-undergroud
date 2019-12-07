@@ -160,9 +160,9 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
+  "cordova-admob-sdk": "0.24.1",
   "cordova-open-native-settings": "1.5.2",
   "cordova-promise-polyfill": "0.0.2",
-  "cordova-admob-sdk": "0.24.1",
   "cordova-plugin-admob-free": "0.27.0",
   "cordova-plugin-appversion": "1.0.0",
   "cordova-plugin-app-update": "2.0.2",

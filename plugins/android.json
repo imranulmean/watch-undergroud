@@ -8,67 +8,66 @@
   },
   "installed_plugins": {
     "cordova-open-native-settings": {
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
     },
     "cordova-plugin-admob-free": {
       "ADMOB_APP_ID": "ca-app-pub-2182088789443424~8251339978",
-      "PLAY_SERVICES_VERSION": "11.0.4",
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
     },
     "cordova-plugin-app-update": {
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
     },
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
     },
     "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
     },
     "cordova-plugin-globalization": {
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
     },
     "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
     },
     "cordova-plugin-ionic-keyboard": {
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
     },
     "cordova-plugin-ionic-webview": {
       "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
     },
     "cordova-plugin-nativegeocoder": {
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
     },
     "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
     },
     "cordova-plugin-x-toast": {
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
     },
     "cordova-webintent": {
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
     },
     "onesignal-cordova-plugin": {
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
     }
   },
   "dependent_plugins": {
-    "cordova-promise-polyfill": {
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
-    },
     "cordova-admob-sdk": {
       "PLAY_SERVICES_VERSION": "11.0.4",
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
+    },
+    "cordova-promise-polyfill": {
+      "PACKAGE_NAME": "app.bd.livetv"
     },
     "cordova-plugin-appversion": {
-      "PACKAGE_NAME": "app.dreamdiver.shobkhobor"
+      "PACKAGE_NAME": "app.bd.livetv"
     }
   }
 }
