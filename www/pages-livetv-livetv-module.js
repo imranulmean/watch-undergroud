@@ -101,6 +101,9 @@ var LivetvPage = /** @class */ (function () {
         this.iab = iab;
         this.httpClient = httpClient;
         this.appUpdate = appUpdate;
+        // https://pastebin.com/raw/ZzGTySZE
+        // http://pe-ak-lp01a-9c9media.akamaized.net/live/Space/p/hls/00000201/689924a518f2c776/index/2176f3ac/live/stream/h264/v1/3500000/manifest.m3u8
+        // https://github.com/mychannels123/watchiptv/blob/master/IPTV1
         this.tvChannels = [];
         this.indiaChannel = [];
         this.sportsChannel = [];
@@ -159,6 +162,7 @@ var LivetvPage = /** @class */ (function () {
             { channelName: 'National Geographic', url: 'http://livecdnh1.tvanywhere.ae/hls/nat_geo/05.m3u8', logo: 'https://blog.nationalgeographic.org/wp-content/uploads/2019/08/NG_Logo-1140x450.jpg', alt: "National Geographic" },
             { channelName: 'National Geo Wild', url: 'http://livecdnh1.tvanywhere.ae/hls/nat_geo_wild/05.m3u8', logo: 'http://www.direct-vs-dish.com/media/channel_logos/nat_geo_wild_lam.png.300x300_q85.png', alt: "Nat Geo Wild" },
             { channelName: 'BBC News', url: 'https://streamingserver003.viewtvgroup.com:443/kapanglocal-playout-master/index.m3u8?fluxustv.m3u8', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/62/BBC_News_2019.svg/1200px-BBC_News_2019.svg.png' },
+            { channelName: 'STAR MOVIES HD', url: 'http://livecdnh1.tvanywhere.ae/hls/star_movies/05.m3u8', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/54/STAR_Movies_logo.svg/220px-STAR_Movies_logo.svg.png', alt: "STAR MOVIES HD" }
         ];
         this.sportsChannel = [
             //http://tv.b4ucast.me/tv/fTPcX1BhLK20190901/chunklist_w1773023560_tkaGxzZW5kdGltZT0xNTc1NjM5NzgwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9Q2NaTjNyXzBPZ05mQzNNU3hFaHkySVFMRWpDa3RsUXR4WTNUeFlGU2V5UT0=.m3u8
@@ -166,10 +170,10 @@ var LivetvPage = /** @class */ (function () {
             { channelName: ' SKY SPORTS ACTION', url: 'http://95.170.215.120:80/hls/m3u8/Sky-Sport-action.m3u8', logo: 'https://e3.365dm.com/tvlogos/channels/1333-Mobile-Logo.svg?', alt: " SKY SPORTS ACTION" },
             { channelName: 'SKY SPORTS FOOTBALL', url: 'http://95.170.215.120:80/hls/m3u8/Sky-Spo-football.m3u8', logo: 'https://e3.365dm.com/tvlogos/channels/3838-Mobile-Logo.svg?', alt: "SKY SPORTS FOOTBALL" },
             { channelName: ' Star Sports 1 HD', url: 'http://icom.movply.stream/hls/star-sports-1-hd.m3u8', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2017/08/star-sports-1.png?fit=300%2C169', alt: " Star Sports 1 HD" },
-            { channelName: ' Star Sports 2 HD', url: 'http://15.1.1.10:8080/SonySix/tracks-v1a1/mono.m3u8?token=4139fcaf002b048d10b06e1fcf547d5cbe2ba418-7a586c7e05357cfc8b8279e9c18edd80-1575645489-1575634689', logo: 'https://i2.wp.com/sportstvon.com/wp-content/uploads/2017/08/star-sports-2.png?fit=300%2C169', alt: " Star Sports 2 HD" },
-            { channelName: ' PTV Sports', url: 'http://tv.b4ucast.me/tv/29Bi4bkZ1J20190929/chunklist_w957210633_tkaGxzZW5kdGltZT0xNTc1NjI1OTIwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9QThJdThUV0t0UHBxUjhUUnVtRDRKVmFpNmM3RWR4NnZTdG5wWVItSnRCUT0=.m3u8', logo: 'https://i2.wp.com/sportstvon.com/wp-content/uploads/2016/12/ptv-sports.png?fit=300%2C169', alt: " PTV Sports" },
-            { channelName: ' Sony Six', url: 'http://15.1.1.10:8080/SonyESPNHD/tracks-v1a1/mono.m3u8?token=e6140748de9482af33db19ac607b6a374ea25ca7-693a95e5ff8a2b380231ac051c7d0147-1575646607-1575635807', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2016/12/sonysixhd.png?fit=300%2C169', alt: " Sony Six" },
-            { channelName: ' IPL', url: 'http://tv.b4ucast.me/tv/vJ9lsiZFOE20190929/chunklist_w457579760_tkaGxzZW5kdGltZT0xNTc1NjI2MTYwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9RDl4bDdIbWhRVllUMUM0WE5oa3oxNlBXUDVnRTUxN2hPZmdROWhmcV9qbz0=.m3u8', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2017/04/ipl18.png?fit=300%2C169', alt: " IPL" },
+            { channelName: ' Star Sports 2 HD', url: 'https://akamai.anytv.live/StartSports2HHD/tracks-v1a1/mono.m3u8', logo: 'https://i2.wp.com/sportstvon.com/wp-content/uploads/2017/08/star-sports-2.png?fit=300%2C169', alt: " Star Sports 2 HD" },
+            // {channelName: ' PTV Sports', url: 'http://tv.b4ucast.me/tv/29Bi4bkZ1J20190929/chunklist_w957210633_tkaGxzZW5kdGltZT0xNTc1NjI1OTIwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9QThJdThUV0t0UHBxUjhUUnVtRDRKVmFpNmM3RWR4NnZTdG5wWVItSnRCUT0=.m3u8', logo: 'https://i2.wp.com/sportstvon.com/wp-content/uploads/2016/12/ptv-sports.png?fit=300%2C169',alt:" PTV Sports" },
+            // {channelName: ' Sony Six', url: 'http://15.1.1.10:8080/SonyESPNHD/tracks-v1a1/mono.m3u8?token=e6140748de9482af33db19ac607b6a374ea25ca7-693a95e5ff8a2b380231ac051c7d0147-1575646607-1575635807', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2016/12/sonysixhd.png?fit=300%2C169',alt:" Sony Six" },
+            // {channelName: ' IPL', url: 'http://tv.b4ucast.me/tv/vJ9lsiZFOE20190929/chunklist_w457579760_tkaGxzZW5kdGltZT0xNTc1NjI2MTYwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9RDl4bDdIbWhRVllUMUM0WE5oa3oxNlBXUDVnRTUxN2hPZmdROWhmcV9qbz0=.m3u8', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2017/04/ipl18.png?fit=300%2C169',alt:" IPL" },
             { channelName: ' Sony Ten 1', url: 'http://icom.movply.stream/hls/ten_1.m3u8', logo: 'https://i0.wp.com/sportstvon.com/wp-content/uploads/2017/08/sony-ten1.png?fit=300%2C169', alt: " Sony Ten 1" },
             { channelName: ' Sony Ten 2', url: 'http://icom.movply.stream/hls/ten_2.m3u8', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2017/08/ten2hd.png?fit=300%2C169', alt: " Sony Ten 2" },
             { channelName: ' WWE Network', url: 'http://tv.b4ucast.me/tv/FRQ3rt1Vnj20190929/chunklist_w568633954_tkaGxzZW5kdGltZT0xNTc1NjI2ODIwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9MjJtMjJneEY2Ul9MT084NFd4NWFjbWE5Z1VGR3U3N0gwbldXREN4MkdEdz0=.m3u8', logo: 'http://sportstvon.com/wp-content/uploads/2017/12/wwe-network-300x169.png', alt: " WWE Network" },
