@@ -88,19 +88,19 @@ export class LivetvPage implements OnInit {
 
     // https://ustreamix.su/stream.php?id=sky-sports-cricket&token=ff1-035-e45-09a-646-ba8-15e-eb3-fef-f8a-66
     
-    {channelName: ' SKY SPORTS CRICKET', url: 'https://crichd.ws/update/skys2.php', logo: 'https://e3.365dm.com/tvlogos/channels/1302-Mobile-Logo.svg?',alt:" SKY SPORTS CRICKET" },
-     {channelName: ' SKY SPORTS ACTION', url: 'http://95.170.215.120:80/hls/m3u8/Sky-Sport-action.m3u8', logo: 'https://e3.365dm.com/tvlogos/channels/1333-Mobile-Logo.svg?',alt:" SKY SPORTS ACTION" },
-     {channelName: 'SKY SPORTS FOOTBALL', url: 'http://95.170.215.120:80/hls/m3u8/Sky-Spo-football.m3u8', logo: 'https://e3.365dm.com/tvlogos/channels/3838-Mobile-Logo.svg?',alt:"SKY SPORTS FOOTBALL" },
+    {channelName: ' SKY SPORTS CRICKET', url: 'http://crichd.ws/update/skys2.php', logo: 'https://e3.365dm.com/tvlogos/channels/1302-Mobile-Logo.svg?',alt:" SKY SPORTS CRICKET" },
+     {channelName: ' SKY SPORTS ACTION', url: 'http://crichd.ws/update/skys3.php', logo: 'https://e3.365dm.com/tvlogos/channels/1333-Mobile-Logo.svg?',alt:" SKY SPORTS ACTION" },
+     {channelName: 'SKY SPORTS FOOTBALL', url: 'http://crichd.ws/update/skysfotb.php', logo: 'https://e3.365dm.com/tvlogos/channels/3838-Mobile-Logo.svg?',alt:"SKY SPORTS FOOTBALL" },
      {channelName: ' Star Sports 1 HD', url: 'http://icom.movply.stream/hls/star-sports-1-hd.m3u8', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2017/08/star-sports-1.png?fit=300%2C169',alt:" Star Sports 1 HD" },
      {channelName: ' Star Sports 2 HD', url: 'https://akamai.anytv.live/StartSports2HHD/tracks-v1a1/mono.m3u8', logo: 'https://i2.wp.com/sportstvon.com/wp-content/uploads/2017/08/star-sports-2.png?fit=300%2C169',alt:" Star Sports 2 HD" },
-     // {channelName: ' PTV Sports', url: 'http://tv.b4ucast.me/tv/29Bi4bkZ1J20190929/chunklist_w957210633_tkaGxzZW5kdGltZT0xNTc1NjI1OTIwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9QThJdThUV0t0UHBxUjhUUnVtRDRKVmFpNmM3RWR4NnZTdG5wWVItSnRCUT0=.m3u8', logo: 'https://i2.wp.com/sportstvon.com/wp-content/uploads/2016/12/ptv-sports.png?fit=300%2C169',alt:" PTV Sports" },
-      {channelName: ' Sony Six', url: 'https://cdn.crichd.to/embed2.php?id=sonysix', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2016/12/sonysixhd.png?fit=300%2C169',alt:" Sony Six" },
+      {channelName: ' PTV Sports', url: 'http://crichd.ws/update/ptv.php', logo: 'https://i2.wp.com/sportstvon.com/wp-content/uploads/2016/12/ptv-sports.png?fit=300%2C169',alt:" PTV Sports" },
+      {channelName: ' Sony Six', url: 'http://free.crichd.online/embed2.php?id=sonysix', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2016/12/sonysixhd.png?fit=300%2C169',alt:" Sony Six" },
      // {channelName: ' IPL', url: 'http://tv.b4ucast.me/tv/vJ9lsiZFOE20190929/chunklist_w457579760_tkaGxzZW5kdGltZT0xNTc1NjI2MTYwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9RDl4bDdIbWhRVllUMUM0WE5oa3oxNlBXUDVnRTUxN2hPZmdROWhmcV9qbz0=.m3u8', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2017/04/ipl18.png?fit=300%2C169',alt:" IPL" },
      {channelName: ' Sony Ten 1', url: 'http://icom.movply.stream/hls/ten_1.m3u8', logo: 'https://i0.wp.com/sportstvon.com/wp-content/uploads/2017/08/sony-ten1.png?fit=300%2C169',alt:" Sony Ten 1" },
      {channelName: ' Sony Ten 2', url: 'http://icom.movply.stream/hls/ten_2.m3u8', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2017/08/ten2hd.png?fit=300%2C169',alt:" Sony Ten 2" },
-     {channelName: ' WWE Network', url: 'http://tv.b4ucast.me/tv/FRQ3rt1Vnj20190929/chunklist_w568633954_tkaGxzZW5kdGltZT0xNTc1NjI2ODIwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9MjJtMjJneEY2Ul9MT084NFd4NWFjbWE5Z1VGR3U3N0gwbldXREN4MkdEdz0=.m3u8', logo: 'http://sportstvon.com/wp-content/uploads/2017/12/wwe-network-300x169.png',alt:" WWE Network" },
+     {channelName: ' WWE Network', url: 'http://crichd.ws/update/wwe.php', logo: 'http://sportstvon.com/wp-content/uploads/2017/12/wwe-network-300x169.png',alt:" WWE Network" },
      { channelName: 'WWE Network', url: 'http://cdnak19.cast4u.info/channels/4/10804.m3u8?fluxustv.m3u8', logo: 'https://i.imgur.com/6chO5x2.png' },
-      { channelName: 'HBO', url: 'http://sv2.dailymotion.com.1cdn.host/live/hbo/chunks.m3u8', logo: 'https://tvseriesfinale.com/wp-content/uploads/2018/01/hbo_logo-590x332.jpg',alt:"HBO" },
+      { channelName: 'HBO', url: 'https://u65464.cdn884.net:8443/hls/exyjs.m3u8?s=i7LvkMGAc2lu4c0zkhJZAw&e=1575927436', logo: 'https://tvseriesfinale.com/wp-content/uploads/2018/01/hbo_logo-590x332.jpg',alt:"HBO" },
     ];    
    this.tv_newspapers=this.tvChannels;
   }
@@ -113,13 +113,12 @@ export class LivetvPage implements OnInit {
     ///////////////////////////
   }
   goToChannel(url) {
-     if(!url.includes("https") && !url.includes("crichd")){
-       this.iab.create(url, '_system', 'location=no');
-     }
-     else{
-       // let openBrowser=this.showSegment==1 ? '_system':'_self';
+     // if(!url.includes("https") && !url.includes("https")){
+     //   this.iab.create(url, '_system', 'location=no');
+     // }
+     // else{
       this.iab.create(url, '_self', 'location=no');
-     }
+     // }
       // window['plugins'].webintent.startActivity({
       //         action: window['plugins'].webintent.ACTION_VIEW,
       //         url:  "googlechrome://navigate?url="+url

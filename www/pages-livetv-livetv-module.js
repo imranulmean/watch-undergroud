@@ -69,7 +69,7 @@ module.exports = "<ion-header>\r\n  <ion-toolbar>\r\n  <ion-row>\r\n    <ion-col
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "ion-toolbar {\n  /*--background: #fe8c00;*/\n  --background:#fff8ed; }\n\nion-content {\n  /*--background: #424242;*/\n  --background:#f1f1f1\r\n; }\n\n#segment {\n  --background: #fabc5a1b; }\n\n.newpaperLogo {\n  margin-top: 0.5em; }\n\n.tv-logo {\n  /*\tmax-height: 50px;\r\n\twidth: unset;*/\n  margin: 0 auto;\n  height: 6em; }\n\n.newpaperHeader {\n  padding: 0 0 1em 0.2em; }\n\nion-segment-button {\n  border: none;\n  font-weight: 900;\n  font-size: 0.8em;\n  --indicator-color-checked: #fcb13c;\n  --color-activated: #fcb13c;\n  --color-checked: #fcb13c; }\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvbGl2ZXR2L0Q6XFxOT0RFSlMgQVBQXFxJb25pYzRcXHdhdGNoLXVuZGVyZ3JvdWQvc3JjXFxhcHBcXHBhZ2VzXFxsaXZldHZcXGxpdmV0di5wYWdlLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2xpdmV0di9saXZldHYucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kseUJBQUE7RUFDQSxvQkFBYSxFQUFBOztBQUVqQjtFQUNJLHlCQUFBO0VBQ0E7QUFBYSxFQUFBOztBQUVqQjtFQUNDLHVCQUFhLEVBQUE7O0FBRWQ7RUFDQyxpQkFBaUIsRUFBQTs7QUFHbEI7RUFDQTtlQ0NlO0VEQ2QsY0FBYztFQUNkLFdBQVcsRUFBQTs7QUFHWjtFQUNDLHNCQUFzQixFQUFBOztBQUd2QjtFQUNDLFlBQVk7RUFDWixnQkFBZ0I7RUFDaEIsZ0JBQWdCO0VBQ2hCLGtDQUEwQjtFQUMxQiwwQkFBa0I7RUFDbEIsd0JBQWdCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9saXZldHYvbGl2ZXR2LnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi10b29sYmFyIHtcclxuICAgIC8qLS1iYWNrZ3JvdW5kOiAjZmU4YzAwOyovXHJcbiAgICAtLWJhY2tncm91bmQ6I2ZmZjhlZDtcclxufVxyXG5pb24tY29udGVudCB7XHJcbiAgICAvKi0tYmFja2dyb3VuZDogIzQyNDI0MjsqL1xyXG4gICAgLS1iYWNrZ3JvdW5kOiNmMWYxZjFcclxufVxyXG4jc2VnbWVudHtcclxuXHQtLWJhY2tncm91bmQ6ICNmYWJjNWExYjtcclxufVxyXG4ubmV3cGFwZXJMb2dve1xyXG5cdG1hcmdpbi10b3A6IDAuNWVtO1xyXG59XHJcblxyXG4udHYtbG9nb3tcclxuLypcdG1heC1oZWlnaHQ6IDUwcHg7XHJcblx0d2lkdGg6IHVuc2V0OyovXHJcblx0bWFyZ2luOiAwIGF1dG87XHJcblx0aGVpZ2h0OiA2ZW07XHJcbn1cclxuXHJcbi5uZXdwYXBlckhlYWRlcntcclxuXHRwYWRkaW5nOiAwIDAgMWVtIDAuMmVtO1xyXG59XHJcblxyXG5pb24tc2VnbWVudC1idXR0b24ge1xyXG5cdGJvcmRlcjogbm9uZTtcclxuXHRmb250LXdlaWdodDogOTAwO1xyXG5cdGZvbnQtc2l6ZTogMC44ZW07XHJcblx0LS1pbmRpY2F0b3ItY29sb3ItY2hlY2tlZDogI2ZjYjEzYztcclxuXHQtLWNvbG9yLWFjdGl2YXRlZDogI2ZjYjEzYztcclxuXHQtLWNvbG9yLWNoZWNrZWQ6ICNmY2IxM2M7XHJcbiAgfSIsImlvbi10b29sYmFyIHtcbiAgLyotLWJhY2tncm91bmQ6ICNmZThjMDA7Ki9cbiAgLS1iYWNrZ3JvdW5kOiNmZmY4ZWQ7IH1cblxuaW9uLWNvbnRlbnQge1xuICAvKi0tYmFja2dyb3VuZDogIzQyNDI0MjsqL1xuICAtLWJhY2tncm91bmQ6I2YxZjFmMVxyXG47IH1cblxuI3NlZ21lbnQge1xuICAtLWJhY2tncm91bmQ6ICNmYWJjNWExYjsgfVxuXG4ubmV3cGFwZXJMb2dvIHtcbiAgbWFyZ2luLXRvcDogMC41ZW07IH1cblxuLnR2LWxvZ28ge1xuICAvKlx0bWF4LWhlaWdodDogNTBweDtcclxuXHR3aWR0aDogdW5zZXQ7Ki9cbiAgbWFyZ2luOiAwIGF1dG87XG4gIGhlaWdodDogNmVtOyB9XG5cbi5uZXdwYXBlckhlYWRlciB7XG4gIHBhZGRpbmc6IDAgMCAxZW0gMC4yZW07IH1cblxuaW9uLXNlZ21lbnQtYnV0dG9uIHtcbiAgYm9yZGVyOiBub25lO1xuICBmb250LXdlaWdodDogOTAwO1xuICBmb250LXNpemU6IDAuOGVtO1xuICAtLWluZGljYXRvci1jb2xvci1jaGVja2VkOiAjZmNiMTNjO1xuICAtLWNvbG9yLWFjdGl2YXRlZDogI2ZjYjEzYztcbiAgLS1jb2xvci1jaGVja2VkOiAjZmNiMTNjOyB9XG4iXX0= */"
+module.exports = "html, body {\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  margin: 0px; }\n\nion-toolbar {\n  /*--background: #fe8c00;*/\n  --background:#fff8ed; }\n\nion-content {\n  /*--background: #424242;*/\n  --background:#f1f1f1\r\n; }\n\n#segment {\n  --background: #fabc5a1b; }\n\n.newpaperLogo {\n  margin-top: 0.5em; }\n\n.tv-logo {\n  /*\tmax-height: 50px;\r\n\twidth: unset;*/\n  margin: 0 auto;\n  height: 6em; }\n\n.newpaperHeader {\n  padding: 0 0 1em 0.2em; }\n\nion-segment-button {\n  border: none;\n  font-weight: 900;\n  font-size: 0.8em;\n  --indicator-color-checked: #fcb13c;\n  --color-activated: #fcb13c;\n  --color-checked: #fcb13c; }\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvbGl2ZXR2L0Q6XFxOT0RFSlMgQVBQXFxJb25pYzRcXHdhdGNoLXVuZGVyZ3JvdWQvc3JjXFxhcHBcXHBhZ2VzXFxsaXZldHZcXGxpdmV0di5wYWdlLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2xpdmV0di9saXZldHYucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBVTtFQUNWLFlBQVc7RUFDWCxnQkFBZTtFQUNmLFdBQVUsRUFBQTs7QUFHWjtFQUNJLHlCQUFBO0VBQ0Esb0JBQWEsRUFBQTs7QUFFakI7RUFDSSx5QkFBQTtFQUNBO0FBQWEsRUFBQTs7QUFFakI7RUFDQyx1QkFBYSxFQUFBOztBQUVkO0VBQ0MsaUJBQWlCLEVBQUE7O0FBR2xCO0VBQ0E7ZUNBZTtFREVkLGNBQWM7RUFDZCxXQUFXLEVBQUE7O0FBR1o7RUFDQyxzQkFBc0IsRUFBQTs7QUFHdkI7RUFDQyxZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLGdCQUFnQjtFQUNoQixrQ0FBMEI7RUFDMUIsMEJBQWtCO0VBQ2xCLHdCQUFnQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvbGl2ZXR2L2xpdmV0di5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJodG1sLCBib2R5e1xyXG4gIHdpZHRoOjEwMCU7XHJcbiAgaGVpZ2h0OjEwMCU7XHJcbiAgb3ZlcmZsb3c6aGlkZGVuO1xyXG4gIG1hcmdpbjowcHg7ICAgXHJcbn1cclxuXHJcbmlvbi10b29sYmFyIHtcclxuICAgIC8qLS1iYWNrZ3JvdW5kOiAjZmU4YzAwOyovXHJcbiAgICAtLWJhY2tncm91bmQ6I2ZmZjhlZDtcclxufVxyXG5pb24tY29udGVudCB7XHJcbiAgICAvKi0tYmFja2dyb3VuZDogIzQyNDI0MjsqL1xyXG4gICAgLS1iYWNrZ3JvdW5kOiNmMWYxZjFcclxufVxyXG4jc2VnbWVudHtcclxuXHQtLWJhY2tncm91bmQ6ICNmYWJjNWExYjtcclxufVxyXG4ubmV3cGFwZXJMb2dve1xyXG5cdG1hcmdpbi10b3A6IDAuNWVtO1xyXG59XHJcblxyXG4udHYtbG9nb3tcclxuLypcdG1heC1oZWlnaHQ6IDUwcHg7XHJcblx0d2lkdGg6IHVuc2V0OyovXHJcblx0bWFyZ2luOiAwIGF1dG87XHJcblx0aGVpZ2h0OiA2ZW07XHJcbn1cclxuXHJcbi5uZXdwYXBlckhlYWRlcntcclxuXHRwYWRkaW5nOiAwIDAgMWVtIDAuMmVtO1xyXG59XHJcblxyXG5pb24tc2VnbWVudC1idXR0b24ge1xyXG5cdGJvcmRlcjogbm9uZTtcclxuXHRmb250LXdlaWdodDogOTAwO1xyXG5cdGZvbnQtc2l6ZTogMC44ZW07XHJcblx0LS1pbmRpY2F0b3ItY29sb3ItY2hlY2tlZDogI2ZjYjEzYztcclxuXHQtLWNvbG9yLWFjdGl2YXRlZDogI2ZjYjEzYztcclxuXHQtLWNvbG9yLWNoZWNrZWQ6ICNmY2IxM2M7XHJcbiAgfSIsImh0bWwsIGJvZHkge1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBtYXJnaW46IDBweDsgfVxuXG5pb24tdG9vbGJhciB7XG4gIC8qLS1iYWNrZ3JvdW5kOiAjZmU4YzAwOyovXG4gIC0tYmFja2dyb3VuZDojZmZmOGVkOyB9XG5cbmlvbi1jb250ZW50IHtcbiAgLyotLWJhY2tncm91bmQ6ICM0MjQyNDI7Ki9cbiAgLS1iYWNrZ3JvdW5kOiNmMWYxZjFcclxuOyB9XG5cbiNzZWdtZW50IHtcbiAgLS1iYWNrZ3JvdW5kOiAjZmFiYzVhMWI7IH1cblxuLm5ld3BhcGVyTG9nbyB7XG4gIG1hcmdpbi10b3A6IDAuNWVtOyB9XG5cbi50di1sb2dvIHtcbiAgLypcdG1heC1oZWlnaHQ6IDUwcHg7XHJcblx0d2lkdGg6IHVuc2V0OyovXG4gIG1hcmdpbjogMCBhdXRvO1xuICBoZWlnaHQ6IDZlbTsgfVxuXG4ubmV3cGFwZXJIZWFkZXIge1xuICBwYWRkaW5nOiAwIDAgMWVtIDAuMmVtOyB9XG5cbmlvbi1zZWdtZW50LWJ1dHRvbiB7XG4gIGJvcmRlcjogbm9uZTtcbiAgZm9udC13ZWlnaHQ6IDkwMDtcbiAgZm9udC1zaXplOiAwLjhlbTtcbiAgLS1pbmRpY2F0b3ItY29sb3ItY2hlY2tlZDogI2ZjYjEzYztcbiAgLS1jb2xvci1hY3RpdmF0ZWQ6ICNmY2IxM2M7XG4gIC0tY29sb3ItY2hlY2tlZDogI2ZjYjEzYzsgfVxuIl19 */"
 
 /***/ }),
 
@@ -101,9 +101,10 @@ var LivetvPage = /** @class */ (function () {
         this.iab = iab;
         this.httpClient = httpClient;
         this.appUpdate = appUpdate;
-        // https://pastebin.com/raw/ZzGTySZE
-        // http://pe-ak-lp01a-9c9media.akamaized.net/live/Space/p/hls/00000201/689924a518f2c776/index/2176f3ac/live/stream/h264/v1/3500000/manifest.m3u8
-        // https://github.com/mychannels123/watchiptv/blob/master/IPTV1
+        // http://tv.bdixsports.com/
+        // http://fomny.com/Video/USA/04/HBO/HBO.php
+        // http://cdn.crichd.to/embed2.php?id=sonysix
+        // http://crichd.ws/update/skys2.php
         this.tvChannels = [];
         this.indiaChannel = [];
         this.sportsChannel = [];
@@ -165,19 +166,20 @@ var LivetvPage = /** @class */ (function () {
             { channelName: 'STAR MOVIES HD', url: 'http://livecdnh1.tvanywhere.ae/hls/star_movies/05.m3u8', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/54/STAR_Movies_logo.svg/220px-STAR_Movies_logo.svg.png', alt: "STAR MOVIES HD" }
         ];
         this.sportsChannel = [
-            //http://tv.b4ucast.me/tv/fTPcX1BhLK20190901/chunklist_w1773023560_tkaGxzZW5kdGltZT0xNTc1NjM5NzgwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9Q2NaTjNyXzBPZ05mQzNNU3hFaHkySVFMRWpDa3RsUXR4WTNUeFlGU2V5UT0=.m3u8
-            { channelName: ' SKY SPORTS CRICKET', url: 'https://ustreamix.su/stream.php?id=sky-sports-cricket&token=ff1-035-e45-09a-646-ba8-15e-eb3-fef-f8a-66', logo: 'https://e3.365dm.com/tvlogos/channels/1302-Mobile-Logo.svg?', alt: " SKY SPORTS CRICKET" },
-            { channelName: ' SKY SPORTS ACTION', url: 'http://95.170.215.120:80/hls/m3u8/Sky-Sport-action.m3u8', logo: 'https://e3.365dm.com/tvlogos/channels/1333-Mobile-Logo.svg?', alt: " SKY SPORTS ACTION" },
-            { channelName: 'SKY SPORTS FOOTBALL', url: 'http://95.170.215.120:80/hls/m3u8/Sky-Spo-football.m3u8', logo: 'https://e3.365dm.com/tvlogos/channels/3838-Mobile-Logo.svg?', alt: "SKY SPORTS FOOTBALL" },
+            // https://ustreamix.su/stream.php?id=sky-sports-cricket&token=ff1-035-e45-09a-646-ba8-15e-eb3-fef-f8a-66
+            { channelName: ' SKY SPORTS CRICKET', url: 'http://crichd.ws/update/skys2.php', logo: 'https://e3.365dm.com/tvlogos/channels/1302-Mobile-Logo.svg?', alt: " SKY SPORTS CRICKET" },
+            { channelName: ' SKY SPORTS ACTION', url: 'http://crichd.ws/update/skys3.php', logo: 'https://e3.365dm.com/tvlogos/channels/1333-Mobile-Logo.svg?', alt: " SKY SPORTS ACTION" },
+            { channelName: 'SKY SPORTS FOOTBALL', url: 'http://crichd.ws/update/skysfotb.php', logo: 'https://e3.365dm.com/tvlogos/channels/3838-Mobile-Logo.svg?', alt: "SKY SPORTS FOOTBALL" },
             { channelName: ' Star Sports 1 HD', url: 'http://icom.movply.stream/hls/star-sports-1-hd.m3u8', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2017/08/star-sports-1.png?fit=300%2C169', alt: " Star Sports 1 HD" },
             { channelName: ' Star Sports 2 HD', url: 'https://akamai.anytv.live/StartSports2HHD/tracks-v1a1/mono.m3u8', logo: 'https://i2.wp.com/sportstvon.com/wp-content/uploads/2017/08/star-sports-2.png?fit=300%2C169', alt: " Star Sports 2 HD" },
-            // {channelName: ' PTV Sports', url: 'http://tv.b4ucast.me/tv/29Bi4bkZ1J20190929/chunklist_w957210633_tkaGxzZW5kdGltZT0xNTc1NjI1OTIwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9QThJdThUV0t0UHBxUjhUUnVtRDRKVmFpNmM3RWR4NnZTdG5wWVItSnRCUT0=.m3u8', logo: 'https://i2.wp.com/sportstvon.com/wp-content/uploads/2016/12/ptv-sports.png?fit=300%2C169',alt:" PTV Sports" },
-            // {channelName: ' Sony Six', url: 'http://15.1.1.10:8080/SonyESPNHD/tracks-v1a1/mono.m3u8?token=e6140748de9482af33db19ac607b6a374ea25ca7-693a95e5ff8a2b380231ac051c7d0147-1575646607-1575635807', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2016/12/sonysixhd.png?fit=300%2C169',alt:" Sony Six" },
+            { channelName: ' PTV Sports', url: 'http://crichd.ws/update/ptv.php', logo: 'https://i2.wp.com/sportstvon.com/wp-content/uploads/2016/12/ptv-sports.png?fit=300%2C169', alt: " PTV Sports" },
+            { channelName: ' Sony Six', url: 'http://free.crichd.online/embed2.php?id=sonysix', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2016/12/sonysixhd.png?fit=300%2C169', alt: " Sony Six" },
             // {channelName: ' IPL', url: 'http://tv.b4ucast.me/tv/vJ9lsiZFOE20190929/chunklist_w457579760_tkaGxzZW5kdGltZT0xNTc1NjI2MTYwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9RDl4bDdIbWhRVllUMUM0WE5oa3oxNlBXUDVnRTUxN2hPZmdROWhmcV9qbz0=.m3u8', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2017/04/ipl18.png?fit=300%2C169',alt:" IPL" },
             { channelName: ' Sony Ten 1', url: 'http://icom.movply.stream/hls/ten_1.m3u8', logo: 'https://i0.wp.com/sportstvon.com/wp-content/uploads/2017/08/sony-ten1.png?fit=300%2C169', alt: " Sony Ten 1" },
             { channelName: ' Sony Ten 2', url: 'http://icom.movply.stream/hls/ten_2.m3u8', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2017/08/ten2hd.png?fit=300%2C169', alt: " Sony Ten 2" },
-            { channelName: ' WWE Network', url: 'http://tv.b4ucast.me/tv/FRQ3rt1Vnj20190929/chunklist_w568633954_tkaGxzZW5kdGltZT0xNTc1NjI2ODIwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9MjJtMjJneEY2Ul9MT084NFd4NWFjbWE5Z1VGR3U3N0gwbldXREN4MkdEdz0=.m3u8', logo: 'http://sportstvon.com/wp-content/uploads/2017/12/wwe-network-300x169.png', alt: " WWE Network" },
+            { channelName: ' WWE Network', url: 'http://crichd.ws/update/wwe.php', logo: 'http://sportstvon.com/wp-content/uploads/2017/12/wwe-network-300x169.png', alt: " WWE Network" },
             { channelName: 'WWE Network', url: 'http://cdnak19.cast4u.info/channels/4/10804.m3u8?fluxustv.m3u8', logo: 'https://i.imgur.com/6chO5x2.png' },
+            { channelName: 'HBO', url: 'https://u65464.cdn884.net:8443/hls/exyjs.m3u8?s=i7LvkMGAc2lu4c0zkhJZAw&e=1575927436', logo: 'https://tvseriesfinale.com/wp-content/uploads/2018/01/hbo_logo-590x332.jpg', alt: "HBO" },
         ];
         this.tv_newspapers = this.tvChannels;
     }
@@ -189,13 +191,12 @@ var LivetvPage = /** @class */ (function () {
         ///////////////////////////
     };
     LivetvPage.prototype.goToChannel = function (url) {
-        if (!url.includes("https")) {
-            this.iab.create(url, '_system', 'location=no');
-        }
-        else {
-            // let openBrowser=this.showSegment==1 ? '_system':'_self';
-            this.iab.create(url, '_self', 'location=no');
-        }
+        // if(!url.includes("https") && !url.includes("https")){
+        //   this.iab.create(url, '_system', 'location=no');
+        // }
+        // else{
+        this.iab.create(url, '_self', 'location=no');
+        // }
         // window['plugins'].webintent.startActivity({
         //         action: window['plugins'].webintent.ACTION_VIEW,
         //         url:  "googlechrome://navigate?url="+url
