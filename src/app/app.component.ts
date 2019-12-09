@@ -101,7 +101,7 @@ export class AppComponent {
 
   setupPush() {
     // I recommend to put these into your environment.ts
-    this.oneSignal.startInit('3eb9384e-2985-4a4b-a7f8-2c1b619230ab', '78641323676');
+    this.oneSignal.startInit('6745c71c-c561-48c1-bccd-7bfc6152b6f4', '992140138467');
     this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.None);
 
     // Notifcation was received in general

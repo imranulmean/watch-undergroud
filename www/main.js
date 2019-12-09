@@ -1192,7 +1192,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-app>\r\n  <ion-split-pane>\r\n\r\n    <ion-router-outlet main></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>"
+module.exports = "<ion-app>\n  <ion-split-pane>\n\n    <ion-router-outlet main></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>"
 
 /***/ }),
 
@@ -1300,7 +1300,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.setupPush = function () {
         var _this = this;
         // I recommend to put these into your environment.ts
-        this.oneSignal.startInit('3eb9384e-2985-4a4b-a7f8-2c1b619230ab', '78641323676');
+        this.oneSignal.startInit('6745c71c-c561-48c1-bccd-7bfc6152b6f4', '992140138467');
         this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.None);
         // Notifcation was received in general
         this.oneSignal.handleNotificationReceived().subscribe(function (data) {
@@ -1428,7 +1428,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import { HammerGestureConfig,HAMMER_GESTURE_CONFIG } from "@angular/platform-browser";
 
 
 
@@ -1453,7 +1452,9 @@ var AppModule = /** @class */ (function () {
                 { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"] },
                 _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_10__["InAppBrowser"],
                 _ionic_native_onesignal_ngx__WEBPACK_IMPORTED_MODULE_16__["OneSignal"],
-                _ionic_native_toast_ngx__WEBPACK_IMPORTED_MODULE_7__["Toast"], _ionic_native_open_native_settings_ngx__WEBPACK_IMPORTED_MODULE_19__["OpenNativeSettings"], _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_20__["AppUpdate"]
+                _ionic_native_toast_ngx__WEBPACK_IMPORTED_MODULE_7__["Toast"],
+                _ionic_native_open_native_settings_ngx__WEBPACK_IMPORTED_MODULE_19__["OpenNativeSettings"],
+                _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_20__["AppUpdate"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
         })
@@ -1572,15 +1573,15 @@ var AdmobFreeService = /** @class */ (function () {
     }
     AdmobFreeService.prototype.BannerAd = function () {
         var bannerConfig = {
+            // bannerAtTop: false,
             isTesting: true,
             autoShow: true,
-            id: "ca-app-pub-2182088789443424/3823303516"
+            id: "ca-app-pub-2182088789443424/3823303516",
         };
         this.admobFree.banner.config(bannerConfig);
         console.log("inside banner ad");
         this.admobFree.banner.prepare().then(function () {
             console.log("banner ad success");
-            // success
         }).catch(function (e) { return alert(e); });
     };
     AdmobFreeService.prototype.InterstitialAd = function () {
@@ -1679,7 +1680,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\NODEJS APP\Ionic4\watch-undergroud\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/ahayder/Work/watch-undergroud/src/main.ts */"./src/main.ts");
 
 
 /***/ })

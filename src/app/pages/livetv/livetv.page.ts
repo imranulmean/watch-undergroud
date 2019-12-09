@@ -24,8 +24,6 @@ export class LivetvPage implements OnInit {
   showSegment:number=1;
   constructor(private admob: AdmobFreeService,
     private iab: InAppBrowser,private httpClient: HttpClient,private appUpdate: AppUpdate ) {
-
-    this.admob.BannerAd();
     
     this.tvChannels = [
       // tslint:disable-next-line: indent
@@ -173,6 +171,11 @@ export class LivetvPage implements OnInit {
   }
 
   ngOnInit() {
+    this.admob.BannerAd();
+  }
+
+  showInterstitial(){
+    this.admob.InterstitialAd();
   }
 
 }

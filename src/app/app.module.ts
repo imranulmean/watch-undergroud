@@ -16,8 +16,6 @@ import { MomentPipe } from './moment.pipe';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 
-import { Injectable } from "@angular/core";
-// import { HammerGestureConfig,HAMMER_GESTURE_CONFIG } from "@angular/platform-browser";
 import { IonicSwipeAllModule } from 'ionic-swipe-all';
 import { OneSignal } from '@ionic-native/onesignal/ngx';
 
@@ -41,7 +39,9 @@ import { AppUpdate } from '@ionic-native/app-update/ngx';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     InAppBrowser,
     OneSignal,
-    Toast,OpenNativeSettings,AppUpdate
+    Toast,
+    OpenNativeSettings,
+    AppUpdate
   ],
   bootstrap: [AppComponent]
 })

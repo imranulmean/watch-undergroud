@@ -6,6 +6,7 @@ import {
   AdMobFreeRewardVideoConfig
 } from '@ionic-native/admob-free/ngx';
 import { Platform } from '@ionic/angular';
+import { shallowEqual } from '@angular/router/src/utils/collection';
 
 
 @Injectable()
@@ -74,9 +75,10 @@ export class AdmobFreeService {
 
   BannerAd() {
     let bannerConfig: AdMobFreeBannerConfig = {
+      // bannerAtTop: false,
       isTesting: true, // Remove in production
       autoShow: true,
-      id: "ca-app-pub-2182088789443424/3823303516"
+      // id: "ca-app-pub-2182088789443424/3823303516",
     };
     this.admobFree.banner.config(bannerConfig);
 
@@ -84,7 +86,6 @@ export class AdmobFreeService {
 
     this.admobFree.banner.prepare().then(() => {
       console.log("banner ad success");
-      // success
     }).catch(e => alert(e));
   }
 
