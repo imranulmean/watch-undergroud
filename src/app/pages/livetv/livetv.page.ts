@@ -87,14 +87,17 @@ export class LivetvPage implements OnInit {
     this.sportsChannel=[
 
     // https://ustreamix.su/stream.php?id=sky-sports-cricket&token=ff1-035-e45-09a-646-ba8-15e-eb3-fef-f8a-66
-    
-    {channelName: ' SKY SPORTS CRICKET', url: 'http://crichd.ws/update/skys2.php', logo: 'https://e3.365dm.com/tvlogos/channels/1302-Mobile-Logo.svg?',alt:" SKY SPORTS CRICKET" },
+    // SKY SPORTS CRICKET:http://crichd.ws/update/skys2.php
+    //Sony Six:http://free.crichd.online/embed2.php?id=sonysix
+      // PTV Sports:http://crichd.ws/update/ptv.php
+      
+    {channelName: ' SKY SPORTS CRICKET', url: 'http://www.freecast123.com/cricsp.php?player=desktop&live=skyscric&vw=620&vh=490', logo: 'https://e3.365dm.com/tvlogos/channels/1302-Mobile-Logo.svg?',alt:" SKY SPORTS CRICKET" },
      {channelName: ' SKY SPORTS ACTION', url: 'http://crichd.ws/update/skys3.php', logo: 'https://e3.365dm.com/tvlogos/channels/1333-Mobile-Logo.svg?',alt:" SKY SPORTS ACTION" },
      {channelName: 'SKY SPORTS FOOTBALL', url: 'http://crichd.ws/update/skysfotb.php', logo: 'https://e3.365dm.com/tvlogos/channels/3838-Mobile-Logo.svg?',alt:"SKY SPORTS FOOTBALL" },
      {channelName: ' Star Sports 1 HD', url: 'http://icom.movply.stream/hls/star-sports-1-hd.m3u8', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2017/08/star-sports-1.png?fit=300%2C169',alt:" Star Sports 1 HD" },
      {channelName: ' Star Sports 2 HD', url: 'https://akamai.anytv.live/StartSports2HHD/tracks-v1a1/mono.m3u8', logo: 'https://i2.wp.com/sportstvon.com/wp-content/uploads/2017/08/star-sports-2.png?fit=300%2C169',alt:" Star Sports 2 HD" },
-      {channelName: ' PTV Sports', url: 'http://crichd.ws/update/ptv.php', logo: 'https://i2.wp.com/sportstvon.com/wp-content/uploads/2016/12/ptv-sports.png?fit=300%2C169',alt:" PTV Sports" },
-      {channelName: ' Sony Six', url: 'http://free.crichd.online/embed2.php?id=sonysix', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2016/12/sonysixhd.png?fit=300%2C169',alt:" Sony Six" },
+      {channelName: ' PTV Sports', url: 'http://www.freecast123.com/cricsp.php?player=desktop&live=ptvpk&vw=620&vh=490', logo: 'https://i2.wp.com/sportstvon.com/wp-content/uploads/2016/12/ptv-sports.png?fit=300%2C169',alt:" PTV Sports" },
+      {channelName: ' Sony Six', url: 'http://www.freecast123.com/crichd.php?player=desktop&live=sonysixind&vw=620&vh=490', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2016/12/sonysixhd.png?fit=300%2C169',alt:" Sony Six" },
      // {channelName: ' IPL', url: 'http://tv.b4ucast.me/tv/vJ9lsiZFOE20190929/chunklist_w457579760_tkaGxzZW5kdGltZT0xNTc1NjI2MTYwJmhsc3N0YXJ0dGltZT0wJmhsc2hhc2g9RDl4bDdIbWhRVllUMUM0WE5oa3oxNlBXUDVnRTUxN2hPZmdROWhmcV9qbz0=.m3u8', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2017/04/ipl18.png?fit=300%2C169',alt:" IPL" },
      {channelName: ' Sony Ten 1', url: 'http://icom.movply.stream/hls/ten_1.m3u8', logo: 'https://i0.wp.com/sportstvon.com/wp-content/uploads/2017/08/sony-ten1.png?fit=300%2C169',alt:" Sony Ten 1" },
      {channelName: ' Sony Ten 2', url: 'http://icom.movply.stream/hls/ten_2.m3u8', logo: 'https://i1.wp.com/sportstvon.com/wp-content/uploads/2017/08/ten2hd.png?fit=300%2C169',alt:" Sony Ten 2" },
