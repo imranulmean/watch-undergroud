@@ -1520,61 +1520,64 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var AdmobFreeService = /** @class */ (function () {
+    // Reward Video Ad's Configurations
+    // RewardVideoConfig: AdMobFreeRewardVideoConfig = {
+    //   isTesting: true, // Remove in production
+    //   autoShow: false// ,
+    //   // id: "ca-app-pub-3940XXXXXXX42544/6300978111"
+    // };
     function AdmobFreeService(admobFree, platform) {
         var _this = this;
         this.admobFree = admobFree;
         this.platform = platform;
         // Interstitial Ad's Configurations
+        // add your config here
+        // for the sake of this example we will just use the test config
+        // isTesting: true,
+        // id: "ca-app-pub-3940256099942544/1033173712", // test id
         this.interstitialConfig = {
-            // add your config here
-            // for the sake of this example we will just use the test config
-            isTesting: true,
             autoShow: false,
             id: "ca-app-pub-2182088789443424/4312094961"
         };
-        // Reward Video Ad's Configurations
-        this.RewardVideoConfig = {
-            isTesting: true,
-            autoShow: false // ,
-            // id: "ca-app-pub-3940XXXXXXX42544/6300978111"
-        };
         platform.ready().then(function () {
-            if (_this.platform.is('cordova')) {
+            if (_this.platform.is('android')) {
                 // Load ad configuration
                 _this.admobFree.interstitial.config(_this.interstitialConfig);
                 // Prepare Ad to Show
                 _this.admobFree.interstitial.prepare()
                     .then(function () {
-                    // alert(1);
-                }).catch(function (e) { return alert(e); });
+                    // console.log(1);
+                }).catch(function (e) { return console.log(e); });
                 // // Load ad configuration
                 // this.admobFree.rewardVideo.config(this.RewardVideoConfig);
                 // // Prepare Ad to Show
                 // this.admobFree.rewardVideo.prepare()
                 //   .then(() => {
-                //     // alert(2);
-                //   }).catch(e => alert(e));
+                //     // console.log(2);
+                //   }).catch(e => console.log(e));
             }
         });
         // Handle interstitial's close event to Prepare Ad again
         this.admobFree.on('admob.interstitial.events.CLOSE').subscribe(function () {
             _this.admobFree.interstitial.prepare()
                 .then(function () {
-                alert("Interstitial CLOSE");
-            }).catch(function (e) { return alert(e); });
-        });
-        // Handle Reward's close event to Prepare Ad again
-        this.admobFree.on('admob.rewardvideo.events.CLOSE').subscribe(function () {
-            _this.admobFree.rewardVideo.prepare()
-                .then(function () {
-                alert("Reward Video CLOSE");
-            }).catch(function (e) { return alert(e); });
+                console.log("Interstitial CLOSE");
+            }).catch(function (e) { return console.log(e); });
         });
     }
+    // Handle Reward's close event to Prepare Ad again
+    //   this.admobFree.on('admob.rewardvideo.events.CLOSE').subscribe(() => {
+    //     this.admobFree.rewardVideo.prepare()
+    //       .then(() => {
+    //         console.log("Reward Video CLOSE");
+    //       }).catch(e => console.log(e));
+    //   });
+    // }
+    // bannerAtTop: false,
+    // isTesting: true, // Remove in production
+    // id: "ca-app-pub-3940256099942544/6300978111", //test id
     AdmobFreeService.prototype.BannerAd = function () {
         var bannerConfig = {
-            // bannerAtTop: false,
-            isTesting: true,
             autoShow: true,
             id: "ca-app-pub-2182088789443424/3823303516",
         };
@@ -1582,7 +1585,7 @@ var AdmobFreeService = /** @class */ (function () {
         console.log("inside banner ad");
         this.admobFree.banner.prepare().then(function () {
             console.log("banner ad success");
-        }).catch(function (e) { return alert(e); });
+        }).catch(function (e) { return console.log(e); });
     };
     AdmobFreeService.prototype.InterstitialAd = function () {
         var _this = this;
@@ -1590,21 +1593,9 @@ var AdmobFreeService = /** @class */ (function () {
         this.admobFree.interstitial.isReady().then(function () {
             // Will show prepared Ad
             _this.admobFree.interstitial.show().then(function () {
-            })
-                .catch(function (e) { return alert("show " + e); });
+            }).catch(function (e) { return console.log("show " + e); });
         })
-            .catch(function (e) { return alert("isReady " + e); });
-    };
-    AdmobFreeService.prototype.RewardVideoAd = function () {
-        var _this = this;
-        // Check if Ad is loaded
-        this.admobFree.rewardVideo.isReady().then(function () {
-            // Will show prepared Ad
-            _this.admobFree.rewardVideo.show().then(function () {
-            })
-                .catch(function (e) { return alert("show " + e); });
-        })
-            .catch(function (e) { return alert("isReady " + e); });
+            .catch(function (e) { return console.log("isReady " + e); });
     };
     AdmobFreeService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),

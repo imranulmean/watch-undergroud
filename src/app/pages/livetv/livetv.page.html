@@ -1,18 +1,16 @@
 <ion-header>
   <ion-toolbar>
-  <ion-row>
-    <ion-col size="6">
-      <ion-title>Amader TV</ion-title>
-    </ion-col>
+    <ion-row>
       <ion-col size="6">
-        <ion-button color="danger" expand="full" (click)=getUpdate()>Software Update</ion-button>
+        <ion-title>Amader TV</ion-title>
       </ion-col>
-  </ion-row>
-     
+    </ion-row>
+
   </ion-toolbar>
 </ion-header>
 <ion-toolbar id="segment">
-  <ion-segment (ionChange)="segmentChanged($event)" value="1" scrollable >
+    <ion-button color="danger" expand="full" (click)=getUpdate()>Software Update</ion-button>
+  <ion-segment (ionChange)="segmentChanged($event)" value="1" scrollable>
     <ion-segment-button value="1" id="1">
       <ion-label><b>Bangla</b></ion-label>
     </ion-segment-button>
@@ -21,28 +19,36 @@
     </ion-segment-button>
     <ion-segment-button value="3" id="3">
       <ion-label><b>Sports</b></ion-label>
-    </ion-segment-button>    
+    </ion-segment-button>
   </ion-segment>
 </ion-toolbar>
 
 <ion-content id="ionContentLive" (swipeleft)="swipeLeftPress($event)" (swiperight)="swipeRightPress($event)">
 
- <ion-row >
-  <ion-col size="6" *ngFor="let c of tv_newspapers" (click)=goToChannel(c.url)>
-    <ion-card *ngIf="showSegment==1">
-      <img src="{{c.logo}}" class="tv-logo">
-      <!-- <ion-label color="warning">{{c.channelName}}</ion-label> -->
-    </ion-card>
+  <ion-grid>
 
-    <ion-card *ngIf="showSegment==2">
-      <img src="{{c.logo}}" class="tv-logo" alt="{{c.alt}}">
-    </ion-card>  
+    <ion-row>
+  
+      <ion-col size="6" size-md="4" size-lg="2" size-xl="1" *ngFor="let c of tv_newspapers" (click)=goToChannel(c.url)>
+  
+        <ion-card *ngIf="showSegment==1">
+          <img src="{{c.logo}}" class="tv-logo">
+          <!-- <ion-label color="warning">{{c.channelName}}</ion-label> -->
+        </ion-card>
+  
+        <ion-card *ngIf="showSegment==2">
+          <img src="{{c.logo}}" class="tv-logo" alt="{{c.alt}}">
+        </ion-card>
+  
+        <ion-card *ngIf="showSegment==3">
+          <img src="{{c.logo}}" class="tv-logo" alt="{{c.alt}}">
+        </ion-card>
+  
+      </ion-col>
+  
+    </ion-row>
 
-    <ion-card *ngIf="showSegment==3">
-      <img src="{{c.logo}}" class="tv-logo" alt="{{c.alt}}">
-    </ion-card>     
+  </ion-grid>
 
-    </ion-col>  
-  </ion-row>
 
 </ion-content>

@@ -58,7 +58,7 @@ var LivetvPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n  <ion-row>\n    <ion-col size=\"6\">\n      <ion-title>Amader TV</ion-title>\n    </ion-col>\n      <ion-col size=\"6\">\n        <ion-button color=\"danger\" expand=\"full\" (click)=getUpdate()>Software Update</ion-button>\n      </ion-col>\n  </ion-row>\n     \n  </ion-toolbar>\n</ion-header>\n<ion-toolbar id=\"segment\">\n  <ion-segment (ionChange)=\"segmentChanged($event)\" value=\"1\" scrollable >\n    <ion-segment-button value=\"1\" id=\"1\">\n      <ion-label><b>Bangla</b></ion-label>\n    </ion-segment-button>\n    <ion-segment-button value=\"2\" id=\"2\">\n      <ion-label><b>India</b></ion-label>\n    </ion-segment-button>\n    <ion-segment-button value=\"3\" id=\"3\">\n      <ion-label><b>Sports</b></ion-label>\n    </ion-segment-button>    \n  </ion-segment>\n</ion-toolbar>\n\n<ion-content id=\"ionContentLive\" (swipeleft)=\"swipeLeftPress($event)\" (swiperight)=\"swipeRightPress($event)\">\n\n <ion-row >\n  <ion-col size=\"6\" *ngFor=\"let c of tv_newspapers\" (click)=goToChannel(c.url)>\n    <ion-card *ngIf=\"showSegment==1\">\n      <img src=\"{{c.logo}}\" class=\"tv-logo\">\n      <!-- <ion-label color=\"warning\">{{c.channelName}}</ion-label> -->\n    </ion-card>\n\n    <ion-card *ngIf=\"showSegment==2\">\n      <img src=\"{{c.logo}}\" class=\"tv-logo\" alt=\"{{c.alt}}\">\n    </ion-card>  \n\n    <ion-card *ngIf=\"showSegment==3\">\n      <img src=\"{{c.logo}}\" class=\"tv-logo\" alt=\"{{c.alt}}\">\n    </ion-card>     \n\n    </ion-col>  \n  </ion-row>\n\n</ion-content>\n"
+module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col size=\"6\">\n        <ion-title>Amader TV</ion-title>\n      </ion-col>\n    </ion-row>\n\n  </ion-toolbar>\n</ion-header>\n<ion-toolbar id=\"segment\">\n    <ion-button color=\"danger\" expand=\"full\" (click)=getUpdate()>Software Update</ion-button>\n  <ion-segment (ionChange)=\"segmentChanged($event)\" value=\"1\" scrollable>\n    <ion-segment-button value=\"1\" id=\"1\">\n      <ion-label><b>Bangla</b></ion-label>\n    </ion-segment-button>\n    <ion-segment-button value=\"2\" id=\"2\">\n      <ion-label><b>India</b></ion-label>\n    </ion-segment-button>\n    <ion-segment-button value=\"3\" id=\"3\">\n      <ion-label><b>Sports</b></ion-label>\n    </ion-segment-button>\n  </ion-segment>\n</ion-toolbar>\n\n<ion-content id=\"ionContentLive\" (swipeleft)=\"swipeLeftPress($event)\" (swiperight)=\"swipeRightPress($event)\">\n\n  <ion-grid>\n\n    <ion-row>\n  \n      <ion-col size=\"6\" size-md=\"4\" size-lg=\"2\" size-xl=\"1\" *ngFor=\"let c of tv_newspapers\" (click)=goToChannel(c.url)>\n  \n        <ion-card *ngIf=\"showSegment==1\">\n          <img src=\"{{c.logo}}\" class=\"tv-logo\">\n          <!-- <ion-label color=\"warning\">{{c.channelName}}</ion-label> -->\n        </ion-card>\n  \n        <ion-card *ngIf=\"showSegment==2\">\n          <img src=\"{{c.logo}}\" class=\"tv-logo\" alt=\"{{c.alt}}\">\n        </ion-card>\n  \n        <ion-card *ngIf=\"showSegment==3\">\n          <img src=\"{{c.logo}}\" class=\"tv-logo\" alt=\"{{c.alt}}\">\n        </ion-card>\n  \n      </ion-col>\n  \n    </ion-row>\n\n  </ion-grid>\n\n\n</ion-content>"
 
 /***/ }),
 
@@ -89,6 +89,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/app-update/ngx */ "./node_modules/@ionic-native/app-update/ngx/index.js");
 /* harmony import */ var src_app_services_admobfree_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/admobfree.service */ "./src/app/services/admobfree.service.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+
 
 
 
@@ -96,11 +98,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var LivetvPage = /** @class */ (function () {
-    function LivetvPage(admob, iab, httpClient, appUpdate) {
+    function LivetvPage(admob, iab, httpClient, appUpdate, platform) {
+        var _this = this;
         this.admob = admob;
         this.iab = iab;
         this.httpClient = httpClient;
         this.appUpdate = appUpdate;
+        this.platform = platform;
         // http://tv.bdixsports.com/
         // http://fomny.com/Video/USA/04/HBO/HBO.php
         // http://cdn.crichd.to/embed2.php?id=sonysix
@@ -110,6 +114,9 @@ var LivetvPage = /** @class */ (function () {
         this.sportsChannel = [];
         this.tv_newspapers = [];
         this.showSegment = 1;
+        platform.ready().then(function () {
+            _this.admob.BannerAd();
+        });
         this.tvChannels = [
             // tslint:disable-next-line: indent
             { channelName: 'BTV World', url: 'https://itpolly.iptv.digijadoo.net/live/btv_world/chunks.m3u8', logo: 'https://i2.wp.com/tvbd.live/wp-content/uploads/2016/11/btv-world.png?fit=400%2C225' },
@@ -197,6 +204,7 @@ var LivetvPage = /** @class */ (function () {
         //   this.iab.create(url, '_system', 'location=no');
         // }
         // else{
+        this.showInterstitial();
         this.iab.create(url, '_self', 'location=no');
         // }
         // window['plugins'].webintent.startActivity({
@@ -245,7 +253,6 @@ var LivetvPage = /** @class */ (function () {
         this.goToSegment();
     };
     LivetvPage.prototype.ngOnInit = function () {
-        this.admob.BannerAd();
     };
     LivetvPage.prototype.showInterstitial = function () {
         this.admob.InterstitialAd();
@@ -257,7 +264,10 @@ var LivetvPage = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./livetv.page.scss */ "./src/app/pages/livetv/livetv.page.scss")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_admobfree_service__WEBPACK_IMPORTED_MODULE_5__["AdmobFreeService"],
-            _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_2__["InAppBrowser"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"], _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_4__["AppUpdate"]])
+            _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_2__["InAppBrowser"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"],
+            _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_4__["AppUpdate"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["Platform"]])
     ], LivetvPage);
     return LivetvPage;
 }());
