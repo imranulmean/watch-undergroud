@@ -10,7 +10,7 @@
 </ion-header>
 <ion-toolbar id="segment">
     <ion-button color="danger" expand="full" (click)=getUpdate()>Software Update</ion-button>
-  <ion-segment (ionChange)="segmentChanged($event)" value="1" scrollable>
+<!--   <ion-segment (ionChange)="segmentChanged($event)" value="1" scrollable>
     <ion-segment-button value="1" id="1">
       <ion-label><b>Bangla</b></ion-label>
     </ion-segment-button>
@@ -20,12 +20,36 @@
     <ion-segment-button value="3" id="3">
       <ion-label><b>Sports</b></ion-label>
     </ion-segment-button>
-  </ion-segment>
+  </ion-segment> -->
 </ion-toolbar>
 
-<ion-content id="ionContentLive" (swipeleft)="swipeLeftPress($event)" (swiperight)="swipeRightPress($event)">
-
-  <ion-grid>
+<!-- <ion-content id="ionContentLive" (swipeleft)="swipeLeftPress($event)" (swiperight)="swipeRightPress($event)"> -->
+<ion-content id="ionContentLive" class="container">
+    <h2 class="suggestedNews"> Bangla Channels:</h2>
+    <div class="thumnails">
+      <div class="list-thumbnail">
+        <div class="img-thumb" *ngFor="let c of tvChannels" (click)="goToChannel(c.url)">
+          <img src="{{c.logo}}" class="tv-logo">
+        </div>
+      </div>
+    </div>
+    <h2 class="suggestedNews"> Indian Channels:</h2>
+    <div class="thumnails">
+      <div class="list-thumbnail">
+        <div class="img-thumb" *ngFor="let c of indiaChannel" (click)="goToChannel(c.url)">
+          <img src="{{c.logo}}" class="tv-logo">
+        </div>
+      </div>
+    </div>
+    <h2 class="suggestedNews"> Sports Channels:</h2>
+    <div class="thumnails">
+      <div class="list-thumbnail">
+        <div class="img-thumb" *ngFor="let c of sportsChannel" (click)="goToChannel(c.url)">
+          <img src="{{c.logo}}" class="tv-logo">
+        </div>
+      </div>
+    </div>
+<!--   <ion-grid>
 
     <ion-row>
   
@@ -33,7 +57,6 @@
   
         <ion-card *ngIf="showSegment==1">
           <img src="{{c.logo}}" class="tv-logo">
-          <!-- <ion-label color="warning">{{c.channelName}}</ion-label> -->
         </ion-card>
   
         <ion-card *ngIf="showSegment==2">
@@ -48,7 +71,7 @@
   
     </ion-row>
 
-  </ion-grid>
+  </ion-grid> -->
 
 
 </ion-content>
