@@ -1,16 +1,16 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-row>
-      <ion-col size="6">
-        <ion-title>Amader TV</ion-title>
-      </ion-col>
-    </ion-row>
+	<ion-toolbar>
+		<ion-row>
+			<ion-col size="6">
+				<ion-title>Amader TV</ion-title>
+			</ion-col>
+		</ion-row>
 
-  </ion-toolbar>
+	</ion-toolbar>
 </ion-header>
 <ion-toolbar id="segment">
-    <ion-button color="danger" expand="full" (click)=getUpdate()>Software Update</ion-button>
-<!--   <ion-segment (ionChange)="segmentChanged($event)" value="1" scrollable>
+	<ion-button color="danger" expand="full" (click)=getUpdate()>Software Update</ion-button>
+	<!--   <ion-segment (ionChange)="segmentChanged($event)" value="1" scrollable>
     <ion-segment-button value="1" id="1">
       <ion-label><b>Bangla</b></ion-label>
     </ion-segment-button>
@@ -25,31 +25,86 @@
 
 <!-- <ion-content id="ionContentLive" (swipeleft)="swipeLeftPress($event)" (swiperight)="swipeRightPress($event)"> -->
 <ion-content id="ionContentLive" class="container">
-    <h2 class="suggestedNews"> Bangla Channels:</h2>
-    <div class="thumnails">
-      <div class="list-thumbnail">
-        <div class="img-thumb" *ngFor="let c of tvChannels" (click)="goToChannel(c.url)">
-          <img src="{{c.logo}}" class="tv-logo">
-        </div>
-      </div>
-    </div>
-    <h2 class="suggestedNews"> Indian Channels:</h2>
-    <div class="thumnails">
-      <div class="list-thumbnail">
-        <div class="img-thumb" *ngFor="let c of indiaChannel" (click)="goToChannel(c.url)">
-          <img src="{{c.logo}}" class="tv-logo">
-        </div>
-      </div>
-    </div>
-    <h2 class="suggestedNews"> Sports Channels:</h2>
-    <div class="thumnails">
-      <div class="list-thumbnail">
-        <div class="img-thumb" *ngFor="let c of sportsChannel" (click)="goToChannel(c.url)">
-          <img src="{{c.logo}}" class="tv-logo">
-        </div>
-      </div>
-    </div>
-<!--   <ion-grid>
+
+	<ion-grid>
+		<ion-row>
+			<ion-col>
+				<ion-item-divider class="ion-no-padding">
+					<ion-text color="dark">
+						<h4>Bangladeshi Channels:</h4>
+					</ion-text>
+				</ion-item-divider>
+				<ion-item class="ion-no-padding">
+					<div class="thumnails">
+						<div class="list-thumbnail">
+							<div class="img-thumb" *ngFor="let c of tvChannels" (click)="goToChannel(c.url)">
+								<img src="{{c.logo}}" class="tv-logo">
+							</div>
+						</div>
+					</div>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+
+
+		<ion-row>
+			<ion-col>
+				<ion-item-divider class="ion-no-padding">
+					<ion-text color="dark">
+						<h4>Bangladeshi Channels:(Outside Bangladesh)</h4>
+					</ion-text>
+				</ion-item-divider>
+				<ion-item class="ion-no-padding">
+					<div class="thumnails">
+						<div class="list-thumbnail">
+							<div class="img-thumb" *ngFor="let c of tvChannelsOutsideBD" (click)="goToChannel(c.url)">
+								<img src="{{c.logo}}" class="tv-logo">
+							</div>
+						</div>
+					</div>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+
+		<ion-row>
+			<ion-col>
+				<ion-item-divider class="ion-no-padding">
+					<ion-text color="dark">
+						<h4>Indian Channels:</h4>
+					</ion-text>
+				</ion-item-divider>
+				<div class="thumnails">
+					<div class="list-thumbnail">
+						<div class="img-thumb" *ngFor="let c of indiaChannel" (click)="goToChannel(c.url)">
+							<img src="{{c.logo}}" class="tv-logo">
+						</div>
+					</div>
+				</div>
+			</ion-col>
+		</ion-row>
+
+		<ion-row>
+
+			<ion-col>
+
+				<ion-item-divider class="ion-no-padding">
+					<ion-text color="dark">
+						<h4>Sports Channels:</h4>
+					</ion-text>
+				</ion-item-divider>
+				<div class="thumnails">
+					<div class="list-thumbnail">
+						<div class="img-thumb" *ngFor="let c of sportsChannel" (click)="goToChannel(c.url)">
+							<img src="{{c.logo}}" class="tv-logo">
+						</div>
+					</div>
+				</div>
+
+			</ion-col>
+
+		</ion-row>
+	</ion-grid>
+	<!--   <ion-grid>
 
     <ion-row>
   
