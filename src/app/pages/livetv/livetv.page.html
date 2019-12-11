@@ -57,7 +57,7 @@
 				<ion-item class="ion-no-padding">
 					<div class="thumnails">
 						<div class="list-thumbnail">
-							<div class="img-thumb" *ngFor="let c of tvChannelsOutsideBD" (click)="goToChannel(c.url)">
+							<div class="img-thumb" *ngFor="let c of tvChannelsOutsideBD" (click)="goToChannel(c.url,"outside")">
 								<img src="{{c.logo}}" class="tv-logo">
 							</div>
 						</div>
