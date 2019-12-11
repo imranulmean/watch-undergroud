@@ -58,7 +58,7 @@ var LivetvPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col size=\"6\">\n        <ion-title>Amader TV</ion-title>\n      </ion-col>\n    </ion-row>\n\n  </ion-toolbar>\n</ion-header>\n<ion-toolbar id=\"segment\">\n    <ion-button color=\"danger\" expand=\"full\" (click)=getUpdate()>Software Update</ion-button>\n  <ion-segment (ionChange)=\"segmentChanged($event)\" value=\"1\" scrollable>\n    <ion-segment-button value=\"1\" id=\"1\">\n      <ion-label><b>Bangla</b></ion-label>\n    </ion-segment-button>\n    <ion-segment-button value=\"2\" id=\"2\">\n      <ion-label><b>India</b></ion-label>\n    </ion-segment-button>\n    <ion-segment-button value=\"3\" id=\"3\">\n      <ion-label><b>Sports</b></ion-label>\n    </ion-segment-button>\n  </ion-segment>\n</ion-toolbar>\n\n<ion-content id=\"ionContentLive\" (swipeleft)=\"swipeLeftPress($event)\" (swiperight)=\"swipeRightPress($event)\">\n\n  <ion-grid>\n\n    <ion-row>\n  \n      <ion-col size=\"6\" size-md=\"4\" size-lg=\"2\" size-xl=\"1\" *ngFor=\"let c of tv_newspapers\" (click)=goToChannel(c.url)>\n  \n        <ion-card *ngIf=\"showSegment==1\">\n          <img src=\"{{c.logo}}\" class=\"tv-logo\">\n          <!-- <ion-label color=\"warning\">{{c.channelName}}</ion-label> -->\n        </ion-card>\n  \n        <ion-card *ngIf=\"showSegment==2\">\n          <img src=\"{{c.logo}}\" class=\"tv-logo\" alt=\"{{c.alt}}\">\n        </ion-card>\n  \n        <ion-card *ngIf=\"showSegment==3\">\n          <img src=\"{{c.logo}}\" class=\"tv-logo\" alt=\"{{c.alt}}\">\n        </ion-card>\n  \n      </ion-col>\n  \n    </ion-row>\n\n  </ion-grid>\n\n\n</ion-content>"
+module.exports = "<ion-header>\r\n\t<ion-toolbar>\r\n\t\t<ion-row>\r\n\t\t\t<ion-col size=\"6\">\r\n\t\t\t\t<ion-title>Amader TV</ion-title>\r\n\t\t\t</ion-col>\r\n\t\t</ion-row>\r\n\r\n\t</ion-toolbar>\r\n</ion-header>\r\n<ion-toolbar id=\"segment\" *ngIf=\"showUpdateButton==1\">\r\n\t<ion-button  color=\"danger\" expand=\"full\" (click)=getUpdate()>Software Update</ion-button>\r\n\t<!--   <ion-segment (ionChange)=\"segmentChanged($event)\" value=\"1\" scrollable>\r\n    <ion-segment-button value=\"1\" id=\"1\">\r\n      <ion-label><b>Bangla</b></ion-label>\r\n    </ion-segment-button>\r\n    <ion-segment-button value=\"2\" id=\"2\">\r\n      <ion-label><b>India</b></ion-label>\r\n    </ion-segment-button>\r\n    <ion-segment-button value=\"3\" id=\"3\">\r\n      <ion-label><b>Sports</b></ion-label>\r\n    </ion-segment-button>\r\n  </ion-segment> -->\r\n</ion-toolbar>\r\n\r\n<!-- <ion-content id=\"ionContentLive\" (swipeleft)=\"swipeLeftPress($event)\" (swiperight)=\"swipeRightPress($event)\"> -->\r\n<ion-content id=\"ionContentLive\" class=\"container\">\r\n\r\n\t<ion-grid>\r\n\t\t<ion-row>\r\n\t\t\t<ion-col>\r\n\t\t\t\t<ion-item-divider class=\"ion-no-padding\">\r\n\t\t\t\t\t<ion-text color=\"dark\">\r\n\t\t\t\t\t\t<h4>Bangladeshi Channels:</h4>\r\n\t\t\t\t\t</ion-text>\r\n\t\t\t\t</ion-item-divider>\r\n\t\t\t\t<ion-item class=\"ion-no-padding\">\r\n\t\t\t\t\t<div class=\"thumnails\">\r\n\t\t\t\t\t\t<div class=\"list-thumbnail\">\r\n\t\t\t\t\t\t\t<div class=\"img-thumb\" *ngFor=\"let c of tvChannels\" (click)=\"goToChannel(c.url)\">\r\n\t\t\t\t\t\t\t\t<img src=\"{{c.logo}}\" class=\"tv-logo\">\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</ion-item>\r\n\t\t\t</ion-col>\r\n\t\t</ion-row>\r\n\r\n\r\n    <ion-row>\r\n      <ion-col>\r\n        <ion-item-divider class=\"ion-no-padding\">\r\n          <ion-text color=\"dark\">\r\n            <h4>Bangladeshi Channels:(Outside Bangladesh)</h4>\r\n          </ion-text>\r\n        </ion-item-divider>\r\n        <div class=\"thumnails\">\r\n          <div class=\"list-thumbnail\">\r\n            <div class=\"img-thumb\" *ngFor=\"let c of tvChannelsOutsideBD\" (click)='goToChannel(c.url,\"outside\")'>\r\n              <img src=\"{{c.logo}}\" class=\"tv-logo\">\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </ion-col>\r\n    </ion-row>\r\n\r\n\t\t<ion-row>\r\n\t\t\t<ion-col>\r\n\t\t\t\t<ion-item-divider class=\"ion-no-padding\">\r\n\t\t\t\t\t<ion-text color=\"dark\">\r\n\t\t\t\t\t\t<h4>Indian Channels:</h4>\r\n\t\t\t\t\t</ion-text>\r\n\t\t\t\t</ion-item-divider>\r\n\t\t\t\t<div class=\"thumnails\">\r\n\t\t\t\t\t<div class=\"list-thumbnail\">\r\n\t\t\t\t\t\t<div class=\"img-thumb\" *ngFor=\"let c of indiaChannel\" (click)=\"goToChannel(c.url)\">\r\n\t\t\t\t\t\t\t<img src=\"{{c.logo}}\" class=\"tv-logo\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</ion-col>\r\n\t\t</ion-row>\r\n\r\n\t\t<ion-row>\r\n\t\t\t<ion-col>\r\n\t\t\t\t<ion-item-divider class=\"ion-no-padding\">\r\n\t\t\t\t\t<ion-text color=\"dark\">\r\n\t\t\t\t\t\t<h4>Sports Channels:</h4>\r\n\t\t\t\t\t</ion-text>\r\n\t\t\t\t</ion-item-divider>\r\n\t\t\t\t<div class=\"thumnails\">\r\n\t\t\t\t\t<div class=\"list-thumbnail\">\r\n\t\t\t\t\t\t<div class=\"img-thumb\" *ngFor=\"let c of sportsChannel\" (click)=\"goToChannel(c.url)\">\r\n\t\t\t\t\t\t\t<img src=\"{{c.logo}}\" class=\"tv-logo\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</ion-col>\r\n\t\t</ion-row>\r\n\t</ion-grid>\r\n\t<!--   <ion-grid>\r\n\r\n    <ion-row>\r\n  \r\n      <ion-col size=\"6\" size-md=\"4\" size-lg=\"2\" size-xl=\"1\" *ngFor=\"let c of tv_newspapers\" (click)=goToChannel(c.url)>\r\n  \r\n        <ion-card *ngIf=\"showSegment==1\">\r\n          <img src=\"{{c.logo}}\" class=\"tv-logo\">\r\n        </ion-card>\r\n  \r\n        <ion-card *ngIf=\"showSegment==2\">\r\n          <img src=\"{{c.logo}}\" class=\"tv-logo\" alt=\"{{c.alt}}\">\r\n        </ion-card>\r\n  \r\n        <ion-card *ngIf=\"showSegment==3\">\r\n          <img src=\"{{c.logo}}\" class=\"tv-logo\" alt=\"{{c.alt}}\">\r\n        </ion-card>\r\n  \r\n      </ion-col>\r\n  \r\n    </ion-row>\r\n\r\n  </ion-grid> -->\r\n\r\n\r\n</ion-content>\r\n"
 
 /***/ }),
 
@@ -69,7 +69,7 @@ module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col s
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "html, body {\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  margin: 0px; }\n\nion-toolbar {\n  /*--background: #fe8c00;*/\n  --background:#fff8ed; }\n\nion-content {\n  /*--background: #424242;*/\n  --background:#f1f1f1\n; }\n\n#segment {\n  --background: #fabc5a1b; }\n\n.newpaperLogo {\n  margin-top: 0.5em; }\n\n.tv-logo {\n  /*\tmax-height: 50px;\n\twidth: unset;*/\n  margin: 0 auto;\n  height: 6em; }\n\n.newpaperHeader {\n  padding: 0 0 1em 0.2em; }\n\nion-segment-button {\n  border: none;\n  font-weight: 900;\n  font-size: 0.8em;\n  --indicator-color-checked: #fcb13c;\n  --color-activated: #fcb13c;\n  --color-checked: #fcb13c; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9haGF5ZGVyL1dvcmsvd2F0Y2gtdW5kZXJncm91ZC9zcmMvYXBwL3BhZ2VzL2xpdmV0di9saXZldHYucGFnZS5zY3NzIiwic3JjL2FwcC9wYWdlcy9saXZldHYvbGl2ZXR2LnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQVU7RUFDVixZQUFXO0VBQ1gsZ0JBQWU7RUFDZixXQUFVLEVBQUE7O0FBR1o7RUFDSSx5QkFBQTtFQUNBLG9CQUFhLEVBQUE7O0FBRWpCO0VBQ0kseUJBQUE7RUFDQTtBQUFhLEVBQUE7O0FBRWpCO0VBQ0MsdUJBQWEsRUFBQTs7QUFFZDtFQUNDLGlCQUFpQixFQUFBOztBQUdsQjtFQUNBO2VDQWU7RURFZCxjQUFjO0VBQ2QsV0FBVyxFQUFBOztBQUdaO0VBQ0Msc0JBQXNCLEVBQUE7O0FBR3ZCO0VBQ0MsWUFBWTtFQUNaLGdCQUFnQjtFQUNoQixnQkFBZ0I7RUFDaEIsa0NBQTBCO0VBQzFCLDBCQUFrQjtFQUNsQix3QkFBZ0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2xpdmV0di9saXZldHYucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaHRtbCwgYm9keXtcbiAgd2lkdGg6MTAwJTtcbiAgaGVpZ2h0OjEwMCU7XG4gIG92ZXJmbG93OmhpZGRlbjtcbiAgbWFyZ2luOjBweDsgICBcbn1cblxuaW9uLXRvb2xiYXIge1xuICAgIC8qLS1iYWNrZ3JvdW5kOiAjZmU4YzAwOyovXG4gICAgLS1iYWNrZ3JvdW5kOiNmZmY4ZWQ7XG59XG5pb24tY29udGVudCB7XG4gICAgLyotLWJhY2tncm91bmQ6ICM0MjQyNDI7Ki9cbiAgICAtLWJhY2tncm91bmQ6I2YxZjFmMVxufVxuI3NlZ21lbnR7XG5cdC0tYmFja2dyb3VuZDogI2ZhYmM1YTFiO1xufVxuLm5ld3BhcGVyTG9nb3tcblx0bWFyZ2luLXRvcDogMC41ZW07XG59XG5cbi50di1sb2dve1xuLypcdG1heC1oZWlnaHQ6IDUwcHg7XG5cdHdpZHRoOiB1bnNldDsqL1xuXHRtYXJnaW46IDAgYXV0bztcblx0aGVpZ2h0OiA2ZW07XG59XG5cbi5uZXdwYXBlckhlYWRlcntcblx0cGFkZGluZzogMCAwIDFlbSAwLjJlbTtcbn1cblxuaW9uLXNlZ21lbnQtYnV0dG9uIHtcblx0Ym9yZGVyOiBub25lO1xuXHRmb250LXdlaWdodDogOTAwO1xuXHRmb250LXNpemU6IDAuOGVtO1xuXHQtLWluZGljYXRvci1jb2xvci1jaGVja2VkOiAjZmNiMTNjO1xuXHQtLWNvbG9yLWFjdGl2YXRlZDogI2ZjYjEzYztcblx0LS1jb2xvci1jaGVja2VkOiAjZmNiMTNjO1xuICB9IiwiaHRtbCwgYm9keSB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIG1hcmdpbjogMHB4OyB9XG5cbmlvbi10b29sYmFyIHtcbiAgLyotLWJhY2tncm91bmQ6ICNmZThjMDA7Ki9cbiAgLS1iYWNrZ3JvdW5kOiNmZmY4ZWQ7IH1cblxuaW9uLWNvbnRlbnQge1xuICAvKi0tYmFja2dyb3VuZDogIzQyNDI0MjsqL1xuICAtLWJhY2tncm91bmQ6I2YxZjFmMVxuOyB9XG5cbiNzZWdtZW50IHtcbiAgLS1iYWNrZ3JvdW5kOiAjZmFiYzVhMWI7IH1cblxuLm5ld3BhcGVyTG9nbyB7XG4gIG1hcmdpbi10b3A6IDAuNWVtOyB9XG5cbi50di1sb2dvIHtcbiAgLypcdG1heC1oZWlnaHQ6IDUwcHg7XG5cdHdpZHRoOiB1bnNldDsqL1xuICBtYXJnaW46IDAgYXV0bztcbiAgaGVpZ2h0OiA2ZW07IH1cblxuLm5ld3BhcGVySGVhZGVyIHtcbiAgcGFkZGluZzogMCAwIDFlbSAwLjJlbTsgfVxuXG5pb24tc2VnbWVudC1idXR0b24ge1xuICBib3JkZXI6IG5vbmU7XG4gIGZvbnQtd2VpZ2h0OiA5MDA7XG4gIGZvbnQtc2l6ZTogMC44ZW07XG4gIC0taW5kaWNhdG9yLWNvbG9yLWNoZWNrZWQ6ICNmY2IxM2M7XG4gIC0tY29sb3ItYWN0aXZhdGVkOiAjZmNiMTNjO1xuICAtLWNvbG9yLWNoZWNrZWQ6ICNmY2IxM2M7IH1cbiJdfQ== */"
+module.exports = ".thumnails {\n  overflow-x: scroll;\n  overflow-y: hidden; }\n\n.img-thumb {\n  display: inline-block;\n  border: 1px solid #ddd;\n  border-radius: 4px;\n  padding: 3px;\n  margin: 0 0.5em 0 0; }\n\n.list-thumbnail {\n  height: 100%;\n  white-space: nowrap; }\n\nion-toolbar {\n  /*--background: #fe8c00;*/\n  --background:#fff8ed; }\n\nion-content {\n  /*--background: #424242;*/ }\n\n#segment {\n  --background: #fabc5a1b; }\n\n.newpaperLogo {\n  margin-top: 0.5em; }\n\n.tv-logo {\n  margin: 0 auto;\n  height: 6em; }\n\n.newpaperHeader {\n  padding: 0 0 1em 0.2em; }\n\nion-segment-button {\n  border: none;\n  font-weight: 900;\n  font-size: 0.8em;\n  --indicator-color-checked: #fcb13c;\n  --color-activated: #fcb13c;\n  --color-checked: #fcb13c; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvbGl2ZXR2L0Q6XFxOT0RFSlMgQVBQXFxJb25pYzRcXHdhdGNoLXVuZGVyZ3JvdWQvc3JjXFxhcHBcXHBhZ2VzXFxsaXZldHZcXGxpdmV0di5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBa0I7RUFDbEIsa0JBQWtCLEVBQUE7O0FBR3BCO0VBQ0UscUJBQXFCO0VBQ3JCLHNCQUFzQjtFQUN0QixrQkFBa0I7RUFDbEIsWUFBWTtFQUdaLG1CQUFrQixFQUFBOztBQUdwQjtFQUNDLFlBQVk7RUFDWixtQkFBbUIsRUFBQTs7QUFHcEI7RUFDSSx5QkFBQTtFQUNBLG9CQUFhLEVBQUE7O0FBRWpCO0VBQ0kseUJBQUEsRUFBMEI7O0FBRzlCO0VBQ0MsdUJBQWEsRUFBQTs7QUFFZDtFQUNDLGlCQUFpQixFQUFBOztBQUdsQjtFQUNDLGNBQWM7RUFDZCxXQUFXLEVBQUE7O0FBR1o7RUFDQyxzQkFBc0IsRUFBQTs7QUFHdkI7RUFDQyxZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLGdCQUFnQjtFQUNoQixrQ0FBMEI7RUFDMUIsMEJBQWtCO0VBQ2xCLHdCQUFnQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvbGl2ZXR2L2xpdmV0di5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGh1bW5haWxze1xyXG4gIG92ZXJmbG93LXg6IHNjcm9sbDtcclxuICBvdmVyZmxvdy15OiBoaWRkZW47XHJcbn1cclxuXHJcbi5pbWctdGh1bWJ7XHJcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gIGJvcmRlcjogMXB4IHNvbGlkICNkZGQ7XHJcbiAgYm9yZGVyLXJhZGl1czogNHB4O1xyXG4gIHBhZGRpbmc6IDNweDtcclxuICAvLyB3aWR0aDogNDAlO1xyXG4gIC8vIGhlaWdodDogNTBweDtcclxuICBtYXJnaW46MCAwLjVlbSAwIDA7IFxyXG4gIC8vIGxpbmUtaGVpZ2h0OiA2MHB4O1xyXG59XHJcbi5saXN0LXRodW1ibmFpbHtcclxuXHRoZWlnaHQ6IDEwMCU7XHJcblx0d2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuXHJcbn1cclxuaW9uLXRvb2xiYXIge1xyXG4gICAgLyotLWJhY2tncm91bmQ6ICNmZThjMDA7Ki9cclxuICAgIC0tYmFja2dyb3VuZDojZmZmOGVkO1xyXG59XHJcbmlvbi1jb250ZW50IHtcclxuICAgIC8qLS1iYWNrZ3JvdW5kOiAjNDI0MjQyOyovXHJcbiAgICAvLyAtLWJhY2tncm91bmQ6I2YxZjFmMVxyXG59XHJcbiNzZWdtZW50e1xyXG5cdC0tYmFja2dyb3VuZDogI2ZhYmM1YTFiO1xyXG59XHJcbi5uZXdwYXBlckxvZ297XHJcblx0bWFyZ2luLXRvcDogMC41ZW07XHJcbn1cclxuXHJcbi50di1sb2dve1xyXG5cdG1hcmdpbjogMCBhdXRvO1xyXG5cdGhlaWdodDogNmVtO1xyXG59XHJcblxyXG4ubmV3cGFwZXJIZWFkZXJ7XHJcblx0cGFkZGluZzogMCAwIDFlbSAwLjJlbTtcclxufVxyXG5cclxuaW9uLXNlZ21lbnQtYnV0dG9uIHtcclxuXHRib3JkZXI6IG5vbmU7XHJcblx0Zm9udC13ZWlnaHQ6IDkwMDtcclxuXHRmb250LXNpemU6IDAuOGVtO1xyXG5cdC0taW5kaWNhdG9yLWNvbG9yLWNoZWNrZWQ6ICNmY2IxM2M7XHJcblx0LS1jb2xvci1hY3RpdmF0ZWQ6ICNmY2IxM2M7XHJcblx0LS1jb2xvci1jaGVja2VkOiAjZmNiMTNjO1xyXG4gIH1cclxuIl19 */"
 
 /***/ }),
 
@@ -109,16 +109,42 @@ var LivetvPage = /** @class */ (function () {
         // http://fomny.com/Video/USA/04/HBO/HBO.php
         // http://cdn.crichd.to/embed2.php?id=sonysix
         // http://crichd.ws/update/skys2.php
+        // https://www.youtube.com/watch?v=256XTt0pVuA
         this.tvChannels = [];
+        this.tvChannelsOutsideBD = [];
         this.indiaChannel = [];
         this.sportsChannel = [];
         this.tv_newspapers = [];
         this.showSegment = 1;
+        this.updateUrl = 'https://raw.githubusercontent.com/livetvappbd/livetv-version/master/version.xml';
+        this.showUpdateButton = 0;
         platform.ready().then(function () {
             _this.admob.BannerAd();
         });
+        // this.tvChannels = [
+        //   { channelName: 'BTV World', url: 'https://itpolly.iptv.digijadoo.net/live/btv_world/chunks.m3u8', logo: 'https://i2.wp.com/tvbd.live/wp-content/uploads/2016/11/btv-world.png?fit=400%2C225' },
+        //   { channelName: 'Jamuna TV', url: 'https://itpolly.iptv.digijadoo.net/live/jamuna_tv/chunks.m3u8', logo: 'http://www.deshibiz.com/img/media/post/1463733058_jamunatv6.jpg' },
+        //   { channelName: 'Somoy News', url: 'https://itpolly.iptv.digijadoo.net/live/somoy_news/chunks.m3u8', logo: 'https://www.freeetv.com/images/03_logo/Somoy_News_Bangladesh.jpg' },
+        //   { channelName: 'Ekattur TV', url: 'https://itpolly.iptv.digijadoo.net/live/ekattor_tv/chunks.m3u8', logo: '../../../assets/img/tv-logos/ekattor-tv.png' },
+        //   { channelName: 'Independent TV', url: 'https://itpolly.iptv.digijadoo.net/live/independent_tv/chunks.m3u8', logo: '../../../assets/img/tv-logos/independent-tv-logo.png' },
+        //   { channelName: 'ATN Bangla', url: 'https://itpolly.iptv.digijadoo.net/live/atn_bangla/chunks.m3u8', logo: '../../../assets/img/tv-logos/atn-bangla-tv.png' },
+        //   { channelName: 'CHANNEL 9 ', url: 'https://itpolly.iptv.digijadoo.net/live/channel_9/chunks.m3u8', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/Channel9_bd.svg/1280px-Channel9_bd.svg.png', alt: "CHANNEL 9 " },
+        //   { channelName: 'SA TV', url: 'https://itpolly.iptv.digijadoo.net/live/sa_tv/playlist.m3u8', logo: '../../../assets/img/tv-logos/satv.png' },
+        //   { channelName: 'ATN NEWS', url: 'https://itpolly.iptv.digijadoo.net/live/atn_news/chunks.m3u8', logo: '../../../assets/img/tv-logos/Atn_news.png' },
+        //   { channelName: 'Nagorik Tv', url: '"https://itpolly.iptv.digijadoo.net/live/nagorik_tv/chunks.m3u8', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/6ms91aehi2a.png' },
+        //   { channelName: 'Boishakhi TV', url: 'https://itpolly.iptv.digijadoo.net/live/boishakhi_tv/chunks.m3u8', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/20mgRCbFLz5.png' },
+        //   { channelName: 'DBC News', url: 'https://itpolly.iptv.digijadoo.net/live/dbc_news/chunks.m3u8', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/6GxyIRO4P74.png' },
+        //   { channelName: 'Asian TV', url: 'https://itpolly.iptv.digijadoo.net/live/asian_tv/chunks.m3u8', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/84xExHj3DJ8.png' },
+        //   { channelName: 'Al Jazeera', url: 'https://www.aljazeera.com/live/', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/0iLtx9H8sr5.png' },
+        //   { channelName: 'Channel 24', url: 'https://itpolly.iptv.digijadoo.net/live/channel_24/chunks.m3u8', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4BJaziwAkuVDBZRuNBuArfKqzINnznF863p6bFp48ynoUoa4L' },
+        //   { channelName: 'Channeli', url: 'https://itpolly.iptv.digijadoo.net/live/channel_i/chunks.m3u8', logo: 'https://dxtm6s46jarcs.cloudfront.net/wp-content/uploads/2015/03/channel-i-logo.jpg' },
+        //   { channelName: 'RTV', url: 'https://itpolly.iptv.digijadoo.net/live/rtv/playlist.m3u8', logo: 'https://www.rtvbd.tv/templates/rtv/img/logo.png' },
+        //   { channelName: 'NTV', url: 'https://itpolly.iptv.digijadoo.net/live/ntv/chunks.m3u8', logo: 'https://www.trzcacak.rs/myfile/detail/354-3547607_ntv-logo-bangladesh-tv-channel.png' },
+        //   { channelName: 'GTV', url: 'https://itpolly.iptv.digijadoo.net/live/gazi_tv/chunks.m3u8', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsHS9VSC-V5QnK9mbSn0mjZUYxp1QGMAAAY9jc0itHn1dMWZNk' },
+        //   { channelName: 'Peace TV', url: 'http://peacetv.ashttp22.visionip.tv/live/peacetv-peacetv-peacetv-bangla-hsslive-25f-16x9-SDh/chunklist.m3u8', logo: 'http://www.desifree.tv/wp-content/uploads/peace-tv.jpg' },
+        //   { channelName: 'Gaan Bangla', url: 'https://itpolly.iptv.digijadoo.net/live/gaan_bangla/chunks.m3u8', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/um9o21i3T1E.png' },
+        // ];
         this.tvChannels = [
-            // tslint:disable-next-line: indent
             { channelName: 'BTV World', url: 'https://itpolly.iptv.digijadoo.net/live/btv_world/chunks.m3u8', logo: 'https://i2.wp.com/tvbd.live/wp-content/uploads/2016/11/btv-world.png?fit=400%2C225' },
             { channelName: 'Jamuna TV', url: 'https://itpolly.iptv.digijadoo.net/live/jamuna_tv/chunks.m3u8', logo: 'http://www.deshibiz.com/img/media/post/1463733058_jamunatv6.jpg' },
             { channelName: 'Somoy News', url: 'https://itpolly.iptv.digijadoo.net/live/somoy_news/chunks.m3u8', logo: 'https://www.freeetv.com/images/03_logo/Somoy_News_Bangladesh.jpg' },
@@ -128,30 +154,43 @@ var LivetvPage = /** @class */ (function () {
             { channelName: 'CHANNEL 9 ', url: 'https://itpolly.iptv.digijadoo.net/live/channel_9/chunks.m3u8', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/Channel9_bd.svg/1280px-Channel9_bd.svg.png', alt: "CHANNEL 9 " },
             { channelName: 'SA TV', url: 'https://itpolly.iptv.digijadoo.net/live/sa_tv/playlist.m3u8', logo: '../../../assets/img/tv-logos/satv.png' },
             { channelName: 'ATN NEWS', url: 'https://itpolly.iptv.digijadoo.net/live/atn_news/chunks.m3u8', logo: '../../../assets/img/tv-logos/Atn_news.png' },
-            // { channelName: 'BBC World', url: 'https://www.bioscopelive.com/en/channel/bbc-world', logo: '../../../assets/img/tv-logos/bbc_world.png' },
-            // { channelName: 'Ananda TV', url: 'http://www.jagobd.com/anandatv', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/HRjXQdYEqsE.png' },
             { channelName: 'Nagorik Tv', url: '"https://itpolly.iptv.digijadoo.net/live/nagorik_tv/chunks.m3u8', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/6ms91aehi2a.png' },
-            // { channelName: 'Mohona TV', url: 'http://www.jagobd.com/mohonatv', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/UU3a2v6E7Zs.png' },
             { channelName: 'Boishakhi TV', url: 'https://itpolly.iptv.digijadoo.net/live/boishakhi_tv/chunks.m3u8', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/20mgRCbFLz5.png' },
             { channelName: 'DBC News', url: 'https://itpolly.iptv.digijadoo.net/live/dbc_news/chunks.m3u8', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/6GxyIRO4P74.png' },
             { channelName: 'Asian TV', url: 'https://itpolly.iptv.digijadoo.net/live/asian_tv/chunks.m3u8', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/84xExHj3DJ8.png' },
-            // { channelName: 'Ruposhi Bangla', url: 'https://www.bioscopelive.com/en/channel/ruposhi-bangla', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/105QtNR46SH.png' },
-            // { channelName: 'ATN Islamic TV', url: 'http://www.jagobd.com/atnislamictv', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/DJcpP2t4Mdp.png' },
-            // { channelName: 'Sangsad Bangla', url: 'http://www.jagobd.com/songsadtv', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/So3Og8HY4uN.png' },
             { channelName: 'Al Jazeera', url: 'https://www.aljazeera.com/live/', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/0iLtx9H8sr5.png' },
             { channelName: 'Channel 24', url: 'https://itpolly.iptv.digijadoo.net/live/channel_24/chunks.m3u8', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4BJaziwAkuVDBZRuNBuArfKqzINnznF863p6bFp48ynoUoa4L' },
             { channelName: 'Channeli', url: 'https://itpolly.iptv.digijadoo.net/live/channel_i/chunks.m3u8', logo: 'https://dxtm6s46jarcs.cloudfront.net/wp-content/uploads/2015/03/channel-i-logo.jpg' },
             { channelName: 'RTV', url: 'https://itpolly.iptv.digijadoo.net/live/rtv/playlist.m3u8', logo: 'https://www.rtvbd.tv/templates/rtv/img/logo.png' },
             { channelName: 'NTV', url: 'https://itpolly.iptv.digijadoo.net/live/ntv/chunks.m3u8', logo: 'https://www.trzcacak.rs/myfile/detail/354-3547607_ntv-logo-bangladesh-tv-channel.png' },
             { channelName: 'GTV', url: 'https://itpolly.iptv.digijadoo.net/live/gazi_tv/chunks.m3u8', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsHS9VSC-V5QnK9mbSn0mjZUYxp1QGMAAAY9jc0itHn1dMWZNk' },
-            // { channelName: 'NEWS24 TV', url: 'http://www.jagobd.com/news24tv', logo: 'http://www.southafricanews24.net/wp-content/uploads/news24.png' },
-            // { channelName: 'Peace TV', url: 'http://peacetvnetwork.visionip.tv/live/62424', logo: 'http://www.desifree.tv/wp-content/uploads/peace-tv.jpg' },
             { channelName: 'Peace TV', url: 'http://peacetv.ashttp22.visionip.tv/live/peacetv-peacetv-peacetv-bangla-hsslive-25f-16x9-SDh/chunklist.m3u8', logo: 'http://www.desifree.tv/wp-content/uploads/peace-tv.jpg' },
             { channelName: 'Gaan Bangla', url: 'https://itpolly.iptv.digijadoo.net/live/gaan_bangla/chunks.m3u8', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/um9o21i3T1E.png' },
         ];
+        this.tvChannelsOutsideBD = [
+            { channelName: 'BTV World', url: 'http://www.jagobd.com/btvworld', logo: 'https://i2.wp.com/tvbd.live/wp-content/uploads/2016/11/btv-world.png?fit=400%2C225' },
+            { channelName: 'Jamuna TV', url: 'http://www.jagobd.com/jamunatv', logo: 'http://www.deshibiz.com/img/media/post/1463733058_jamunatv6.jpg' },
+            { channelName: 'Somoy News', url: 'http://www.jagobd.com/somoynews', logo: 'https://www.freeetv.com/images/03_logo/Somoy_News_Bangladesh.jpg' },
+            { channelName: 'Ekattur TV', url: 'http://www.jagobd.com/ekattortv', logo: '../../../assets/img/tv-logos/ekattor-tv.png' },
+            { channelName: 'Independent TV', url: 'http://www.jagobd.com/independent', logo: '../../../assets/img/tv-logos/independent-tv-logo.png' },
+            { channelName: 'ATN Bangla', url: 'http://www.jagobd.com/atn-bangla', logo: '../../../assets/img/tv-logos/atn-bangla-tv.png' },
+            { channelName: 'SA TV', url: 'http://www.jagobd.com/satv', logo: '../../../assets/img/tv-logos/satv.png' },
+            { channelName: 'ATN NEWS', url: 'http://www.jagobd.com/atnnews', logo: '../../../assets/img/tv-logos/Atn_news.png' },
+            { channelName: 'Ananda TV', url: 'http://www.jagobd.com/anandatv', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/HRjXQdYEqsE.png' },
+            { channelName: 'Mohona TV', url: 'http://www.jagobd.com/mohonatv', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/UU3a2v6E7Zs.png' },
+            { channelName: 'Boishakhi TV', url: 'http://www.jagobd.com/boishakhitv', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/20mgRCbFLz5.png' },
+            { channelName: 'DBC News', url: 'http://www.jagobd.com/dbcnews', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/6GxyIRO4P74.png' },
+            { channelName: 'ATN Islamic TV', url: 'http://www.jagobd.com/atnislamictv', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/DJcpP2t4Mdp.png' },
+            { channelName: 'Sangsad Bangla', url: 'http://www.jagobd.com/songsadtv', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/So3Og8HY4uN.png' },
+            { channelName: 'Al Jazeera', url: 'https://www.aljazeera.com/live/', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/0iLtx9H8sr5.png' },
+            { channelName: 'Channel 24', url: 'http://www.jagobd.com/channel24', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4BJaziwAkuVDBZRuNBuArfKqzINnznF863p6bFp48ynoUoa4L' },
+            { channelName: 'Channeli', url: 'http://www.jagobd.com/channeli', logo: 'https://dxtm6s46jarcs.cloudfront.net/wp-content/uploads/2015/03/channel-i-logo.jpg' },
+            { channelName: 'RTV', url: 'http://www.jagobd.com/rtv', logo: 'https://www.rtvbd.tv/templates/rtv/img/logo.png' },
+            { channelName: 'NEWS24 TV', url: 'http://www.jagobd.com/news24tv', logo: 'http://www.southafricanews24.net/wp-content/uploads/news24.png' },
+            { channelName: 'Peace TV', url: 'http://peacetvnetwork.visionip.tv/live/62424', logo: 'http://www.desifree.tv/wp-content/uploads/peace-tv.jpg' },
+            { channelName: 'Gaan Bangla', url: 'http://www.jagobd.com/gaanbangla', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/um9o21i3T1E.png' }
+        ];
         this.indiaChannel = [
-            // https://www.dsebd.org/images/logo.png
-            // https://www.dsebd.org/images/dse-name.jpg
             { channelName: 'ZEE TV', url: 'https://itpolly.iptv.digijadoo.net/live/zee_tv/chunks.m3u8', logo: 'http://zeelwebsite.s3.amazonaws.com/zeetele/wp-content/uploads/2017/09/zee_tv.jpg', alt: "ZEE TV" },
             { channelName: 'Zee Bangla', url: 'http://pockettv.xyz/api/zee.m3u8?c=zeebanglahd', logo: 'https://www.adgully.com/img/400/201810/zee-bangla-logo.jpg', alt: "Zee Bangla" },
             { channelName: 'Colors Bangla', url: 'https://itpolly.iptv.digijadoo.net/live/colors_bangla_hd/playlist.m3u8', logo: 'https://upload.wikimedia.org/wikipedia/en/8/85/Colors_Bangla_Logo.jpg', alt: "Colors Bangla" },
@@ -191,31 +230,44 @@ var LivetvPage = /** @class */ (function () {
             { channelName: 'HBO', url: 'https://u65464.cdn884.net:8443/hls/exyjs.m3u8?s=i7LvkMGAc2lu4c0zkhJZAw&e=1575927436', logo: 'https://tvseriesfinale.com/wp-content/uploads/2018/01/hbo_logo-590x332.jpg', alt: "HBO" },
         ];
         this.tv_newspapers = this.tvChannels;
+        this.appUpdate.checkAppUpdate(this.updateUrl).then(function (update) {
+            // alert(JSON.stringify(update)); 
+            if (update['code'] === 201) {
+                _this.showUpdateButton = 1;
+            }
+        });
     }
     LivetvPage.prototype.getUpdate = function () {
         ////////////////////////
         // alert("hola");
-        var updateUrl = 'https://raw.githubusercontent.com/livetvappbd/livetv-version/master/version.xml';
-        this.appUpdate.checkAppUpdate(updateUrl).then(function () { console.log('Update available'); });
+        // code:201, msg:"success, need update"
+        // code:202, msg:"success, up to update"
+        var _this = this;
+        this.appUpdate.checkAppUpdate(this.updateUrl).then(function (update) {
+            // alert(JSON.stringify(update)); 
+            _this.showUpdateButton = 0;
+        });
         ///////////////////////////
     };
-    LivetvPage.prototype.goToChannel = function (url) {
-        // if(!url.includes("https") && !url.includes("https")){
-        //   this.iab.create(url, '_system', 'location=no');
-        // }
-        // else{
+    LivetvPage.prototype.goToChannel = function (url, outside) {
         this.showInterstitial();
-        this.iab.create(url, '_self', 'location=no');
-        // }
-        // window['plugins'].webintent.startActivity({
-        //         action: window['plugins'].webintent.ACTION_VIEW,
-        //         url:  "googlechrome://navigate?url="+url
-        //     },
-        //     function() {},
-        //     function() {
-        //         alert('Failed to open URL via Android Intent.');
-        //       console.log("Failed to open URL via Android Intent.")
-        //     });    
+        if (!outside) {
+            if (url.includes("bioscopelive")) {
+                this.iab.create(url, '_system', 'location=no');
+            }
+            else {
+                this.iab.create(url, '_self', 'location=no');
+            }
+        }
+        else {
+            window['plugins'].webintent.startActivity({
+                action: window['plugins'].webintent.ACTION_VIEW,
+                url: "googlechrome://navigate?url=" + url
+            }, function () { }, function () {
+                alert('Failed to open URL via Android Intent.');
+                console.log("Failed to open URL via Android Intent.");
+            });
+        }
     };
     LivetvPage.prototype.segmentChanged = function (ev) {
         console.log('Segment changed', ev.detail.value);

@@ -17,7 +17,7 @@ export class LivetvPage implements OnInit {
 	// http://fomny.com/Video/USA/04/HBO/HBO.php
 	// http://cdn.crichd.to/embed2.php?id=sonysix
 	// http://crichd.ws/update/skys2.php
-
+  // https://www.youtube.com/watch?v=256XTt0pVuA
 	tvChannels: any = [];
 	tvChannelsOutsideBD: any = [];
 	indiaChannel: any = [];
@@ -25,7 +25,8 @@ export class LivetvPage implements OnInit {
 	tv_newspapers: any = [];
 
 	showSegment: number = 1;
-
+  updateUrl = 'https://raw.githubusercontent.com/livetvappbd/livetv-version/master/version.xml';
+  showUpdateButton:number=0;
 
 	constructor(private admob: AdmobFreeService,
 		private iab: InAppBrowser,
@@ -63,7 +64,7 @@ export class LivetvPage implements OnInit {
 			{ channelName: 'BTV World', url: 'https://itpolly.iptv.digijadoo.net/live/btv_world/chunks.m3u8', logo: 'https://i2.wp.com/tvbd.live/wp-content/uploads/2016/11/btv-world.png?fit=400%2C225' },
 			{ channelName: 'Jamuna TV', url: 'https://itpolly.iptv.digijadoo.net/live/jamuna_tv/chunks.m3u8', logo: 'http://www.deshibiz.com/img/media/post/1463733058_jamunatv6.jpg' },
 			{ channelName: 'Somoy News', url: 'https://itpolly.iptv.digijadoo.net/live/somoy_news/chunks.m3u8', logo: 'https://www.freeetv.com/images/03_logo/Somoy_News_Bangladesh.jpg' },
-			{ channelName: 'Ekattur TV', url: 'https://edge4.bioscopelive.com/hls/anonymous/IHK2Buk2_BFirPwELXlx0Q/1576012021/ekattur_tv.m3u8', logo: '../../../assets/img/tv-logos/ekattor-tv.png' },
+			{ channelName: 'Ekattur TV', url: 'https://itpolly.iptv.digijadoo.net/live/ekattor_tv/chunks.m3u8', logo: '../../../assets/img/tv-logos/ekattor-tv.png' },
 			{ channelName: 'Independent TV', url: 'https://itpolly.iptv.digijadoo.net/live/independent_tv/chunks.m3u8', logo: '../../../assets/img/tv-logos/independent-tv-logo.png' },
 			{ channelName: 'ATN Bangla', url: 'https://itpolly.iptv.digijadoo.net/live/atn_bangla/chunks.m3u8', logo: '../../../assets/img/tv-logos/atn-bangla-tv.png' },
 			{ channelName: 'CHANNEL 9 ', url: 'https://itpolly.iptv.digijadoo.net/live/channel_9/chunks.m3u8', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/Channel9_bd.svg/1280px-Channel9_bd.svg.png', alt: "CHANNEL 9 " },
@@ -78,7 +79,7 @@ export class LivetvPage implements OnInit {
 			{ channelName: 'Channeli', url: 'https://itpolly.iptv.digijadoo.net/live/channel_i/chunks.m3u8', logo: 'https://dxtm6s46jarcs.cloudfront.net/wp-content/uploads/2015/03/channel-i-logo.jpg' },
 			{ channelName: 'RTV', url: 'https://itpolly.iptv.digijadoo.net/live/rtv/playlist.m3u8', logo: 'https://www.rtvbd.tv/templates/rtv/img/logo.png' },
 			{ channelName: 'NTV', url: 'https://itpolly.iptv.digijadoo.net/live/ntv/chunks.m3u8', logo: 'https://www.trzcacak.rs/myfile/detail/354-3547607_ntv-logo-bangladesh-tv-channel.png' },
-			{ channelName: 'GTV', url: 'https://itpolly.iptv.digijadoo.net/live/gazi_tv/chunks.m3u8', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsHS9VSC-V5QnK9mbSn0mjZUYxp1QGMAAAY9jc0itHn1dMWZNk' },
+			{ channelName: 'GTV', url: 'http://icom.movply.stream/hls/gazi-tv_2.m3u8', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsHS9VSC-V5QnK9mbSn0mjZUYxp1QGMAAAY9jc0itHn1dMWZNk' },
 			{ channelName: 'Peace TV', url: 'http://peacetv.ashttp22.visionip.tv/live/peacetv-peacetv-peacetv-bangla-hsslive-25f-16x9-SDh/chunklist.m3u8', logo: 'http://www.desifree.tv/wp-content/uploads/peace-tv.jpg' },
 			{ channelName: 'Gaan Bangla', url: 'https://itpolly.iptv.digijadoo.net/live/gaan_bangla/chunks.m3u8', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/um9o21i3T1E.png' },
 		];
@@ -103,7 +104,8 @@ export class LivetvPage implements OnInit {
 			{ channelName: 'Channeli', url: 'http://www.jagobd.com/channeli', logo: 'https://dxtm6s46jarcs.cloudfront.net/wp-content/uploads/2015/03/channel-i-logo.jpg' },
 			{ channelName: 'RTV', url: 'http://www.jagobd.com/rtv', logo: 'https://www.rtvbd.tv/templates/rtv/img/logo.png' },
 			{ channelName: 'NEWS24 TV', url: 'http://www.jagobd.com/news24tv', logo: 'http://www.southafricanews24.net/wp-content/uploads/news24.png' },
-			{ channelName: 'Peace TV', url: 'http://peacetvnetwork.visionip.tv/live/62424', logo: 'http://www.desifree.tv/wp-content/uploads/peace-tv.jpg' },
+			{ channelName: 'GTV', url: 'http://icom.movply.stream/hls/gazi-tv_2.m3u8', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsHS9VSC-V5QnK9mbSn0mjZUYxp1QGMAAAY9jc0itHn1dMWZNk' },
+      { channelName: 'Peace TV', url: 'http://peacetvnetwork.visionip.tv/live/62424', logo: 'http://www.desifree.tv/wp-content/uploads/peace-tv.jpg' },
 			{ channelName: 'Gaan Bangla', url: 'http://www.jagobd.com/gaanbangla', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/um9o21i3T1E.png' }
 		];
 
@@ -149,13 +151,26 @@ export class LivetvPage implements OnInit {
 			{ channelName: 'HBO', url: 'https://u65464.cdn884.net:8443/hls/exyjs.m3u8?s=i7LvkMGAc2lu4c0zkhJZAw&e=1575927436', logo: 'https://tvseriesfinale.com/wp-content/uploads/2018/01/hbo_logo-590x332.jpg', alt: "HBO" },
 		];
 		this.tv_newspapers = this.tvChannels;
+    this.appUpdate.checkAppUpdate(this.updateUrl).then((update) => 
+    {
+        // alert(JSON.stringify(update)); 
+        if(update['code']===201){
+           this.showUpdateButton=1; 
+        }
+    });    
 	}
 
 	getUpdate() {
 		////////////////////////
 		// alert("hola");
-		const updateUrl = 'https://raw.githubusercontent.com/livetvappbd/livetv-version/master/version.xml';
-		this.appUpdate.checkAppUpdate(updateUrl).then(() => { console.log('Update available') });
+    // code:201, msg:"success, need update"
+    // code:202, msg:"success, up to update"
+		
+		this.appUpdate.checkAppUpdate(this.updateUrl).then((update) => 
+    {
+        // alert(JSON.stringify(update)); 
+        this.showUpdateButton=0;
+    });
 		///////////////////////////
 	}
 	goToChannel(url,outside) {
