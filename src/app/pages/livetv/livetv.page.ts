@@ -34,7 +34,7 @@ export class LivetvPage implements OnInit {
 		private appUpdate: AppUpdate,
 		private platform: Platform) {
 
-		platform.ready().then(() => {
+		this.platform.ready().then(() => {
 			this.admob.BannerAd();
 		});
 		// this.tvChannels = [
@@ -105,7 +105,7 @@ export class LivetvPage implements OnInit {
 			{ channelName: 'RTV', url: 'http://www.jagobd.com/rtv', logo: 'https://www.rtvbd.tv/templates/rtv/img/logo.png' },
 			{ channelName: 'NEWS24 TV', url: 'http://www.jagobd.com/news24tv', logo: 'http://www.southafricanews24.net/wp-content/uploads/news24.png' },
 			{ channelName: 'GTV', url: 'http://icom.movply.stream/hls/gazi-tv_2.m3u8', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsHS9VSC-V5QnK9mbSn0mjZUYxp1QGMAAAY9jc0itHn1dMWZNk' },
-      { channelName: 'Peace TV', url: 'http://peacetvnetwork.visionip.tv/live/62424', logo: 'http://www.desifree.tv/wp-content/uploads/peace-tv.jpg' },
+      		{ channelName: 'Peace TV', url: 'http://peacetvnetwork.visionip.tv/live/62424', logo: 'http://www.desifree.tv/wp-content/uploads/peace-tv.jpg' },
 			{ channelName: 'Gaan Bangla', url: 'http://www.jagobd.com/gaanbangla', logo: 'https://cdn.bioscopelive.com/upload/channels/sd/um9o21i3T1E.png' }
 		];
 

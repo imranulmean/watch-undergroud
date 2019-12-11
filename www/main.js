@@ -1192,7 +1192,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-app>\r\n  <ion-split-pane>\r\n\r\n    <ion-router-outlet main></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>"
+module.exports = "<ion-app>\n  <ion-split-pane>\n\n    <ion-router-outlet main></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>"
 
 /***/ }),
 
@@ -1671,7 +1671,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\NODEJS APP\Ionic4\watch-undergroud\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/ahayder/Work/watch-undergroud/src/main.ts */"./src/main.ts");
 
 
 /***/ })
