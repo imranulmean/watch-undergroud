@@ -26,62 +26,15 @@
 			</ion-col>
 		</ion-row>
 
-
-		<ion-row>
+		<ion-row *ngFor="let g of channelsGang">
 			<ion-col class="ion-no-padding">
 				<ion-text color="dark">
-					<h5 class="left-padding">বাংলাদেশী চ্যানেল:</h5>
+					<h5 class="left-padding">{{g.channelCategory}}:</h5>
 				</ion-text>
 				<div class="thumnails">
 					<div class="list-thumbnail">
-						<div class="img-thumb" *ngFor="let c of tvChannels" (click)="goToChannel(c.url)">
-							<img src="{{c.logo}}" class="tv-logo">
-						</div>
-					</div>
-				</div>
-			</ion-col>
-		</ion-row>
-
-
-		<ion-row>
-			<ion-col class="ion-no-padding">
-				<ion-text color="dark">
-					<h5 class="left-padding">বাংলাদেশী চ্যানেল:(প্রবাসীদের জন্য)</h5>
-				</ion-text>
-				<div class="thumnails">
-					<div class="list-thumbnail">
-						<div class="img-thumb" *ngFor="let c of tvChannelsOutsideBD"
-							(click)='goToChannel(c.url,"outside")'>
-							<img src="{{c.logo}}" class="tv-logo">
-						</div>
-					</div>
-				</div>
-			</ion-col>
-		</ion-row>
-
-		<ion-row>
-			<ion-col class="ion-no-padding">
-				<ion-text color="dark">
-					<h5 class="left-padding">ইন্ডিয়ান চ্যানেল:</h5>
-				</ion-text>
-				<div class="thumnails">
-					<div class="list-thumbnail">
-						<div class="img-thumb" *ngFor="let c of indiaChannel" (click)="goToChannel(c.url)">
-							<img src="{{c.logo}}" class="tv-logo">
-						</div>
-					</div>
-				</div>
-			</ion-col>
-		</ion-row>
-
-		<ion-row>
-			<ion-col class="ion-no-padding">
-				<ion-text color="dark">
-					<h5 class="left-padding">খেলার চ্যানেল:</h5>
-				</ion-text>
-				<div class="thumnails">
-					<div class="list-thumbnail">
-						<div class="img-thumb" *ngFor="let c of sportsChannel" (click)="goToChannel(c.url)">
+						<div class="img-thumb" *ngFor="let c of g.channels" 
+						(click)="goToChannel(c.url,g.outside)">
 							<img src="{{c.logo}}" class="tv-logo">
 						</div>
 					</div>

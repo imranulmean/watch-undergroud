@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase:{
+ 	apiKey: "AIzaSyDnCHlYLChbJX13qTEkIZR90yd0E2gtPeM",
+    authDomain: "live-tv-channels-ffd06.firebaseapp.com",
+    databaseURL: "https://live-tv-channels-ffd06.firebaseio.com",
+    projectId: "live-tv-channels-ffd06",
+    storageBucket: "live-tv-channels-ffd06.appspot.com",
+    messagingSenderId: "505374819705",
+    appId: "1:505374819705:web:6a38a0f9d4ca1d50fb1ba8"	
+  } 
 };
 
 /*

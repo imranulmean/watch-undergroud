@@ -24,11 +24,22 @@ import { AdmobFreeService } from './services/admobfree.service';
 import { OpenNativeSettings } from '@ionic-native/open-native-settings/ngx';
 import { AppUpdate } from '@ionic-native/app-update/ngx';
 
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [AppComponent, MomentPipe],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,IonicSwipeAllModule],
+  imports: [
+              BrowserModule, 
+              IonicModule.forRoot(), 
+              AppRoutingModule,
+              HttpClientModule,
+              IonicSwipeAllModule,
+              AngularFireModule.initializeApp(environment.firebase),
+              AngularFirestoreModule,
+           ],
   providers: [
     StatusBar,
     SplashScreen,
