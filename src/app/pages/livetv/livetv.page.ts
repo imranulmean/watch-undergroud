@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { AppUpdate } from '@ionic-native/app-update/ngx';
 import { AdmobFreeService } from 'src/app/services/admobfree.service';
 import { Platform } from '@ionic/angular';
-
+import { LoadingController } from '@ionic/angular';
 import { Channel, AllChannelService } from '../../services/all-channel.service';
 
 @Component({
@@ -38,24 +38,39 @@ export class LivetvPage implements OnInit {
 		private httpClient: HttpClient,
 		private appUpdate: AppUpdate,
 		private platform: Platform,
-		private channelService: AllChannelService) {
+		private channelService: AllChannelService,
+    	public loadingController: LoadingController) {
 
 		this.platform.ready().then(() => {
 			this.admob.BannerAd();
 		});
-	    this.channelService.getChannels().subscribe(res => {
-	      this.channelsGang = res;
-	      console.log(this.channelsGang);
-	    });
-		
-    this.appUpdate.checkAppUpdate(this.updateUrl).then((update) => 
-    	{
-	        // alert(JSON.stringify(update)); 
-	        if(update['code']===201){
-           		this.showUpdateButton=1; 
-        }
-      });    
+
+		this.showAutoHideLoader();	
+	    this.appUpdate.checkAppUpdate(this.updateUrl).then((update) => 
+	    	{
+		        // alert(JSON.stringify(update)); 
+		        if(update['code']===201){
+	           		this.showUpdateButton=1; 
+	        }
+	      });    
 	}
+
+	  showAutoHideLoader() {
+	    this.loadingController.create({
+	      spinner: 'crescent',
+	      cssClass: 'loader',
+	      // duration: 1000
+	    }).then((res) => {
+			res.present();
+			this.channelService.getChannels().subscribe(res => {
+				this.channelsGang = res;
+				this.loadingController.dismiss();
+				console.log(this.channelsGang);
+			});	      
+			res.onDidDismiss().then((dis) => {
+			});
+	    });
+	  }	
 
 	getUpdate() {
 		////////////////////////
