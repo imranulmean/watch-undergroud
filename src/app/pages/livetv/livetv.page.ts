@@ -88,46 +88,40 @@ export class LivetvPage implements OnInit {
 	          });       
 	    }
 	}
-	
-	segmentChanged(ev: any) {
-		console.log('Segment changed', ev.detail.value);
-		this.showSegment = ev.detail.value;
-		this.showSegment == 1 ? document.getElementById("ionContentLive").style.setProperty('--background', '#f1f1f1') : document.getElementById("ionContentLive").style.setProperty('--background', '#ffffff');
-		this.goToSegment();
-	}
 
-	goToSegment() {
-		if (this.showSegment == 1) {
-			this.tv_newspapers = this.tvChannels;
-		}
-		else if (this.showSegment == 2) {
-			this.tv_newspapers = this.indiaChannel;
-		}
-		else if (this.showSegment == 3) {
-			this.tv_newspapers = this.sportsChannel;
-		}
-		let nextButtonNumber: number = this.showSegment;
-		document.getElementById(String(nextButtonNumber)).click();
-		let buttonWidth = document.getElementById(String(nextButtonNumber)).offsetWidth;
-		document.getElementById('segment').scrollLeft = nextButtonNumber * buttonWidth - buttonWidth;
-	}
-	swipeLeftPress($event) {
-		this.showSegment = Number(this.showSegment) + 1;
-		// if(this.showSegment>2) {
-		//  this.showSegment=1;
-		// }
-		this.goToSegment();
+	// segmentChanged(ev: any) {
+	// 	console.log('Segment changed', ev.detail.value);
+	// 	this.showSegment = ev.detail.value;
+	// 	this.showSegment == 1 ? document.getElementById("ionContentLive").style.setProperty('--background', '#f1f1f1') : document.getElementById("ionContentLive").style.setProperty('--background', '#ffffff');
+	// 	this.goToSegment();
+	// }
 
-	}
+	// goToSegment() {
+	// 	if (this.showSegment == 1) {
+	// 		this.tv_newspapers = this.tvChannels;
+	// 	}
+	// 	else if (this.showSegment == 2) {
+	// 		this.tv_newspapers = this.indiaChannel;
+	// 	}
+	// 	else if (this.showSegment == 3) {
+	// 		this.tv_newspapers = this.sportsChannel;
+	// 	}
+	// 	let nextButtonNumber: number = this.showSegment;
+	// 	document.getElementById(String(nextButtonNumber)).click();
+	// 	let buttonWidth = document.getElementById(String(nextButtonNumber)).offsetWidth;
+	// 	document.getElementById('segment').scrollLeft = nextButtonNumber * buttonWidth - buttonWidth;
+	// }
+	// swipeLeftPress($event) {
+	// 	this.showSegment = Number(this.showSegment) + 1;
+	// 	this.goToSegment();
+
+	// }
 
 
-	swipeRightPress($event) {
-		this.showSegment = Number(this.showSegment) - 1;
-		// if(this.showSegment<1) {
-		//  this.showSegment=2;
-		// }
-		this.goToSegment();
-	}
+	// swipeRightPress($event) {
+	// 	this.showSegment = Number(this.showSegment) - 1;
+	// 	this.goToSegment();
+	// }
 
 	ngOnInit() {
 
