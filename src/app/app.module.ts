@@ -27,7 +27,8 @@ import { AppUpdate } from '@ionic-native/app-update/ngx';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-
+import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
+import { ExampleModalPageModule } from './pages/example-modal/example-modal.module';
 @NgModule({
   declarations: [AppComponent, MomentPipe],
   entryComponents: [],
@@ -38,7 +39,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
               HttpClientModule,
               IonicSwipeAllModule,
               AngularFireModule.initializeApp(environment.firebase),
-              AngularFirestoreModule,
+              AngularFirestoreModule,ExampleModalPageModule
            ],
   providers: [
     StatusBar,
@@ -52,7 +53,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     OneSignal,
     Toast,
     OpenNativeSettings,
-    AppUpdate
+    AppUpdate,StreamingMedia
   ],
   bootstrap: [AppComponent]
 })

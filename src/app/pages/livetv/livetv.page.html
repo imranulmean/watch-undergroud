@@ -18,13 +18,23 @@
 	<ion-grid class="ion-no-padding">
 
 		<ion-row class="ion-no-padding">
-			<ion-col class="ion-no-padding" size-xs="5" offset-xs="3.5" size-sm="3" offset-sm="4.5" size-md="2"
-				offset-md="5" size-lg="2" offset-lg="5" size-xl="1" offset-xl="5.5">
-				<ion-card (click)="goToChannel('http://icom.movply.stream/hls/gazi-tv_2.m3u8')">
-					<img height="70" src="../../../assets/icon/BPLOfficialLogo.png" />
-				</ion-card>
+			<ion-col class="ion-no-padding">
+				<div class="thumnails">
+					<div class="list-thumbnail">
+						<div class="img-thumb" *ngFor="let c of featuredGang"  (click)="openModal(c)">
+							<img src="{{c.featuredLogo}}" class="tv-logo">
+						</div>
+					</div>
+				</div>
 			</ion-col>
 		</ion-row>
+<!-- 		<ion-row class="ion-no-padding">
+			<ion-col *ngFor="let f of featuredGang" size="6">
+				<ion-card (click)=openModal(f)>
+					<img height="70" src="{{f.featuredLogo}}" />
+				</ion-card>
+			</ion-col>
+		</ion-row> -->
 
 		<ion-row *ngFor="let g of channelsGang">
 			<ion-col class="ion-no-padding">
@@ -34,7 +44,7 @@
 				<div class="thumnails">
 					<div class="list-thumbnail">
 						<div class="img-thumb" *ngFor="let c of g.channels" 
-						(click)="goToChannel(c.url,g.outside)">
+						(click)="goToChannel(c.url,g.outside,c.videoPlayer)">
 							<img src="{{c.logo}}" class="tv-logo">
 						</div>
 					</div>

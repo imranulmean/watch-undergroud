@@ -58,7 +58,7 @@ var LivetvPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\r\n\t<ion-toolbar color=\"dark\">\r\n\t\t<ion-buttons slot=\"start\">\r\n\t\t\t<ion-button>\r\n\t\t\t\t<img height=\"30\" src=\"../../../assets/icon/icon.png\" />\r\n\t\t\t</ion-button>\r\n\t\t</ion-buttons>\r\n\t\t<ion-title>আমাদের টিভি</ion-title>\r\n\t</ion-toolbar>\r\n\t<ion-toolbar id=\"segment\" *ngIf=\"showUpdateButton==1\">\r\n\t\t<ion-button color=\"danger\" expand=\"full\" (click)=getUpdate()>এখনই আপডেট করুন</ion-button>\r\n\t</ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content class=\"ion-no-padding\">\r\n\r\n\r\n\t<ion-grid class=\"ion-no-padding\">\r\n\r\n\t\t<ion-row class=\"ion-no-padding\">\r\n\t\t\t<ion-col class=\"ion-no-padding\" size-xs=\"5\" offset-xs=\"3.5\" size-sm=\"3\" offset-sm=\"4.5\" size-md=\"2\"\r\n\t\t\t\toffset-md=\"5\" size-lg=\"2\" offset-lg=\"5\" size-xl=\"1\" offset-xl=\"5.5\">\r\n\t\t\t\t<ion-card (click)=\"goToChannel('http://icom.movply.stream/hls/gazi-tv_2.m3u8')\">\r\n\t\t\t\t\t<img height=\"70\" src=\"../../../assets/icon/BPLOfficialLogo.png\" />\r\n\t\t\t\t</ion-card>\r\n\t\t\t</ion-col>\r\n\t\t</ion-row>\r\n\r\n\t\t<ion-row *ngFor=\"let g of channelsGang\">\r\n\t\t\t<ion-col class=\"ion-no-padding\">\r\n\t\t\t\t<ion-text color=\"dark\">\r\n\t\t\t\t\t<h5 class=\"left-padding\">{{g.channelCategory}}:</h5>\r\n\t\t\t\t</ion-text>\r\n\t\t\t\t<div class=\"thumnails\">\r\n\t\t\t\t\t<div class=\"list-thumbnail\">\r\n\t\t\t\t\t\t<div class=\"img-thumb\" *ngFor=\"let c of g.channels\" \r\n\t\t\t\t\t\t(click)=\"goToChannel(c.url,g.outside)\">\r\n\t\t\t\t\t\t\t<img src=\"{{c.logo}}\" class=\"tv-logo\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</ion-col>\r\n\t\t</ion-row>\r\n\t</ion-grid>\r\n\r\n</ion-content>"
+module.exports = "<ion-header>\r\n\t<ion-toolbar color=\"dark\">\r\n\t\t<ion-buttons slot=\"start\">\r\n\t\t\t<ion-button>\r\n\t\t\t\t<img height=\"30\" src=\"../../../assets/icon/icon.png\" />\r\n\t\t\t</ion-button>\r\n\t\t</ion-buttons>\r\n\t\t<ion-title>আমাদের টিভি</ion-title>\r\n\t</ion-toolbar>\r\n\t<ion-toolbar id=\"segment\" *ngIf=\"showUpdateButton==1\">\r\n\t\t<ion-button color=\"danger\" expand=\"full\" (click)=getUpdate()>এখনই আপডেট করুন</ion-button>\r\n\t</ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content class=\"ion-no-padding\">\r\n\r\n\r\n\t<ion-grid class=\"ion-no-padding\">\r\n\r\n\t\t<ion-row class=\"ion-no-padding\">\r\n\t\t\t<ion-col class=\"ion-no-padding\">\r\n\t\t\t\t<div class=\"thumnails\">\r\n\t\t\t\t\t<div class=\"list-thumbnail\">\r\n\t\t\t\t\t\t<div class=\"img-thumb\" *ngFor=\"let c of featuredGang\"  (click)=\"openModal(c)\">\r\n\t\t\t\t\t\t\t<img src=\"{{c.featuredLogo}}\" class=\"tv-logo\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</ion-col>\r\n\t\t</ion-row>\r\n<!-- \t\t<ion-row class=\"ion-no-padding\">\r\n\t\t\t<ion-col *ngFor=\"let f of featuredGang\" size=\"6\">\r\n\t\t\t\t<ion-card (click)=openModal(f)>\r\n\t\t\t\t\t<img height=\"70\" src=\"{{f.featuredLogo}}\" />\r\n\t\t\t\t</ion-card>\r\n\t\t\t</ion-col>\r\n\t\t</ion-row> -->\r\n\r\n\t\t<ion-row *ngFor=\"let g of channelsGang\">\r\n\t\t\t<ion-col class=\"ion-no-padding\">\r\n\t\t\t\t<ion-text color=\"dark\">\r\n\t\t\t\t\t<h5 class=\"left-padding\">{{g.channelCategory}}:</h5>\r\n\t\t\t\t</ion-text>\r\n\t\t\t\t<div class=\"thumnails\">\r\n\t\t\t\t\t<div class=\"list-thumbnail\">\r\n\t\t\t\t\t\t<div class=\"img-thumb\" *ngFor=\"let c of g.channels\" \r\n\t\t\t\t\t\t(click)=\"goToChannel(c.url,g.outside,c.videoPlayer)\">\r\n\t\t\t\t\t\t\t<img src=\"{{c.logo}}\" class=\"tv-logo\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</ion-col>\r\n\t\t</ion-row>\r\n\t</ion-grid>\r\n\r\n</ion-content>"
 
 /***/ }),
 
@@ -91,6 +91,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_services_admobfree_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/admobfree.service */ "./src/app/services/admobfree.service.ts");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _services_all_channel_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../services/all-channel.service */ "./src/app/services/all-channel.service.ts");
+/* harmony import */ var _ionic_native_streaming_media_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic-native/streaming-media/ngx */ "./node_modules/@ionic-native/streaming-media/ngx/index.js");
+/* harmony import */ var _example_modal_example_modal_page__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../example-modal/example-modal.page */ "./src/app/pages/example-modal/example-modal.page.ts");
+
+
+
 
 
 
@@ -101,7 +106,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var LivetvPage = /** @class */ (function () {
-    function LivetvPage(admob, iab, httpClient, appUpdate, platform, channelService, loadingController) {
+    function LivetvPage(admob, iab, httpClient, appUpdate, platform, channelService, loadingController, streamingMedia, modalController) {
         var _this = this;
         this.admob = admob;
         this.iab = iab;
@@ -110,6 +115,8 @@ var LivetvPage = /** @class */ (function () {
         this.platform = platform;
         this.channelService = channelService;
         this.loadingController = loadingController;
+        this.streamingMedia = streamingMedia;
+        this.modalController = modalController;
         // http://tv.bdixsports.com/
         // http://fomny.com/Video/USA/04/HBO/HBO.php
         // http://cdn.crichd.to/embed2.php?id=sonysix
@@ -120,6 +127,9 @@ var LivetvPage = /** @class */ (function () {
         //Sony Six:http://free.crichd.online/embed2.php?id=sonysix
         // PTV Sports:http://crichd.ws/update/ptv.php  
         // { channelName: 'SONY SAB', url: 'http://216.144.250.174/S0ny_Sab_HD/playlist.m3u8', logo: 'https://image3.mouthshut.com/images/imagesp/925002091s.jpeg'},
+        // 		channelName: "Server 4"
+        // url: "http://www.freecast123.com/cricsp.php?player=desktop&live=bbtsp3&vw=100%&vh=1000"
+        // videoPlayer: "n"
         this.showSegment = 1;
         this.updateUrl = 'https://raw.githubusercontent.com/livetvappbd/livetv-version/master/version.xml';
         this.showUpdateButton = 0;
@@ -134,6 +144,28 @@ var LivetvPage = /** @class */ (function () {
             }
         });
     }
+    LivetvPage.prototype.openModal = function (featureObject) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var modal;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.showInterstitial();
+                        return [4 /*yield*/, this.modalController.create({
+                                component: _example_modal_example_modal_page__WEBPACK_IMPORTED_MODULE_9__["ExampleModalPage"],
+                                componentProps: {
+                                    "featureObject": featureObject
+                                }
+                            })];
+                    case 1:
+                        modal = _a.sent();
+                        modal.onDidDismiss().then(function (dataReturned) { });
+                        return [4 /*yield*/, modal.present()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
     LivetvPage.prototype.showAutoHideLoader = function () {
         var _this = this;
         this.loadingController.create({
@@ -146,9 +178,18 @@ var LivetvPage = /** @class */ (function () {
                 _this.loadingController.dismiss();
                 console.log(_this.channelsGang);
             });
+            _this.channelService.getFeaturedGames().subscribe(function (res) {
+                _this.featuredGang = res;
+                //this.loadingController.dismiss();
+                console.log(_this.featuredGang);
+            });
             res.onDidDismiss().then(function (dis) {
             });
         });
+    };
+    LivetvPage.prototype.goToChannel = function (url, outside, insidePlayer) {
+        this.showInterstitial();
+        this.channelService.goToChannel(url, outside, insidePlayer);
     };
     LivetvPage.prototype.getUpdate = function () {
         ////////////////////////
@@ -162,50 +203,6 @@ var LivetvPage = /** @class */ (function () {
         });
         ///////////////////////////
     };
-    LivetvPage.prototype.goToChannel = function (url, outside) {
-        this.showInterstitial();
-        if (!outside) {
-            this.iab.create(url, '_self', 'location=no');
-        }
-        else {
-            window['plugins'].webintent.startActivity({
-                action: window['plugins'].webintent.ACTION_VIEW,
-                url: "googlechrome://navigate?url=" + url
-            }, function () { }, function () {
-                alert('Failed to open URL via Android Intent.');
-                console.log("Failed to open URL via Android Intent.");
-            });
-        }
-    };
-    // segmentChanged(ev: any) {
-    // 	console.log('Segment changed', ev.detail.value);
-    // 	this.showSegment = ev.detail.value;
-    // 	this.showSegment == 1 ? document.getElementById("ionContentLive").style.setProperty('--background', '#f1f1f1') : document.getElementById("ionContentLive").style.setProperty('--background', '#ffffff');
-    // 	this.goToSegment();
-    // }
-    // goToSegment() {
-    // 	if (this.showSegment == 1) {
-    // 		this.tv_newspapers = this.tvChannels;
-    // 	}
-    // 	else if (this.showSegment == 2) {
-    // 		this.tv_newspapers = this.indiaChannel;
-    // 	}
-    // 	else if (this.showSegment == 3) {
-    // 		this.tv_newspapers = this.sportsChannel;
-    // 	}
-    // 	let nextButtonNumber: number = this.showSegment;
-    // 	document.getElementById(String(nextButtonNumber)).click();
-    // 	let buttonWidth = document.getElementById(String(nextButtonNumber)).offsetWidth;
-    // 	document.getElementById('segment').scrollLeft = nextButtonNumber * buttonWidth - buttonWidth;
-    // }
-    // swipeLeftPress($event) {
-    // 	this.showSegment = Number(this.showSegment) + 1;
-    // 	this.goToSegment();
-    // }
-    // swipeRightPress($event) {
-    // 	this.showSegment = Number(this.showSegment) - 1;
-    // 	this.goToSegment();
-    // }
     LivetvPage.prototype.ngOnInit = function () {
     };
     LivetvPage.prototype.showInterstitial = function () {
@@ -223,55 +220,10 @@ var LivetvPage = /** @class */ (function () {
             _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_4__["AppUpdate"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["Platform"],
             _services_all_channel_service__WEBPACK_IMPORTED_MODULE_7__["AllChannelService"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["LoadingController"]])
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["LoadingController"],
+            _ionic_native_streaming_media_ngx__WEBPACK_IMPORTED_MODULE_8__["StreamingMedia"], _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ModalController"]])
     ], LivetvPage);
     return LivetvPage;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/services/all-channel.service.ts":
-/*!*************************************************!*\
-  !*** ./src/app/services/all-channel.service.ts ***!
-  \*************************************************/
-/*! exports provided: AllChannelService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AllChannelService", function() { return AllChannelService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
-/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-
-
-
-
-var AllChannelService = /** @class */ (function () {
-    function AllChannelService(db) {
-        this.channelCollection = db.collection('allChannels');
-        this.channels = this.channelCollection.snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (actions) {
-            return actions.map(function (a) {
-                var data = a.payload.doc.data();
-                var id = a.payload.doc.id;
-                return tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({ id: id }, data);
-            });
-        }));
-    }
-    AllChannelService.prototype.getChannels = function () {
-        return this.channels;
-    };
-    AllChannelService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-            providedIn: 'root'
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"]])
-    ], AllChannelService);
-    return AllChannelService;
 }());
 
 

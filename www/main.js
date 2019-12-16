@@ -1120,6 +1120,9 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./pages/example-modal/example-modal.module": [
+		"./src/app/pages/example-modal/example-modal.module.ts"
+	],
 	"./pages/livetv/livetv.module": [
 		"./src/app/pages/livetv/livetv.module.ts",
 		"pages-livetv-livetv-module"
@@ -1134,7 +1137,7 @@ function webpackAsyncContext(req) {
 			throw e;
 		});
 	}
-	return __webpack_require__.e(ids[1]).then(function() {
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
 		var id = ids[0];
 		return __webpack_require__(id);
 	});
@@ -1166,6 +1169,7 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [
     { path: '', redirectTo: 'livetv', pathMatch: 'full' },
     { path: 'livetv', loadChildren: './pages/livetv/livetv.module#LivetvPageModule' },
+    { path: 'example-modal', loadChildren: './pages/example-modal/example-modal.module#ExampleModalPageModule' },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -1418,6 +1422,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
 /* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(angularfire2_firestore__WEBPACK_IMPORTED_MODULE_23__);
+/* harmony import */ var _ionic_native_streaming_media_ngx__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @ionic-native/streaming-media/ngx */ "./node_modules/@ionic-native/streaming-media/ngx/index.js");
+/* harmony import */ var _pages_example_modal_example_modal_module__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./pages/example-modal/example-modal.module */ "./src/app/pages/example-modal/example-modal.module.ts");
+
+
 
 
 
@@ -1456,7 +1464,7 @@ var AppModule = /** @class */ (function () {
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_11__["HttpClientModule"],
                 ionic_swipe_all__WEBPACK_IMPORTED_MODULE_15__["IonicSwipeAllModule"],
                 angularfire2__WEBPACK_IMPORTED_MODULE_21__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_22__["environment"].firebase),
-                angularfire2_firestore__WEBPACK_IMPORTED_MODULE_23__["AngularFirestoreModule"],
+                angularfire2_firestore__WEBPACK_IMPORTED_MODULE_23__["AngularFirestoreModule"], _pages_example_modal_example_modal_module__WEBPACK_IMPORTED_MODULE_25__["ExampleModalPageModule"]
             ],
             providers: [
                 _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
@@ -1470,7 +1478,7 @@ var AppModule = /** @class */ (function () {
                 _ionic_native_onesignal_ngx__WEBPACK_IMPORTED_MODULE_16__["OneSignal"],
                 _ionic_native_toast_ngx__WEBPACK_IMPORTED_MODULE_7__["Toast"],
                 _ionic_native_open_native_settings_ngx__WEBPACK_IMPORTED_MODULE_19__["OpenNativeSettings"],
-                _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_20__["AppUpdate"]
+                _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_20__["AppUpdate"], _ionic_native_streaming_media_ngx__WEBPACK_IMPORTED_MODULE_24__["StreamingMedia"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
         })
@@ -1511,6 +1519,140 @@ var MomentPipe = /** @class */ (function () {
         })
     ], MomentPipe);
     return MomentPipe;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/example-modal/example-modal.module.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/pages/example-modal/example-modal.module.ts ***!
+  \*************************************************************/
+/*! exports provided: ExampleModalPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExampleModalPageModule", function() { return ExampleModalPageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _example_modal_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./example-modal.page */ "./src/app/pages/example-modal/example-modal.page.ts");
+
+
+
+
+
+
+
+var routes = [
+    {
+        path: '',
+        component: _example_modal_page__WEBPACK_IMPORTED_MODULE_6__["ExampleModalPage"]
+    }
+];
+var ExampleModalPageModule = /** @class */ (function () {
+    function ExampleModalPageModule() {
+    }
+    ExampleModalPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+                _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes)
+            ],
+            declarations: [_example_modal_page__WEBPACK_IMPORTED_MODULE_6__["ExampleModalPage"]]
+        })
+    ], ExampleModalPageModule);
+    return ExampleModalPageModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/example-modal/example-modal.page.html":
+/*!*************************************************************!*\
+  !*** ./src/app/pages/example-modal/example-modal.page.html ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ion-header>\n  <ion-toolbar>\n\t<ion-buttons slot=\"start\">\n\t\t<ion-button>\n\t\t\t<img height=\"30\" src=\"{{featureObject.featuredLogo}}\" />\n\t\t</ion-button>\n\t</ion-buttons>  \n    <ion-title>{{featureObject.channelCategory}}</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\t<ion-button *ngFor=\"let c of featureObject.channels\"  (click)=\"goToChannel(c.url,c.outside,c.videoPlayer)\" color=\"dark\" expand=\"full\">{{c.channelName}}</ion-button>\n\t<ion-button color=\"danger\" (click)=\"closeModal()\">Close</ion-button>\n</ion-content>\n"
+
+/***/ }),
+
+/***/ "./src/app/pages/example-modal/example-modal.page.scss":
+/*!*************************************************************!*\
+  !*** ./src/app/pages/example-modal/example-modal.page.scss ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2V4YW1wbGUtbW9kYWwvZXhhbXBsZS1tb2RhbC5wYWdlLnNjc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/pages/example-modal/example-modal.page.ts":
+/*!***********************************************************!*\
+  !*** ./src/app/pages/example-modal/example-modal.page.ts ***!
+  \***********************************************************/
+/*! exports provided: ExampleModalPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExampleModalPage", function() { return ExampleModalPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _services_all_channel_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/all-channel.service */ "./src/app/services/all-channel.service.ts");
+
+
+
+
+var ExampleModalPage = /** @class */ (function () {
+    function ExampleModalPage(modalController, navParams, channelService) {
+        this.modalController = modalController;
+        this.navParams = navParams;
+        this.channelService = channelService;
+    }
+    ExampleModalPage.prototype.ngOnInit = function () {
+        this.featureObject = this.navParams.data.featureObject;
+    };
+    ExampleModalPage.prototype.goToChannel = function (url, outside, insidePlayer) {
+        this.channelService.goToChannel(url, outside, insidePlayer);
+    };
+    ExampleModalPage.prototype.closeModal = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var onClosedData;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        onClosedData = "Wrapped Up!";
+                        return [4 /*yield*/, this.modalController.dismiss(onClosedData)];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ExampleModalPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-example-modal',
+            template: __webpack_require__(/*! ./example-modal.page.html */ "./src/app/pages/example-modal/example-modal.page.html"),
+            styles: [__webpack_require__(/*! ./example-modal.page.scss */ "./src/app/pages/example-modal/example-modal.page.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavParams"], _services_all_channel_service__WEBPACK_IMPORTED_MODULE_3__["AllChannelService"]])
+    ], ExampleModalPage);
+    return ExampleModalPage;
 }());
 
 
@@ -1619,6 +1761,98 @@ var AdmobFreeService = /** @class */ (function () {
             _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"]])
     ], AdmobFreeService);
     return AdmobFreeService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/all-channel.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/services/all-channel.service.ts ***!
+  \*************************************************/
+/*! exports provided: AllChannelService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AllChannelService", function() { return AllChannelService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angularfire2/firestore */ "./node_modules/angularfire2/firestore/index.js");
+/* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _ionic_native_streaming_media_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/streaming-media/ngx */ "./node_modules/@ionic-native/streaming-media/ngx/index.js");
+/* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/ngx/index.js");
+
+
+
+
+
+
+var AllChannelService = /** @class */ (function () {
+    function AllChannelService(db, streamingMedia, iab) {
+        this.streamingMedia = streamingMedia;
+        this.iab = iab;
+        this.channelCollection = db.collection('allChannels');
+        this.featuredGamesCollection = db.collection('Featured Games');
+        this.channels = this.channelCollection.snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (actions) {
+            return actions.map(function (a) {
+                var data = a.payload.doc.data();
+                var id = a.payload.doc.id;
+                return tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({ id: id }, data);
+            });
+        }));
+        this.featuredGames = this.featuredGamesCollection.snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (actions) {
+            return actions.map(function (a) {
+                var data = a.payload.doc.data();
+                var id = a.payload.doc.id;
+                return tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({ id: id }, data);
+            });
+        }));
+    }
+    AllChannelService.prototype.getChannels = function () {
+        return this.channels;
+    };
+    AllChannelService.prototype.getFeaturedGames = function () {
+        return this.featuredGames;
+    };
+    AllChannelService.prototype.goToChannel = function (url, outside, insidePlayer) {
+        console.log(url);
+        if (!outside) {
+            if (insidePlayer) {
+                this.iab.create(url, '_self', 'location=yes');
+            }
+            else {
+                var options = {
+                    successCallback: function () { console.log('Video played'); },
+                    errorCallback: function (e) { console.log('Error streaming'); },
+                    orientation: 'landscape',
+                    shouldAutoClose: true,
+                    controls: true
+                };
+                this.streamingMedia.playVideo(url, options);
+            }
+        }
+        else {
+            window['plugins'].webintent.startActivity({
+                action: window['plugins'].webintent.ACTION_VIEW,
+                url: "googlechrome://navigate?url=" + url
+            }, function () { }, function () {
+                alert('Failed to open URL via Android Intent.');
+                console.log("Failed to open URL via Android Intent.");
+            });
+        }
+    };
+    AllChannelService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"],
+            _ionic_native_streaming_media_ngx__WEBPACK_IMPORTED_MODULE_4__["StreamingMedia"],
+            _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_5__["InAppBrowser"]])
+    ], AllChannelService);
+    return AllChannelService;
 }());
 
 

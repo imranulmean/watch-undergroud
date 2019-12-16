@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+	<ion-buttons slot="start">
+		<ion-button>
+			<img height="30" src="{{featureObject.featuredLogo}}" />
+		</ion-button>
+	</ion-buttons>  
+    <ion-title>{{featureObject.channelCategory}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-button *ngFor="let c of featureObject.channels"  (click)="goToChannel(c.url,c.outside,c.videoPlayer)" color="dark" expand="full">{{c.channelName}}</ion-button>
+	<ion-button color="danger" (click)="closeModal()">Close</ion-button>
+</ion-content>

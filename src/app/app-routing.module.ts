@@ -3,7 +3,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'livetv', pathMatch: 'full' },
-  { path: 'livetv', loadChildren: './pages/livetv/livetv.module#LivetvPageModule' },
+  { path: 'livetv', loadChildren: './pages/livetv/livetv.module#LivetvPageModule' },  { path: 'example-modal', loadChildren: './pages/example-modal/example-modal.module#ExampleModalPageModule' },
+
+
+
+  
+
 ];
 
 @NgModule({
