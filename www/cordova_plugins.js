@@ -155,14 +155,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "OneSignal"
       ]
-    },
-    {
-      "id": "cordova-plugin-streaming-media.StreamingMedia",
-      "file": "plugins/cordova-plugin-streaming-media/www/StreamingMedia.js",
-      "pluginId": "cordova-plugin-streaming-media",
-      "clobbers": [
-        "streamingMedia"
-      ]
     }
   ];
   module.exports.metadata = {
@@ -184,7 +176,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-whitelist": "1.3.3",
     "cordova-plugin-x-toast": "2.7.2",
     "cordova-webintent": "2.0.0",
-    "onesignal-cordova-plugin": "2.7.0",
-    "cordova-plugin-streaming-media": "2.2.0"
+    "onesignal-cordova-plugin": "2.7.0"
   };
 });

@@ -1196,7 +1196,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-app>\r\n  <ion-split-pane>\r\n\r\n    <ion-router-outlet main></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>"
+module.exports = "<ion-app>\n  <ion-split-pane>\n\n    <ion-router-outlet main></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>"
 
 /***/ }),
 
@@ -1583,7 +1583,7 @@ var ExampleModalPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n\t<ion-buttons slot=\"start\">\n\t\t<ion-button>\n\t\t\t<img height=\"30\" src=\"{{featureObject.featuredLogo}}\" />\n\t\t</ion-button>\n\t</ion-buttons>  \n    <ion-title>{{featureObject.channelCategory}}</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\t<ion-button *ngFor=\"let c of featureObject.channels\"  (click)=\"goToChannel(c.url,c.outside,c.videoPlayer)\" color=\"dark\" expand=\"full\">{{c.channelName}}</ion-button>\n\t<ion-button color=\"danger\" (click)=\"closeModal()\">Close</ion-button>\n</ion-content>\n"
+module.exports = "<ion-header>\n\t<ion-toolbar color=\"dark\">\n\t\t<ion-buttons slot=\"start\">\n\t\t\t<ion-button>\n\t\t\t\t<img height=\"30\" src=\"{{featureObject.featuredLogo}}\" />\n\t\t\t</ion-button>\n\t\t</ion-buttons>\n\t\t<ion-title>{{featureObject.channelCategory}}</ion-title>\n\t</ion-toolbar>\n</ion-header>\n\n<ion-content class=\"ion-padding\">\n\t<ion-button color=\"light\" *ngFor=\"let c of featureObject.channels\"\n\t\t(click)=\"goToChannel(c.url,c.outside,c.videoPlayer)\" expand=\"full\">{{c.channelName}}</ion-button>\n\t<ion-button color=\"danger\" expand=\"block\" (click)=\"closeModal()\">\n\t\t<ion-icon slot=\"start\" name=\"close\"></ion-icon>Close\n\t</ion-button>\n</ion-content>"
 
 /***/ }),
 
@@ -1930,7 +1930,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\NODEJS APP\Ionic4\watch-undergroud\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/ahayder/Work/watch-undergroud/src/main.ts */"./src/main.ts");
 
 
 /***/ })
