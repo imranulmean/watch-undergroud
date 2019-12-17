@@ -2,7 +2,7 @@
   "_args": [
     [
       "cordova-plugin-globalization@1.11.0",
-      "D:\\NODEJS APP\\Ionic4\\watch-undergroud"
+      "/Users/ahayder/Work/watch-undergroud"
     ]
   ],
   "_from": "cordova-plugin-globalization@1.11.0",
@@ -26,7 +26,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-globalization/-/cordova-plugin-globalization-1.11.0.tgz",
   "_spec": "1.11.0",
-  "_where": "D:\\NODEJS APP\\Ionic4\\watch-undergroud",
+  "_where": "/Users/ahayder/Work/watch-undergroud",
   "author": {
     "name": "Apache Software Foundation"
   },

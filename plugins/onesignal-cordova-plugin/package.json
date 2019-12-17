@@ -1,27 +1,31 @@
 {
-  "_from": "onesignal-cordova-plugin",
+  "_args": [
+    [
+      "onesignal-cordova-plugin@2.7.0",
+      "/Users/ahayder/Work/watch-undergroud"
+    ]
+  ],
+  "_from": "onesignal-cordova-plugin@2.7.0",
   "_id": "onesignal-cordova-plugin@2.7.0",
   "_inBundle": false,
   "_integrity": "sha512-ZkvF9uus+WdX+9Nh2p0OlZ6gUJHqKI88IQz78wW1Dat0kPmQvi8bYFi+MI8LYTkg2IFza6W0IbVVkEw7ye58cw==",
   "_location": "/onesignal-cordova-plugin",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "onesignal-cordova-plugin",
+    "raw": "onesignal-cordova-plugin@2.7.0",
     "name": "onesignal-cordova-plugin",
     "escapedName": "onesignal-cordova-plugin",
-    "rawSpec": "",
+    "rawSpec": "2.7.0",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "2.7.0"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/onesignal-cordova-plugin/-/onesignal-cordova-plugin-2.7.0.tgz",
-  "_shasum": "53e368a66d56f453ee104a0dbb527ff155a55a24",
-  "_spec": "onesignal-cordova-plugin",
+  "_spec": "2.7.0",
   "_where": "/Users/ahayder/Work/watch-undergroud",
   "author": {
     "name": "Josh Kasten, Brad Hesse, Rodrigo Gomez-Palacio"
@@ -29,7 +33,6 @@
   "bugs": {
     "url": "https://github.com/onesignal/OneSignal-Cordova-SDK/issues"
   },
-  "bundleDependencies": false,
   "cordova": {
     "id": "onesignal-cordova-plugin",
     "platforms": [
@@ -40,7 +43,6 @@
     ]
   },
   "cordova_name": "OneSignal Push Notifications",
-  "deprecated": false,
   "description": "OneSignal is a high volume Push Notification service for mobile apps. In addition to basic notification delivery, OneSignal also provides tools to localize, target, schedule, and automate notifications that you send.",
   "engines": [
     {

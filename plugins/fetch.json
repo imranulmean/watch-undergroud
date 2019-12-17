@@ -1,20 +1,4 @@
 {
-  "cordova-plugin-app-update": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-app-update"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-appversion": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-appversion@1.0.0"
-    },
-    "is_top_level": false,
-    "variables": {}
-  },
   "cordova-plugin-whitelist": {
     "source": {
       "type": "registry",
@@ -53,7 +37,9 @@
       "id": "cordova-plugin-ionic-webview@^4.0.0"
     },
     "is_top_level": true,
-    "variables": {}
+    "variables": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+    }
   },
   "cordova-plugin-ionic-keyboard": {
     "source": {
@@ -111,6 +97,40 @@
     "is_top_level": true,
     "variables": {}
   },
+  "cordova-webintent": {
+    "source": {
+      "type": "registry",
+      "id": "github:cordova-misc/cordova-webintent"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-app-update": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-app-update@^2.0.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-appversion": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-appversion@1.0.0"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-admob-free": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-admob-free@^0.27.0"
+    },
+    "is_top_level": true,
+    "variables": {
+      "ADMOB_APP_ID": "ca-app-pub-2182088789443424~8251339978"
+    }
+  },
   "cordova-promise-polyfill": {
     "source": {
       "type": "registry",
@@ -127,44 +147,18 @@
     "is_top_level": false,
     "variables": {}
   },
-  "cordova-webintent": {
-    "source": {
-      "type": "registry",
-      "id": "github:cordova-misc/cordova-webintent"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-admob-free": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-admob-free"
-    },
-    "is_top_level": true,
-    "variables": {
-      "ADMOB_APP_ID": "ca-app-pub-2182088789443424~8251339978"
-    }
-  },
   "onesignal-cordova-plugin": {
     "source": {
       "type": "registry",
-      "id": "onesignal-cordova-plugin"
+      "id": "onesignal-cordova-plugin@^2.7.0"
     },
     "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-file": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-file@^6.0.0"
-    },
-    "is_top_level": false,
     "variables": {}
   },
   "cordova-plugin-streaming-media": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-streaming-media"
+      "id": "cordova-plugin-streaming-media@^2.2.0"
     },
     "is_top_level": true,
     "variables": {}

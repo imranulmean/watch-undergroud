@@ -1,27 +1,31 @@
 {
-  "_from": "cordova-admob-sdk@~0.24.1",
+  "_args": [
+    [
+      "cordova-admob-sdk@0.24.1",
+      "/Users/ahayder/Work/watch-undergroud"
+    ]
+  ],
+  "_from": "cordova-admob-sdk@0.24.1",
   "_id": "cordova-admob-sdk@0.24.1",
   "_inBundle": false,
   "_integrity": "sha512-gz9h9E/opydsq3nCB2vL40Miy7KG7gcmhkvY1WqiHb015PpaLr50pgmUNBKCTW3/J6Vn+xNcCHPRiJIZLUMX9Q==",
   "_location": "/cordova-admob-sdk",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "cordova-admob-sdk@~0.24.1",
+    "raw": "cordova-admob-sdk@0.24.1",
     "name": "cordova-admob-sdk",
     "escapedName": "cordova-admob-sdk",
-    "rawSpec": "~0.24.1",
+    "rawSpec": "0.24.1",
     "saveSpec": null,
-    "fetchSpec": "~0.24.1"
+    "fetchSpec": "0.24.1"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-admob-sdk/-/cordova-admob-sdk-0.24.1.tgz",
-  "_shasum": "bf2453d0254d02f4b48b8fe8a5fd4530ae4f1ef9",
-  "_spec": "cordova-admob-sdk@~0.24.1",
+  "_spec": "0.24.1",
   "_where": "/Users/ahayder/Work/watch-undergroud",
   "author": {
     "name": "Ratson"
@@ -29,7 +33,6 @@
   "bugs": {
     "url": "https://gitlab.com/ratson/cordova-admob-sdk/issues"
   },
-  "bundleDependencies": false,
   "cordova": {
     "id": "cordova-admob-sdk",
     "platforms": [
@@ -37,7 +40,6 @@
       "ios"
     ]
   },
-  "deprecated": false,
   "description": "Google AdMob SDK to Cordova.",
   "devDependencies": {
     "husky": "^1.3.1",

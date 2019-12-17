@@ -2,7 +2,7 @@
   "_args": [
     [
       "cordova-plugin-geolocation@4.0.2",
-      "D:\\NODEJS APP\\Ionic4\\watch-undergroud"
+      "/Users/ahayder/Work/watch-undergroud"
     ]
   ],
   "_from": "cordova-plugin-geolocation@4.0.2",
@@ -26,7 +26,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-geolocation/-/cordova-plugin-geolocation-4.0.2.tgz",
   "_spec": "4.0.2",
-  "_where": "D:\\NODEJS APP\\Ionic4\\watch-undergroud",
+  "_where": "/Users/ahayder/Work/watch-undergroud",
   "author": {
     "name": "Apache Software Foundation"
   },

@@ -1,35 +1,38 @@
 {
-  "_from": "cordova-plugin-streaming-media",
+  "_args": [
+    [
+      "cordova-plugin-streaming-media@2.2.0",
+      "/Users/ahayder/Work/watch-undergroud"
+    ]
+  ],
+  "_from": "cordova-plugin-streaming-media@2.2.0",
   "_id": "cordova-plugin-streaming-media@2.2.0",
   "_inBundle": false,
   "_integrity": "sha512-h+DduQmFDr5nEnBPvgavJkQY3RICt8Qd293kVFAQq2Lj8UjD2ul59ULIiLDgNU8V5iCrp38YA56loUy+SrwiHw==",
   "_location": "/cordova-plugin-streaming-media",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "cordova-plugin-streaming-media",
+    "raw": "cordova-plugin-streaming-media@2.2.0",
     "name": "cordova-plugin-streaming-media",
     "escapedName": "cordova-plugin-streaming-media",
-    "rawSpec": "",
+    "rawSpec": "2.2.0",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "2.2.0"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-streaming-media/-/cordova-plugin-streaming-media-2.2.0.tgz",
-  "_shasum": "4be4d0941b78b2cc6c989b13ad07f8b2004e9566",
-  "_spec": "cordova-plugin-streaming-media",
-  "_where": "D:\\NODEJS APP\\Ionic4\\watch-undergroud",
+  "_spec": "2.2.0",
+  "_where": "/Users/ahayder/Work/watch-undergroud",
   "author": {
     "name": "Nicholas Hutchind"
   },
   "bugs": {
     "url": "https://github.com/nchutchind/Streaming-Media-Cordova-Plugin/issues"
   },
-  "bundleDependencies": false,
   "contributors": [
     {
       "name": "Timothy Shamilov"
@@ -38,7 +41,6 @@
       "name": "Michael Robinson"
     }
   ],
-  "deprecated": false,
   "description": "This plugin allows you to stream audio and video in a fullscreen, native player on iOS and Android.",
   "homepage": "https://github.com/nchutchind/Streaming-Media-Cordova-Plugin#readme",
   "keywords": [

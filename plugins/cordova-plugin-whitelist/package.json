@@ -2,7 +2,7 @@
   "_args": [
     [
       "cordova-plugin-whitelist@1.3.3",
-      "D:\\NODEJS APP\\Ionic4\\watch-undergroud"
+      "/Users/ahayder/Work/watch-undergroud"
     ]
   ],
   "_from": "cordova-plugin-whitelist@1.3.3",
@@ -26,7 +26,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-whitelist/-/cordova-plugin-whitelist-1.3.3.tgz",
   "_spec": "1.3.3",
-  "_where": "D:\\NODEJS APP\\Ionic4\\watch-undergroud",
+  "_where": "/Users/ahayder/Work/watch-undergroud",
   "author": {
     "name": "Apache Software Foundation"
   },

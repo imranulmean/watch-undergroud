@@ -1821,7 +1821,7 @@ var AllChannelService = /** @class */ (function () {
         console.log(url);
         if (!outside) {
             if (insidePlayer) {
-                this.iab.create(url, '_self', 'location=yes');
+                this.iab.create(url, '_self', 'location=no');
             }
             else {
                 var options = {

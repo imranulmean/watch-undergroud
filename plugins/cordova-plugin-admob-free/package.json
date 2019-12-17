@@ -1,27 +1,31 @@
 {
-  "_from": "cordova-plugin-admob-free",
+  "_args": [
+    [
+      "cordova-plugin-admob-free@0.27.0",
+      "/Users/ahayder/Work/watch-undergroud"
+    ]
+  ],
+  "_from": "cordova-plugin-admob-free@0.27.0",
   "_id": "cordova-plugin-admob-free@0.27.0",
   "_inBundle": false,
   "_integrity": "sha512-4QP89i3maFivk2GN8uAfaPDjwSAwvfrxkJu6pV1+ZJbPSAlp1OhNeXUbXXK8VXNNkoEWqLFQ2TCU1c09ybdATQ==",
   "_location": "/cordova-plugin-admob-free",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "cordova-plugin-admob-free",
+    "raw": "cordova-plugin-admob-free@0.27.0",
     "name": "cordova-plugin-admob-free",
     "escapedName": "cordova-plugin-admob-free",
-    "rawSpec": "",
+    "rawSpec": "0.27.0",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "0.27.0"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-admob-free/-/cordova-plugin-admob-free-0.27.0.tgz",
-  "_shasum": "1f695043a2ef3545a9457bab624c196f02f32ec2",
-  "_spec": "cordova-plugin-admob-free",
+  "_spec": "0.27.0",
   "_where": "/Users/ahayder/Work/watch-undergroud",
   "author": {
     "name": "Ratson"
@@ -35,7 +39,6 @@
   "bugs": {
     "url": "https://github.com/ratson/cordova-plugin-admob-free/issues"
   },
-  "bundleDependencies": false,
   "cordova": {
     "id": "cordova-plugin-admob-free",
     "platforms": [
@@ -43,7 +46,6 @@
       "ios"
     ]
   },
-  "deprecated": false,
   "description": "Cordova AdMob Plugin for Google AdMob",
   "devDependencies": {
     "@babel/core": "^7.4.5",
