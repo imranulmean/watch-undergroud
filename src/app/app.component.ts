@@ -8,6 +8,7 @@ import { OneSignal } from '@ionic-native/onesignal/ngx';
 import { Location } from '@angular/common';
 import { NavController } from '@ionic/angular';
 import { AppUpdate } from '@ionic-native/app-update/ngx';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -42,7 +43,7 @@ export class AppComponent {
     private popoverCtrl: PopoverController,
     private actionSheetCtrl: ActionSheetController,
     private location: Location,
-    private navCtrl: NavController,private appUpdate: AppUpdate
+    private navCtrl: NavController,private appUpdate: AppUpdate,private screenOrientation: ScreenOrientation
   ) {
     this.initializeApp();
 
@@ -143,7 +144,7 @@ export class AppComponent {
   // active hardware back button
   backButtonEvent() {
     this.platform.backButton.subscribe(async () => {
-      this.openHome();
+      // this.openHome();
       // close action sheet
       // try {
       //     const element = await this.actionSheetCtrl.getTop();

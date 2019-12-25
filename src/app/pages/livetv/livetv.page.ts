@@ -9,6 +9,8 @@ import { Channel, AllChannelService } from '../../services/all-channel.service';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
 import { ModalController } from '@ionic/angular';
 import { ExampleModalPage } from '../example-modal/example-modal.page';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+import { Router } from '@angular/router';
 @Component({
 	selector: 'app-livetv',
 	templateUrl: './livetv.page.html',
@@ -30,6 +32,10 @@ export class LivetvPage implements OnInit {
 // 		channelName: "Server 4"
 // url: "http://www.freecast123.com/cricsp.php?player=desktop&live=bbtsp3&vw=100%&vh=1000"
 // videoPlayer: "n"
+
+// Cartoon Network:https://www.streamlive.to/view/76674/Cartoon%20Network%20(SD)
+// sony hd:http://216.144.250.174/Sony_TV_HD_02/playlist.m3u8 	
+// sony six:https://wicket.pw/watch-sony-six-live-hd-quality/
 	
 	showSegment: number = 1;
  	 updateUrl = 'https://raw.githubusercontent.com/livetvappbd/livetv-version/master/version.xml';
@@ -44,7 +50,9 @@ export class LivetvPage implements OnInit {
 		private platform: Platform,
 		private channelService: AllChannelService,
     	public loadingController: LoadingController,
-    	private streamingMedia: StreamingMedia,public modalController: ModalController
+    	private streamingMedia: StreamingMedia,
+    	public modalController: ModalController,
+    	private screenOrientation: ScreenOrientation,private router: Router
     	) {
 
 		this.platform.ready().then(() => {
@@ -59,10 +67,18 @@ export class LivetvPage implements OnInit {
 	           		this.showUpdateButton=1; 
 	        }
 	      });    
+		this.screenOrientation.unlock();	    
 	}
-
+	changeScreen(){
+		if(this.screenOrientation.type.includes("portrait")){
+			this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+		}
+		else{
+			 this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+		}
+	}	
 	 async openModal(featureObject) {
-	 	this.showInterstitial();
+	 	// this.showInterstitial();
 	    const modal = await this.modalController.create({
 	      component: ExampleModalPage,
 	      componentProps: {
@@ -100,9 +116,9 @@ export class LivetvPage implements OnInit {
 			});
 		}	
 
-	goToChannel(url,outside,insidePlayer) {
-			this.showInterstitial();
-			this.channelService.goToChannel(url,outside,insidePlayer);
+	goToChannel(url,outside,insidePlayer,streamingMedia) {
+			// this.showInterstitial();
+			this.channelService.goToChannel(url,outside,insidePlayer,streamingMedia);
 	}
 
 	getUpdate() {
@@ -122,9 +138,4 @@ export class LivetvPage implements OnInit {
 	ngOnInit() {
 
 	}
-
-	showInterstitial() {
-		this.admob.InterstitialAd();
-	}
-
 }

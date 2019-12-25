@@ -18,7 +18,7 @@ export class ExampleModalPage implements OnInit {
   }
 
 	goToChannel(url,outside,insidePlayer) {
-		this.channelService.goToChannel(url,outside,insidePlayer);
+		this.channelService.goToChannel(url,outside,insidePlayer,this.featureObject.streamingMedia);
 	}
 	async closeModal() {
 		const onClosedData: string = "Wrapped Up!";

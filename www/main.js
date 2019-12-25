@@ -1196,7 +1196,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-app>\n  <ion-split-pane>\n\n    <ion-router-outlet main></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>"
+module.exports = "<ion-app>\r\n  <ion-split-pane>\r\n\r\n    <ion-router-outlet main></ion-router-outlet>\r\n  </ion-split-pane>\r\n</ion-app>"
 
 /***/ }),
 
@@ -1220,6 +1220,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_onesignal_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/onesignal/ngx */ "./node_modules/@ionic-native/onesignal/ngx/index.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic-native/app-update/ngx */ "./node_modules/@ionic-native/app-update/ngx/index.js");
+/* harmony import */ var _ionic_native_screen_orientation_ngx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic-native/screen-orientation/ngx */ "./node_modules/@ionic-native/screen-orientation/ngx/index.js");
+
 
 
 
@@ -1232,7 +1234,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent(platform, splashScreen, statusBar, oneSignal, alertCtrl, router, toast, modalCtrl, menu, popoverCtrl, actionSheetCtrl, location, navCtrl, appUpdate) {
+    function AppComponent(platform, splashScreen, statusBar, oneSignal, alertCtrl, router, toast, modalCtrl, menu, popoverCtrl, actionSheetCtrl, location, navCtrl, appUpdate, screenOrientation) {
         this.platform = platform;
         this.splashScreen = splashScreen;
         this.statusBar = statusBar;
@@ -1247,6 +1249,7 @@ var AppComponent = /** @class */ (function () {
         this.location = location;
         this.navCtrl = navCtrl;
         this.appUpdate = appUpdate;
+        this.screenOrientation = screenOrientation;
         // set up hardware back button event.
         this.lastTimeBackPress = 0;
         this.timePeriodToExit = 2000;
@@ -1351,7 +1354,6 @@ var AppComponent = /** @class */ (function () {
         var _this = this;
         this.platform.backButton.subscribe(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                this.openHome();
                 return [2 /*return*/];
             });
         }); });
@@ -1377,7 +1379,7 @@ var AppComponent = /** @class */ (function () {
             _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["PopoverController"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ActionSheetController"],
             _angular_common__WEBPACK_IMPORTED_MODULE_8__["Location"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavController"], _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_9__["AppUpdate"]])
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavController"], _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_9__["AppUpdate"], _ionic_native_screen_orientation_ngx__WEBPACK_IMPORTED_MODULE_10__["ScreenOrientation"]])
     ], AppComponent);
     return AppComponent;
 }()); // end of class
@@ -1424,6 +1426,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var angularfire2_firestore__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(angularfire2_firestore__WEBPACK_IMPORTED_MODULE_23__);
 /* harmony import */ var _ionic_native_streaming_media_ngx__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @ionic-native/streaming-media/ngx */ "./node_modules/@ionic-native/streaming-media/ngx/index.js");
 /* harmony import */ var _pages_example_modal_example_modal_module__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./pages/example-modal/example-modal.module */ "./src/app/pages/example-modal/example-modal.module.ts");
+/* harmony import */ var _ionic_native_video_player_ngx__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @ionic-native/video-player/ngx */ "./node_modules/@ionic-native/video-player/ngx/index.js");
+/* harmony import */ var _ionic_native_screen_orientation_ngx__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @ionic-native/screen-orientation/ngx */ "./node_modules/@ionic-native/screen-orientation/ngx/index.js");
+
+
 
 
 
@@ -1478,7 +1484,7 @@ var AppModule = /** @class */ (function () {
                 _ionic_native_onesignal_ngx__WEBPACK_IMPORTED_MODULE_16__["OneSignal"],
                 _ionic_native_toast_ngx__WEBPACK_IMPORTED_MODULE_7__["Toast"],
                 _ionic_native_open_native_settings_ngx__WEBPACK_IMPORTED_MODULE_19__["OpenNativeSettings"],
-                _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_20__["AppUpdate"], _ionic_native_streaming_media_ngx__WEBPACK_IMPORTED_MODULE_24__["StreamingMedia"]
+                _ionic_native_app_update_ngx__WEBPACK_IMPORTED_MODULE_20__["AppUpdate"], _ionic_native_streaming_media_ngx__WEBPACK_IMPORTED_MODULE_24__["StreamingMedia"], _ionic_native_video_player_ngx__WEBPACK_IMPORTED_MODULE_26__["VideoPlayer"], _ionic_native_screen_orientation_ngx__WEBPACK_IMPORTED_MODULE_27__["ScreenOrientation"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
         })
@@ -1583,7 +1589,7 @@ var ExampleModalPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n\t<ion-toolbar color=\"dark\">\n\t\t<ion-buttons slot=\"start\">\n\t\t\t<ion-button>\n\t\t\t\t<img height=\"30\" src=\"{{featureObject.featuredLogo}}\" />\n\t\t\t</ion-button>\n\t\t</ion-buttons>\n\t\t<ion-title>{{featureObject.channelCategory}}</ion-title>\n\t</ion-toolbar>\n</ion-header>\n\n<ion-content class=\"ion-padding\">\n\t<ion-button color=\"light\" *ngFor=\"let c of featureObject.channels\"\n\t\t(click)=\"goToChannel(c.url,c.outside,c.videoPlayer)\" expand=\"full\">{{c.channelName}}</ion-button>\n\t<ion-button color=\"danger\" expand=\"block\" (click)=\"closeModal()\">\n\t\t<ion-icon slot=\"start\" name=\"close\"></ion-icon>Close\n\t</ion-button>\n</ion-content>"
+module.exports = "<ion-header>\r\n\t<ion-toolbar color=\"dark\">\r\n\t\t<ion-buttons slot=\"start\">\r\n\t\t\t<ion-button>\r\n\t\t\t\t<img height=\"30\" src=\"{{featureObject.featuredLogo}}\" />\r\n\t\t\t</ion-button>\r\n\t\t</ion-buttons>\r\n\t\t<ion-title>{{featureObject.channelCategory}}</ion-title>\r\n\t</ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content class=\"ion-padding\">\r\n\t<ion-button color=\"light\" *ngFor=\"let c of featureObject.channels\"\r\n\t\t(click)=\"goToChannel(c.url,c.outside,c.videoPlayer)\" expand=\"full\">{{c.channelName}}</ion-button>\r\n\t<ion-button color=\"danger\" expand=\"block\" (click)=\"closeModal()\">\r\n\t\t<ion-icon slot=\"start\" name=\"close\"></ion-icon>Close\r\n\t</ion-button>\r\n</ion-content>"
 
 /***/ }),
 
@@ -1626,7 +1632,7 @@ var ExampleModalPage = /** @class */ (function () {
         this.featureObject = this.navParams.data.featureObject;
     };
     ExampleModalPage.prototype.goToChannel = function (url, outside, insidePlayer) {
-        this.channelService.goToChannel(url, outside, insidePlayer);
+        this.channelService.goToChannel(url, outside, insidePlayer, this.featureObject.streamingMedia);
     };
     ExampleModalPage.prototype.closeModal = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
@@ -1784,6 +1790,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 /* harmony import */ var _ionic_native_streaming_media_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/streaming-media/ngx */ "./node_modules/@ionic-native/streaming-media/ngx/index.js");
 /* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/ngx/index.js");
+/* harmony import */ var _ionic_native_video_player_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/video-player/ngx */ "./node_modules/@ionic-native/video-player/ngx/index.js");
+/* harmony import */ var _ionic_native_screen_orientation_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic-native/screen-orientation/ngx */ "./node_modules/@ionic-native/screen-orientation/ngx/index.js");
+/* harmony import */ var src_app_services_admobfree_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/services/admobfree.service */ "./src/app/services/admobfree.service.ts");
+
+
+
 
 
 
@@ -1791,9 +1803,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var AllChannelService = /** @class */ (function () {
-    function AllChannelService(db, streamingMedia, iab) {
+    function AllChannelService(db, streamingMedia, iab, videoPlayer, screenOrientation, admob) {
         this.streamingMedia = streamingMedia;
         this.iab = iab;
+        this.videoPlayer = videoPlayer;
+        this.screenOrientation = screenOrientation;
+        this.admob = admob;
         this.channelCollection = db.collection('allChannels');
         this.featuredGamesCollection = db.collection('Featured Games');
         this.channels = this.channelCollection.snapshotChanges().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (actions) {
@@ -1817,21 +1832,34 @@ var AllChannelService = /** @class */ (function () {
     AllChannelService.prototype.getFeaturedGames = function () {
         return this.featuredGames;
     };
-    AllChannelService.prototype.goToChannel = function (url, outside, insidePlayer) {
+    AllChannelService.prototype.goToChannel = function (url, outside, insidePlayer, streamingMedia) {
         console.log(url);
+        this.admob.InterstitialAd();
+        //this.iab.create(url, '_self', 'location=no');
         if (!outside) {
             if (insidePlayer) {
+                this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
                 this.iab.create(url, '_self', 'location=no');
             }
             else {
-                var options = {
-                    successCallback: function () { console.log('Video played'); },
-                    errorCallback: function (e) { console.log('Error streaming'); },
-                    orientation: 'landscape',
-                    shouldAutoClose: true,
-                    controls: true
-                };
-                this.streamingMedia.playVideo(url, options);
+                if (streamingMedia && streamingMedia === "y") {
+                    var options = {
+                        successCallback: function () { console.log('Video played'); },
+                        errorCallback: function (e) { console.log('Error streaming'); },
+                        orientation: 'landscape',
+                        shouldAutoClose: true,
+                        controls: true
+                    };
+                    this.streamingMedia.playVideo(url, options);
+                }
+                else {
+                    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+                    this.videoPlayer.play(url).then(function () {
+                        console.log('video completed');
+                    }).catch(function (err) {
+                        console.log(err);
+                    });
+                }
             }
         }
         else {
@@ -1850,7 +1878,8 @@ var AllChannelService = /** @class */ (function () {
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [angularfire2_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"],
             _ionic_native_streaming_media_ngx__WEBPACK_IMPORTED_MODULE_4__["StreamingMedia"],
-            _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_5__["InAppBrowser"]])
+            _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_5__["InAppBrowser"], _ionic_native_video_player_ngx__WEBPACK_IMPORTED_MODULE_6__["VideoPlayer"],
+            _ionic_native_screen_orientation_ngx__WEBPACK_IMPORTED_MODULE_7__["ScreenOrientation"], src_app_services_admobfree_service__WEBPACK_IMPORTED_MODULE_8__["AdmobFreeService"]])
     ], AllChannelService);
     return AllChannelService;
 }());
@@ -1930,7 +1959,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/ahayder/Work/watch-undergroud/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\NODEJS APP\Ionic4\watch-undergroud\src\main.ts */"./src/main.ts");
 
 
 /***/ })

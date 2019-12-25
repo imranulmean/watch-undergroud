@@ -4,6 +4,9 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { VideoPlayer } from '@ionic-native/video-player/ngx';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+import { AdmobFreeService } from 'src/app/services/admobfree.service';
 export interface Channel {
 
 }
@@ -21,7 +24,8 @@ export class AllChannelService {
 
 	constructor(db: AngularFirestore,
 			  	private streamingMedia: StreamingMedia,
-  			  	private iab: InAppBrowser,) { 
+  			  	private iab: InAppBrowser,private videoPlayer: VideoPlayer,
+  			  	private screenOrientation: ScreenOrientation,private admob: AdmobFreeService) { 
 
 		this.channelCollection = db.collection<Channel>('allChannels');	
 		this.featuredGamesCollection = db.collection<Channel>('Featured Games');
@@ -54,22 +58,36 @@ export class AllChannelService {
 	    return this.featuredGames;
 	  }	  
 
-	 goToChannel(url,outside,insidePlayer) {
-	 	console.log(url);
+	 goToChannel(url,outside,insidePlayer,streamingMedia) {
+	 	console.log(url); 
+	 	this.admob.InterstitialAd();	
+	 	//this.iab.create(url, '_self', 'location=no');
 	    if(!outside){
 	        if (insidePlayer) {
+	        	this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
 	        	this.iab.create(url, '_self', 'location=no');
 	        }
 	        else{
-				let options: StreamingVideoOptions = {
-				  successCallback: () => { console.log('Video played') },
-				  errorCallback: (e) => { console.log('Error streaming') },
-				  orientation: 'landscape',
-				  shouldAutoClose: true,
-				  controls: true
-				};
+	        	if(streamingMedia && streamingMedia==="y"){
+					let options: StreamingVideoOptions = {
+					  successCallback: () => { console.log('Video played') },
+					  errorCallback: (e) => { console.log('Error streaming') },
+					  orientation: 'landscape',
+					  shouldAutoClose: true,
+					  controls: true
+					};
 
-				this.streamingMedia.playVideo(url, options);	        	
+					this.streamingMedia.playVideo(url, options);				        		
+	        	}
+        		else{
+        			this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+					this.videoPlayer.play(url).then(() => {
+					 console.log('video completed');
+					}).catch(err => {
+					 console.log(err);
+					});	        			
+        		}
+				
 	        }
 	        
 	    }
@@ -84,5 +102,5 @@ export class AllChannelService {
 	            console.log("Failed to open URL via Android Intent.")
 	          });       
 	    }
-	}	  	  
+	 }	  	  
 }

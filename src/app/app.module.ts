@@ -29,6 +29,8 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
 import { ExampleModalPageModule } from './pages/example-modal/example-modal.module';
+import { VideoPlayer } from '@ionic-native/video-player/ngx';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 @NgModule({
   declarations: [AppComponent, MomentPipe],
   entryComponents: [],
@@ -53,7 +55,7 @@ import { ExampleModalPageModule } from './pages/example-modal/example-modal.modu
     OneSignal,
     Toast,
     OpenNativeSettings,
-    AppUpdate,StreamingMedia
+    AppUpdate,StreamingMedia,VideoPlayer,ScreenOrientation
   ],
   bootstrap: [AppComponent]
 })

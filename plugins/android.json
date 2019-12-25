@@ -60,6 +60,12 @@
     },
     "cordova-plugin-streaming-media": {
       "PACKAGE_NAME": "app.bd.livetv"
+    },
+    "com.moust.cordova.videoplayer": {
+      "PACKAGE_NAME": "app.bd.livetv"
+    },
+    "cordova-plugin-screen-orientation": {
+      "PACKAGE_NAME": "app.bd.livetv"
     }
   },
   "dependent_plugins": {
@@ -71,6 +77,9 @@
     },
     "cordova-admob-sdk": {
       "PLAY_SERVICES_VERSION": "11.0.4",
+      "PACKAGE_NAME": "app.bd.livetv"
+    },
+    "es6-promise-plugin": {
       "PACKAGE_NAME": "app.bd.livetv"
     }
   }

@@ -5,7 +5,12 @@
 				<img height="30" src="../../../assets/icon/icon.png" />
 			</ion-button>
 		</ion-buttons>
-		<ion-title>আমাদের টিভি</ion-title>
+		<ion-title style="padding:0">আমাদের টিভি 
+			<ion-chip style="padding:0">
+			  <ion-label color="danger" outline=true (click)=changeScreen()>Change Screen</ion-label>
+			</ion-chip>
+		</ion-title>
+		
 	</ion-toolbar>
 	<ion-toolbar id="segment" *ngIf="showUpdateButton==1">
 		<ion-button color="danger" expand="full" (click)=getUpdate()>এখনই আপডেট করুন</ion-button>
@@ -44,7 +49,7 @@
 				<div class="thumnails">
 					<div class="list-thumbnail">
 						<div class="img-thumb" *ngFor="let c of g.channels" 
-						(click)="goToChannel(c.url,g.outside,c.videoPlayer)">
+						(click)="goToChannel(c.url,g.outside,c.videoPlayer,g.streamingMedia)">
 							<img src="{{c.logo}}" class="tv-logo">
 						</div>
 					</div>
