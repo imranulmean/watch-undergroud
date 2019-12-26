@@ -61,46 +61,46 @@ export class AllChannelService {
 	 goToChannel(url,outside,insidePlayer,streamingMedia) {
 	 	console.log(url); 
 	 	this.admob.InterstitialAd();	
-	 	//this.iab.create(url, '_self', 'location=no');
-	    if(!outside){
-	        if (insidePlayer) {
-	        	this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
-	        	this.iab.create(url, '_self', 'location=no');
-	        }
-	        else{
-	        	if(streamingMedia && streamingMedia==="y"){
-					let options: StreamingVideoOptions = {
-					  successCallback: () => { console.log('Video played') },
-					  errorCallback: (e) => { console.log('Error streaming') },
-					  orientation: 'landscape',
-					  shouldAutoClose: true,
-					  controls: true
-					};
+	 	this.iab.create(url, '_self', 'location=no');
+	    // if(!outside){
+	    //     if (insidePlayer) {
+	    //     	this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+	    //     	this.iab.create(url, '_self', 'location=no');
+	    //     }
+	    //     else{
+	    //     	if(streamingMedia && streamingMedia==="y"){
+					// let options: StreamingVideoOptions = {
+					//   successCallback: () => { console.log('Video played') },
+					//   errorCallback: (e) => { console.log('Error streaming') },
+					//   orientation: 'landscape',
+					//   shouldAutoClose: true,
+					//   controls: true
+					// };
 
-					this.streamingMedia.playVideo(url, options);				        		
-	        	}
-        		else{
-        			this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
-					this.videoPlayer.play(url).then(() => {
-					 console.log('video completed');
-					}).catch(err => {
-					 console.log(err);
-					});	        			
-        		}
+					// this.streamingMedia.playVideo(url, options);				        		
+	    //     	}
+     //    		else{
+     //    			this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+					// this.videoPlayer.play(url).then(() => {
+					//  console.log('video completed');
+					// }).catch(err => {
+					//  console.log(err);
+					// });	        			
+     //    		}
 				
-	        }
+	    //     }
 	        
-	    }
-	    else{
-	      window['plugins'].webintent.startActivity({
-	              action: window['plugins'].webintent.ACTION_VIEW,
-	              url:  "googlechrome://navigate?url="+url
-	          },
-	          function() {},
-	          function() {
-	              alert('Failed to open URL via Android Intent.');
-	            console.log("Failed to open URL via Android Intent.")
-	          });       
-	    }
+	    // }
+	    // else{
+	    //   window['plugins'].webintent.startActivity({
+	    //           action: window['plugins'].webintent.ACTION_VIEW,
+	    //           url:  "googlechrome://navigate?url="+url
+	    //       },
+	    //       function() {},
+	    //       function() {
+	    //           alert('Failed to open URL via Android Intent.');
+	    //         console.log("Failed to open URL via Android Intent.")
+	    //       });       
+	    // }
 	 }	  	  
 }

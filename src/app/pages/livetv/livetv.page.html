@@ -6,9 +6,9 @@
 			</ion-button>
 		</ion-buttons>
 		<ion-title style="padding:0">আমাদের টিভি 
-			<ion-chip style="padding:0">
+<!-- 			<ion-chip style="padding:0">
 			  <ion-label color="danger" outline=true (click)=changeScreen()>Change Screen</ion-label>
-			</ion-chip>
+			</ion-chip> -->
 		</ion-title>
 		
 	</ion-toolbar>
@@ -48,8 +48,9 @@
 				</ion-text>
 				<div class="thumnails">
 					<div class="list-thumbnail">
-						<div class="img-thumb" *ngFor="let c of g.channels" 
-						(click)="goToChannel(c.url,g.outside,c.videoPlayer,g.streamingMedia)">
+<!-- 						<div class="img-thumb" *ngFor="let c of g.channels" 
+						(click)="goToChannel(c.url,g.outside,c.videoPlayer,g.streamingMedia)"> -->
+						<div class="img-thumb" *ngFor="let c of g.channels" (click)="openModal(c,g)">						
 							<img src="{{c.logo}}" class="tv-logo">
 						</div>
 					</div>

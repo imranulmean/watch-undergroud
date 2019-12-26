@@ -67,8 +67,9 @@ export class LivetvPage implements OnInit {
 	           		this.showUpdateButton=1; 
 	        }
 	      });    
-		this.screenOrientation.unlock();	    
+		// this.screenOrientation.unlock();	    
 	}
+	
 	changeScreen(){
 		if(this.screenOrientation.type.includes("portrait")){
 			this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
@@ -77,8 +78,13 @@ export class LivetvPage implements OnInit {
 			 this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
 		}
 	}	
-	 async openModal(featureObject) {
+	 async openModal(featureObject,allChannelGangObj) {
 	 	// this.showInterstitial();
+	 	if(allChannelGangObj){
+	 		featureObject['streamingMedia']=allChannelGangObj['streamingMedia'];
+	 		featureObject['featuredLogo']=featureObject.logo;
+	 		featureObject['channelCategory']=featureObject.channelName;
+	 	}
 	    const modal = await this.modalController.create({
 	      component: ExampleModalPage,
 	      componentProps: {
