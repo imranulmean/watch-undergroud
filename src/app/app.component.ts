@@ -144,6 +144,7 @@ export class AppComponent {
   // active hardware back button
   backButtonEvent() {
     this.platform.backButton.subscribe(async () => {
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       // this.openHome();
       // close action sheet
       // try {

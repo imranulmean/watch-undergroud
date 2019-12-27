@@ -1354,6 +1354,7 @@ var AppComponent = /** @class */ (function () {
         var _this = this;
         this.platform.backButton.subscribe(function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
                 return [2 /*return*/];
             });
         }); });
@@ -1618,18 +1619,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 /* harmony import */ var _services_all_channel_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/all-channel.service */ "./src/app/services/all-channel.service.ts");
+/* harmony import */ var _ionic_native_screen_orientation_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/screen-orientation/ngx */ "./node_modules/@ionic-native/screen-orientation/ngx/index.js");
+
 
 
 
 
 var ExampleModalPage = /** @class */ (function () {
-    function ExampleModalPage(modalController, navParams, channelService) {
+    function ExampleModalPage(modalController, navParams, channelService, screenOrientation) {
         this.modalController = modalController;
         this.navParams = navParams;
         this.channelService = channelService;
+        this.screenOrientation = screenOrientation;
     }
     ExampleModalPage.prototype.ngOnInit = function () {
         this.featureObject = this.navParams.data.featureObject;
+        console.log(this.featureObject);
     };
     ExampleModalPage.prototype.goToChannel = function (url, outside, insidePlayer) {
         this.channelService.goToChannel(url, outside, insidePlayer, this.featureObject.streamingMedia);
@@ -1640,6 +1645,7 @@ var ExampleModalPage = /** @class */ (function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
                         onClosedData = "Wrapped Up!";
                         return [4 /*yield*/, this.modalController.dismiss(onClosedData)];
                     case 1:
@@ -1656,7 +1662,8 @@ var ExampleModalPage = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./example-modal.page.scss */ "./src/app/pages/example-modal/example-modal.page.scss")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ModalController"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavParams"], _services_all_channel_service__WEBPACK_IMPORTED_MODULE_3__["AllChannelService"]])
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavParams"], _services_all_channel_service__WEBPACK_IMPORTED_MODULE_3__["AllChannelService"],
+            _ionic_native_screen_orientation_ngx__WEBPACK_IMPORTED_MODULE_4__["ScreenOrientation"]])
     ], ExampleModalPage);
     return ExampleModalPage;
 }());
@@ -1835,7 +1842,7 @@ var AllChannelService = /** @class */ (function () {
     AllChannelService.prototype.goToChannel = function (url, outside, insidePlayer, streamingMedia) {
         console.log(url);
         this.admob.InterstitialAd();
-        //this.iab.create(url, '_self', 'location=no');
+        // this.iab.create(url, '_self', 'location=no');
         if (!outside) {
             if (insidePlayer) {
                 this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);

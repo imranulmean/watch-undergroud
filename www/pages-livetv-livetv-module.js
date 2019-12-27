@@ -58,7 +58,7 @@ var LivetvPageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\r\n\t<ion-toolbar color=\"dark\">\r\n\t\t<ion-buttons slot=\"start\">\r\n\t\t\t<ion-button>\r\n\t\t\t\t<img height=\"30\" src=\"../../../assets/icon/icon.png\" />\r\n\t\t\t</ion-button>\r\n\t\t</ion-buttons>\r\n\t\t<ion-title style=\"padding:0\">আমাদের টিভি \r\n\t\t\t<ion-chip style=\"padding:0\">\r\n\t\t\t  <ion-label color=\"danger\" outline=true (click)=changeScreen()>Change Screen</ion-label>\r\n\t\t\t</ion-chip>\r\n\t\t</ion-title>\r\n\t\t\r\n\t</ion-toolbar>\r\n\t<ion-toolbar id=\"segment\" *ngIf=\"showUpdateButton==1\">\r\n\t\t<ion-button color=\"danger\" expand=\"full\" (click)=getUpdate()>এখনই আপডেট করুন</ion-button>\r\n\t</ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content class=\"ion-no-padding\">\r\n\r\n\r\n\t<ion-grid class=\"ion-no-padding\">\r\n\r\n\t\t<ion-row class=\"ion-no-padding\">\r\n\t\t\t<ion-col class=\"ion-no-padding\">\r\n\t\t\t\t<div class=\"thumnails\">\r\n\t\t\t\t\t<div class=\"list-thumbnail\">\r\n\t\t\t\t\t\t<div class=\"img-thumb\" *ngFor=\"let c of featuredGang\"  (click)=\"openModal(c)\">\r\n\t\t\t\t\t\t\t<img src=\"{{c.featuredLogo}}\" class=\"tv-logo\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</ion-col>\r\n\t\t</ion-row>\r\n<!-- \t\t<ion-row class=\"ion-no-padding\">\r\n\t\t\t<ion-col *ngFor=\"let f of featuredGang\" size=\"6\">\r\n\t\t\t\t<ion-card (click)=openModal(f)>\r\n\t\t\t\t\t<img height=\"70\" src=\"{{f.featuredLogo}}\" />\r\n\t\t\t\t</ion-card>\r\n\t\t\t</ion-col>\r\n\t\t</ion-row> -->\r\n\r\n\t\t<ion-row *ngFor=\"let g of channelsGang\">\r\n\t\t\t<ion-col class=\"ion-no-padding\">\r\n\t\t\t\t<ion-text color=\"dark\">\r\n\t\t\t\t\t<h5 class=\"left-padding\">{{g.channelCategory}}:</h5>\r\n\t\t\t\t</ion-text>\r\n\t\t\t\t<div class=\"thumnails\">\r\n\t\t\t\t\t<div class=\"list-thumbnail\">\r\n\t\t\t\t\t\t<div class=\"img-thumb\" *ngFor=\"let c of g.channels\" \r\n\t\t\t\t\t\t(click)=\"goToChannel(c.url,g.outside,c.videoPlayer,g.streamingMedia)\">\r\n\t\t\t\t\t\t\t<img src=\"{{c.logo}}\" class=\"tv-logo\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</ion-col>\r\n\t\t</ion-row>\r\n\t</ion-grid>\r\n\r\n</ion-content>"
+module.exports = "<ion-header>\r\n\t<ion-toolbar color=\"dark\">\r\n\t\t<ion-buttons slot=\"start\">\r\n\t\t\t<ion-button>\r\n\t\t\t\t<img height=\"30\" src=\"../../../assets/icon/icon.png\" />\r\n\t\t\t</ion-button>\r\n\t\t</ion-buttons>\r\n\t\t<ion-title style=\"padding:0\">আমাদের টিভি \r\n<!-- \t\t\t<ion-chip style=\"padding:0\">\r\n\t\t\t  <ion-label color=\"danger\" outline=true (click)=changeScreen()>Change Screen</ion-label>\r\n\t\t\t</ion-chip> -->\r\n\t\t</ion-title>\r\n\t\t\r\n\t</ion-toolbar>\r\n\t<ion-toolbar id=\"segment\" *ngIf=\"showUpdateButton==1\">\r\n\t\t<ion-button color=\"danger\" expand=\"full\" (click)=getUpdate()>এখনই আপডেট করুন</ion-button>\r\n\t</ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content class=\"ion-no-padding\">\r\n\r\n\r\n\t<ion-grid class=\"ion-no-padding\">\r\n\r\n\t\t<ion-row class=\"ion-no-padding\">\r\n\t\t\t<ion-col class=\"ion-no-padding\">\r\n\t\t\t\t<div class=\"thumnails\">\r\n\t\t\t\t\t<div class=\"list-thumbnail\">\r\n\t\t\t\t\t\t<div class=\"img-thumb\" *ngFor=\"let c of featuredGang\"  (click)=\"openModal(c)\">\r\n\t\t\t\t\t\t\t<img src=\"{{c.featuredLogo}}\" class=\"tv-logo\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</ion-col>\r\n\t\t</ion-row>\r\n<!-- \t\t<ion-row class=\"ion-no-padding\">\r\n\t\t\t<ion-col *ngFor=\"let f of featuredGang\" size=\"6\">\r\n\t\t\t\t<ion-card (click)=openModal(f)>\r\n\t\t\t\t\t<img height=\"70\" src=\"{{f.featuredLogo}}\" />\r\n\t\t\t\t</ion-card>\r\n\t\t\t</ion-col>\r\n\t\t</ion-row> -->\r\n\r\n\t\t<ion-row *ngFor=\"let g of channelsGang\">\r\n\t\t\t<ion-col class=\"ion-no-padding\">\r\n\t\t\t\t<ion-text color=\"dark\">\r\n\t\t\t\t\t<h5 class=\"left-padding\">{{g.channelCategory}}:</h5>\r\n\t\t\t\t</ion-text>\r\n\t\t\t\t<div class=\"thumnails\">\r\n\t\t\t\t\t<div class=\"list-thumbnail\">\r\n<!-- \t\t\t\t\t\t<div class=\"img-thumb\" *ngFor=\"let c of g.channels\" \r\n\t\t\t\t\t\t(click)=\"goToChannel(c.url,g.outside,c.videoPlayer,g.streamingMedia)\"> -->\r\n\t\t\t\t\t\t<div class=\"img-thumb\" *ngFor=\"let c of g.channels\" (click)=\"openModal(c,g)\">\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<img src=\"{{c.logo}}\" class=\"tv-logo\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</ion-col>\r\n\t\t</ion-row>\r\n\t</ion-grid>\r\n\r\n</ion-content>"
 
 /***/ }),
 
@@ -152,7 +152,7 @@ var LivetvPage = /** @class */ (function () {
                 _this.showUpdateButton = 1;
             }
         });
-        this.screenOrientation.unlock();
+        // this.screenOrientation.unlock();	    
     }
     LivetvPage.prototype.changeScreen = function () {
         if (this.screenOrientation.type.includes("portrait")) {
@@ -162,17 +162,24 @@ var LivetvPage = /** @class */ (function () {
             this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
         }
     };
-    LivetvPage.prototype.openModal = function (featureObject) {
+    LivetvPage.prototype.openModal = function (featureObject, allChannelGangObj) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var modal;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.modalController.create({
-                            component: _example_modal_example_modal_page__WEBPACK_IMPORTED_MODULE_9__["ExampleModalPage"],
-                            componentProps: {
-                                "featureObject": featureObject
-                            }
-                        })];
+                    case 0:
+                        // this.showInterstitial();
+                        if (allChannelGangObj) {
+                            featureObject['streamingMedia'] = allChannelGangObj['streamingMedia'];
+                            featureObject['featuredLogo'] = featureObject.logo;
+                            featureObject['channelCategory'] = featureObject.channelName;
+                        }
+                        return [4 /*yield*/, this.modalController.create({
+                                component: _example_modal_example_modal_page__WEBPACK_IMPORTED_MODULE_9__["ExampleModalPage"],
+                                componentProps: {
+                                    "featureObject": featureObject
+                                }
+                            })];
                     case 1:
                         modal = _a.sent();
                         modal.onDidDismiss().then(function (dataReturned) { });
